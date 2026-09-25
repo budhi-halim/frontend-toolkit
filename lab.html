@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="An interactive laboratory for Frontend Toolkit's custom glass, surface, fluid and atmospheric elements.">
+  <title>Effect lab — Frontend Toolkit</title>
+  <link rel="icon" href="site/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="demo/style.css">
+  <script src="dist/frontend-toolkit.js" defer></script>
+  <script src="demo/logic.js" defer></script>
+  <script src="demo/ui.js" defer></script>
+  <link rel="stylesheet" href="site/design.css">
+  <script src="site/theme.js" defer></script>
+</head>
+<body class="lab-page">
+  <a class="skip-link" href="#workspace">Skip to the effect inspector</a>
+  <!-- chrome:header:start -->
+<header class="tk-header wrap"><a class="tk-brand" href="index.html" aria-label="Frontend Toolkit home"><img src="site/favicon.svg" alt="" width="34" height="34"><span>Frontend Toolkit</span><span class="tk-version" data-version>1.0.0</span></a><nav class="tk-nav" aria-label="Main navigation"><a href="index.html">Demo</a><a href="lab.html" aria-current="page">Lab</a><a href="docs/guide.html">Docs</a><a href="examples/index.html">Examples</a><button class="tk-theme" id="theme-button" data-theme-toggle type="button" aria-label="Switch color theme"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg></button></nav></header>
+<!-- chrome:header:end -->
+  <main class="wrap lab-main">
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow"><span class="accent-dot"></span> EFFECT LAB <span class="eyebrow-divider">/</span> ADVANCED CONTROLS</p><h1 id="page-title">Effect lab</h1><p class="intro-description">Inspect every setting, compare rendering modes, and export configurations.</p></div>
+      <div class="intro-note"><p>Full configuration, source controls, and rendering diagnostics.</p><div class="small-mono"><span id="study-count">72 EXAMPLES</span></div></div>
+    </section>
+    <div class="lab-actions"><div class="segmented" role="group" aria-label="Motion preview"><button id="lab-motion-full" type="button" aria-pressed="true">Full motion</button><button id="lab-motion-reduced" type="button" aria-pressed="false">Reduced motion</button></div><button id="import-button" class="button" type="button">Import configuration</button><button id="export-button" class="button" type="button">Export configuration</button></div>
+    <div class="catalog-tools"><label for="effect-search">Find an effect<input type="search" id="effect-search" placeholder="Search names, uses, or materials" autocomplete="off"></label><label for="effect-group">Category<select id="effect-group"><option value="all">All categories</option></select></label><span id="filter-summary" class="small-mono" aria-live="polite"></span></div>
+    <nav id="effect-nav" class="effect-nav" aria-label="Select an effect"></nav>
+    <section id="workspace" class="workspace" aria-labelledby="selected-title">
+      <div class="preview-column">
+        <div class="preview-heading"><div class="preview-title"><span id="selected-index" class="mono-number">01</span><h2 id="selected-title">Liquid glass</h2><span id="effect-type" class="pill">Optics</span></div><button id="reset-button" class="text-button" type="button" title="Reset this material's settings">↺ <span>Reset</span></button></div>
+        <div id="stage" class="stage" data-background="palette" data-effect="glass">
+          <div class="stage-art" aria-hidden="true"><span class="art-circle"></span><span class="art-panel"></span><span class="art-type">SAMPLE<br><i>backdrop</i></span><span class="art-lines"></span></div>
+          <span class="stage-corner top-left">LIVE SPECIMEN</span><span id="stage-size" class="stage-corner bottom-right">Adjust anything →</span>
+          <div id="specimen-mount" class="specimen-mount"></div>
+        </div>
+        <section class="runtime-panel" aria-label="Compatibility and animation status">
+          <div class="runtime-heading"><span id="runtime-indicator" class="status-dot"></span><strong id="runtime-label">Checking animation state</strong><span class="small-mono">RENDERER STATUS</span></div>
+          <p id="runtime-detail">Rendering runs on this computer. The host PC only serves the files.</p>
+          <div class="runtime-actions"><button id="enable-motion" class="primary-small" type="button">Enable animations for testing</button><button id="respect-motion" class="quiet-button" type="button" hidden>Use system motion preference</button><button id="portable-button" class="quiet-button" type="button">Use Canvas fallback</button><button id="retry-renderer" class="quiet-button" type="button">Retry renderer</button><button id="diagnose-button" class="text-button" type="button">Run diagnostics</button></div>
+          <p id="probe-result" class="control-help" hidden></p>
+        </section>
+        <div class="transport"><div class="transport-buttons"><button id="play-button" class="primary-small" type="button" aria-pressed="false">Ⅱ Pause</button><button id="step-button" class="quiet-button" type="button" title="Pause and advance by one 60 Hz frame">Step +1</button><button id="rewind-button" class="quiet-button" type="button" title="Reset the effect clock to zero">↤ <span>Rewind</span></button></div><div class="clock"><span id="animation-dot" class="status-dot"></span><span id="time-readout">0.00 s</span><span id="renderer-pill" class="renderer-pill">Initializing</span></div></div>
+        <div class="interaction-bar"><label class="toggle-inline"><input id="drag-toggle" type="checkbox"> Drag card</label><button id="reset-position" class="text-button" type="button">Center</button><button id="frame-effect" class="text-button" type="button">Fit effect</button><button id="clear-effect" class="text-button" type="button">Clear particles</button></div><p id="interaction-hint" class="control-help"></p><p id="selected-description" class="effect-description"></p>
+        <div class="scene-tools">
+          <div class="scene-topline"><span class="section-label">THE TEST ENVIRONMENT</span><label class="toggle-inline"><input id="content-toggle" type="checkbox" checked> Show content</label></div>
+          <div class="scene-controls"><label class="scene-select" for="background-select">Backdrop<select id="background-select"><option value="palette">Color study</option><option value="grid">Optical grid</option><option value="photo">Geometric backdrop</option><option value="dark">Dark canvas</option><option value="light">Light canvas</option><option value="checker">Transparency</option></select></label><div class="scene-range"><label for="scene-width">Width <output id="width-output">78%</output></label><input id="scene-width" type="range" min="30" max="100" value="78"></div><div class="scene-range"><label for="scene-height">Height <output id="height-output">290</output></label><input id="scene-height" type="range" min="150" max="520" value="290"></div><div class="scene-range"><label for="scene-radius">Radius <output id="radius-output">30</output></label><input id="scene-radius" type="range" min="0" max="90" value="30"></div></div><div class="fill-control"><label for="fill-slider">Card fill <output id="fill-output">0%</output></label><input id="fill-slider" type="range" min="0" max="1" step=".01" value="0"><span class="control-help">Zero means a transparent interior. The effect has its own opacity.</span></div>
+        </div>
+        <section class="code-panel" aria-label="Integration code and diagnostics"><div class="code-toolbar"><div class="code-tabs" role="tablist" aria-label="Code format"><button class="code-tab active" role="tab" aria-selected="true" data-tab="html">HTML</button><button class="code-tab" role="tab" aria-selected="false" data-tab="css">CSS</button><button class="code-tab" role="tab" aria-selected="false" data-tab="js">Low-level JS</button><button class="code-tab" role="tab" aria-selected="false" data-tab="loading">Loading</button><button class="code-tab" role="tab" aria-selected="false" data-tab="json">JSON</button></div><button id="copy-button" class="text-button" type="button">Copy <span aria-hidden="true">⧉</span></button></div><pre id="code-output" tabindex="0" role="tabpanel" aria-label="Integration code"></pre><div class="code-footer"><span>CHANGES UPDATE IN REAL TIME</span><button id="share-button" class="text-button" type="button">Copy scene link ↗</button></div></section>
+      </div>
+      <aside class="inspector" aria-label="Material controls"><div class="inspector-heading"><h2>Settings</h2><span class="section-label">LIVE CONTROLS</span></div><label class="preset-label" for="preset-select">Start with a preset</label><select id="preset-select" class="preset-select"></select><div id="effect-controls" class="controls-group"></div><details class="settings-details"><summary>Playback & performance <span>+</span></summary><div id="performance-controls" class="controls-group"></div></details><details id="source-details" class="settings-details" hidden><summary>Water texture source <span>+</span></summary><p class="control-help">Use an image, or explicitly capture the sample below. Snapshots are isolated and cached, not taken every frame. Native capture supports ordinary HTML; complex content may need the optional html2canvas adapter.</p><input id="texture-input" type="file" accept="image/png,image/jpeg,image/webp"><button id="clear-texture" type="button" class="quiet-button">Restore built-in texture</button><p id="texture-name" class="control-help">Built-in texture</p><div id="snapshot-sample" class="snapshot-sample"><span>LIVE HTML SOURCE</span><strong contenteditable="true" spellcheck="false">Snapshot<br>sample</strong><p contenteditable="true">Edit this text, then capture again.</p></div><button id="capture-button" type="button" class="quiet-button">Capture this HTML</button></details><div class="seed-row"><label for="seed-input">Seed</label><input id="seed-input" type="number" min="0" max="65535" value="7"><button id="random-seed" class="quiet-button" type="button">New seed ↻</button></div><div class="diagnostics"><div class="diagnostic-heading"><h3>Diagnostics</h3><span id="health-label" class="health-label">READY</span></div><dl id="stats-list"></dl><p id="backend-note" class="control-help"></p><button id="copy-report" class="text-button" type="button">Copy debug report ↗</button><button id="download-report" class="text-button" type="button">Save report JSON ↓</button><details id="event-details"><summary>Event log <span id="event-count">0</span></summary><ol id="event-log" class="event-log"></ol></details></div></aside>
+    </section>
+    <section class="collection" aria-labelledby="collection-title"><div class="collection-heading"><div><p class="eyebrow">THE COLLECTION</p><h2 id="collection-title">All examples</h2></div><div class="collection-tools"><span class="small-mono">HOVER TO ANIMATE · CLICK TO INSPECT</span><button id="gallery-play" class="quiet-button" type="button" aria-pressed="false">Animate all</button></div></div><div id="gallery" class="gallery"></div></section>
+    <section class="integration-note"><div class="integration-symbol" aria-hidden="true">&lt;/&gt;</div><div><h2>Integration options</h2><p>Drop in the classic script for custom elements. Import a renderer for your own clock, layout, and lifecycle. Use the selective module entry to fetch effects eagerly, near visibility, after load, during idle time, or manually. The classic entry on this page includes everything for offline use.</p></div><span class="small-mono">CLASSIC / SELECTIVE / LOW-LEVEL</span></section>
+  </main>
+  <!-- chrome:footer:start -->
+<footer class="tk-footer wrap"><span>Frontend Toolkit <span data-version>1.0.0</span></span><nav aria-label="Project resources"><a href="https://github.com/budhi-halim/frontend-toolkit">GitHub</a><a href="docs/compatibility.html">Compatibility</a><a href="LICENSE">MIT license</a><a href="docs/notices.html">Notices</a></nav></footer>
+<!-- chrome:footer:end -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><input id="import-input" type="file" accept="application/json,.json" hidden>
+  <noscript><p class="noscript">Enable JavaScript to run the interactive effects laboratory.</p></noscript>
+</body>
+</html>

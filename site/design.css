@@ -1,0 +1,131 @@
+/* Shared interface design. Frontend Toolkit, MIT; see LICENSE and NOTICE.txt. */
+:root {
+  color-scheme: light dark;
+  --page: light-dark(#f5f5ef, #101815);
+  --panel: light-dark(#fffefa, #17211c);
+  --soft: light-dark(#eeefe8, #202c24);
+  --ink: light-dark(#202e27, #eef2e9);
+  --muted: light-dark(#657268, #a4b3a7);
+  --line: light-dark(#d8dfd4, #334338);
+  --accent: light-dark(#2e5140, #bfdda8);
+  --accent-ink: light-dark(#f5faed, #1b2c20);
+  --accent-soft: color-mix(in oklch, var(--accent) 10%, var(--panel));
+  --raised: var(--soft);
+  --focus: var(--accent);
+  --stage: #101c20;
+  --shadow: 0 12px 40px #10291b0a;
+  --radius: 12px;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --sans: Inter, "Segoe UI", Arial, sans-serif;
+  font-family: var(--sans);
+  font-synthesis: none;
+  line-height: 1.5;
+  background: var(--page);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+button, a, input, select, summary { -webkit-tap-highlight-color: transparent; }
+button, summary { touch-action: manipulation; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .5; }
+:where(button, a, input, select, summary, pre):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+[hidden] { display: none !important; }
+pre, code { font-family: var(--mono); }
+.wrap { width: min(1320px, calc(100% - 96px)); margin-inline: auto; }
+.skip-link { position: fixed; z-index: 100; left: 16px; top: 12px; transform: translateY(-180%); padding: 10px 18px; background: var(--ink); color: var(--page); }
+.skip-link:focus { transform: none; top: 12px; }
+.tk-header { min-height: 96px; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
+.tk-brand { display: flex; align-items: center; gap: 12px; font-size: 17px; font-weight: 650; letter-spacing: -.4px; white-space: nowrap; }
+.tk-brand img { display: block; width: 34px; height: 34px; }
+.tk-version { border: 1px solid var(--line); border-radius: 5px; padding: 2px 7px; color: var(--muted); font: 11px/1.5 var(--mono); letter-spacing: 0; }
+.tk-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; font-size: 13px; font-weight: 550; }
+.tk-nav a { display: flex; align-items: center; min-height: 42px; padding: 7px 0; color: var(--muted); }
+.tk-nav a[aria-current] { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
+.tk-nav a:hover, .tk-footer a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.tk-theme { width: 42px; height: 42px; min-height: 42px; display: grid; place-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 50%; padding: 0; }
+.tk-theme svg { display: block; }
+.tk-footer { margin-block: 0; border-top: 1px solid var(--line); padding: 25px 0 36px; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 18px; color: var(--muted); font: 11px/1.7 var(--sans); letter-spacing: 0; }
+.tk-footer > span { width: auto; order: 0; }
+.tk-footer > span > span { margin-left: 8px; font-family: var(--mono); font-size: 10px; }
+.tk-footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+/* Lab and examples use the same typography, widths, controls and surfaces as the demo. */
+.lab-page .lab-main { padding: 0; max-width: 1320px; }
+.lab-page .intro { padding: 52px 0 32px; }
+.lab-page h1 { font-family: var(--sans); font-size: clamp(38px, 4vw, 56px); font-weight: 550; line-height: 1.1; letter-spacing: -2px; }
+.lab-page .eyebrow { font-family: var(--sans); font-weight: 600; letter-spacing: 1.3px; font-size: 10px; }
+.lab-page .intro-note { max-width: 280px; font-size: 13px; line-height: 1.75; color: var(--muted); }
+.lab-page .intro-note .small-mono { margin-top: 12px; }
+.lab-page .intro-description { font-size: 14px; line-height: 1.75; }
+.lab-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.lab-actions .button, .lab-page .quiet-button, .lab-page .primary-small { min-height: 42px; border: 1px solid var(--line); border-radius: 8px; font: 500 12px var(--sans); padding: 9px 13px; background: var(--panel); color: var(--ink); }
+.lab-page .primary-small { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.lab-page select, .lab-page input[type=search], .lab-page input[type=text], .lab-page input[type=number] { background: var(--panel); border-color: var(--line); }
+.lab-page .catalog-tools input, .lab-page .catalog-tools select { min-height: 42px; font-size: 12px; }
+.lab-page .catalog-tools label { font-size: 12px; }
+.lab-page .effect-nav { margin-bottom: 22px; border-color: var(--line); }
+.lab-page .effect-nav button { min-height: 40px; font-family: var(--sans); font-size: 12px; }
+.lab-page .inspector, .lab-page .scene-tools, .lab-page .code-panel { border-radius: 12px; background: var(--panel); border-color: var(--line); }
+.lab-page .inspector { padding: 24px; }
+.lab-page .inspector-heading h2 { font: 550 20px var(--sans); letter-spacing: -.5px; }
+.lab-page .control-line label, .lab-page .preset-label, .lab-page .settings-details summary { font-family: var(--sans); font-size: 12px; }
+.lab-page .stage { border: 1px solid var(--line); border-radius: 12px; }
+.lab-page .runtime-panel { border-color: var(--line); background: var(--panel); }
+.lab-page .runtime-panel.attention { border-color: color-mix(in oklch, #ad7a3f 60%, var(--line)); background: color-mix(in oklch, #ad7a3f 8%, var(--panel)); }
+.lab-page .code-panel pre, .lab-page #code-output { background: var(--soft); color: var(--ink); font-size: 12px; line-height: 1.75; }
+.lab-page .collection { margin-top: 48px; }
+.lab-page .collection h2, .lab-page .integration-note h2 { font-family: var(--sans); font-weight: 550; letter-spacing: -.6px; }
+.lab-page .integration-note { border-color: var(--line); border-radius: 12px; background: var(--panel); margin-bottom: 48px; }
+.lab-page .small-mono, .lab-page .section-label { letter-spacing: .5px; }
+.example-page .example-main { max-width: 980px; padding: 46px 0 64px; margin-block: 0; }
+.example-page h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 550; line-height: 1.12; letter-spacing: -1.6px; margin: 22px 0; }
+.example-page .example-main > nav { font-size: 12px; gap: 20px; }
+.example-page .example-main p { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.example-page .example-main a { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.example-page .guide-list a { text-decoration: none; background: var(--panel); border-color: var(--line); color: var(--ink); }
+.example-page .guide-list span { color: var(--muted); }
+.example-page .example-main pre, .documentation pre { background: var(--soft); color: var(--ink); border: 1px solid var(--line); }
+.example-page .example-main button { min-height: 42px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); }
+.example-page .example-card p { color: inherit; }
+.documentation a { color: var(--accent); text-decoration: underline; }
+.documentation code { background: var(--soft); }
+.documentation pre code { background: none; }
+.documentation .code-label { background: var(--panel); color: var(--muted); border: 1px solid var(--line); border-bottom: 0; }
+.documentation .table-scroll, .documentation .reference-section { border-color: var(--line); }
+.documentation th { background: var(--soft); }
+.documentation td, .documentation th { border-bottom-color: var(--line); }
+.docs-nav a[aria-current] { background: var(--soft); }
+@media (max-width: 1100px) { .wrap { width: calc(100% - 56px); } }
+@media (max-width: 760px) { .tk-nav { gap: 15px; } .tk-brand { font-size: 15px; } .tk-version { display: none; } }
+@media (max-width: 640px) {
+  .wrap { width: calc(100% - 32px); }
+  .tk-header { flex-wrap: wrap; gap: 12px; padding: 18px 0 12px; }
+  .tk-brand { font-size: 15px; gap: 10px; }
+  .tk-brand img { width: 30px; height: 30px; }
+  .tk-nav { flex: 1 1 100%; gap: 0; justify-content: space-between; font-size: 12px; }
+  .tk-nav a { min-height: 42px; }
+  .tk-theme { width: 38px; height: 38px; min-height: 38px; }
+  .tk-footer { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 0; }
+  .tk-footer nav { gap: 16px; }
+  .lab-page .intro { padding: 32px 0 22px; }
+  .lab-page h1 { font-size: 40px; }
+  .lab-page .intro-note { display: none; }
+  .lab-page .inspector { padding: 20px 16px; }
+  .lab-page .controls-group { grid-template-columns: minmax(0, 1fr); }
+  .lab-page .control-line label { font-size: 12px; }
+  .lab-page input[type=number] { min-height: 36px; }
+  .lab-page .code-panel pre, .lab-page #code-output { font-size: 11px; }
+  .lab-page .clock { margin-left: auto; }
+  .lab-page .transport { flex-wrap: wrap; }
+  .lab-page .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .example-page .example-main { padding-top: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+.lab-actions .segmented { display: inline-flex; padding: 3px; gap: 2px; background: var(--soft); border: 1px solid var(--line); border-radius: 10px; }
+.lab-actions .segmented button { min-height: 34px; padding: 6px 13px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); font: 500 12px var(--sans); }
+.lab-actions .segmented button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: 0 1px 3px #10291b10; }
+.documentation td code, .documentation th code { white-space: nowrap; }

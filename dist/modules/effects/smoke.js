@@ -1,0 +1,5 @@
+/*! Frontend Toolkit 1.0.0. Copyright (c) 2026 Frontend Toolkit contributors.
+MIT for project code. Retained upstream material is not relicensed.
+Keep the distribution LICENSE, NOTICE.txt and licenses/ files with these modules. */
+import{SMOKE_FRAGMENT as i}from"../shaders/smoke.js";import{createGpuRenderer as n}from"./gpu.js";import{getDefaults as l}from"../core/schema.js";import{colorRGB as u}from"../core/utils.js";function m(t,r={},a){return n(t,i,{...l("smoke"),...r},{effect:"smoke",effective:(e,s)=>({...e,steps:Math.max(12,Math.round(e.steps*s.detail))}),uniforms:e=>({uSeed:e.seed,uScale:e.scale,uDensity:e.density,uTurbulence:e.turbulence,uWind:e.wind,uSpread:e.spread,uRise:e.rise,uLight:e.light,uColor:u(e.color),uSteps:e.steps,uDepth:e.depth,uShadow:e.shadow,uLightAngle:e.lightAngle}),stats:e=>({volumeSamples:e.steps,volume:"3D density; front-to-back extinction"}),fallback:e=>`radial-gradient(ellipse at 46% 45%,color-mix(in srgb,${e.color} 55%,transparent),transparent 65%),radial-gradient(ellipse at 57% 65%,color-mix(in srgb,${e.color} 40%,transparent),transparent 45%)`},a)}export{m as createSmokeRenderer};
+//# sourceMappingURL=smoke.js.map

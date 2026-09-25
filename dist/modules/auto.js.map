@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/auto.js"],
+  "sourcesContent": ["import {defineElements} from './elements.js';\nexport * from './index.js';\ndefineElements();\n"],
+  "mappings": ";;;AAAA,OAAQ,kBAAAA,MAAqB,gBAC7B,WAAc,aACdA,EAAe",
+  "names": ["defineElements"]
+}

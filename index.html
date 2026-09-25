@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Frontend Toolkit: configurable materials, visual effects, and interaction for native HTML elements. Explore the effects and copy integration examples.">
+  <title>Frontend Toolkit — Visual effects for the web</title>
+  <link rel="icon" href="site/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="site/style.css">
+  <script src="dist/frontend-toolkit.js" defer></script>
+  <script src="site/logic.js" defer></script>
+  <script src="site/ui.js" defer></script>
+  <link rel="stylesheet" href="site/design.css">
+  <script src="site/theme.js" defer></script>
+</head>
+<body class="demo-page">
+  <a class="skip-link" href="#effects">Skip to effects</a>
+  <!-- chrome:header:start -->
+<header class="tk-header wrap"><a class="tk-brand" href="index.html" aria-label="Frontend Toolkit home"><img src="site/favicon.svg" alt="" width="34" height="34"><span>Frontend Toolkit</span><span class="tk-version" data-version>1.0.0</span></a><nav class="tk-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Demo</a><a href="lab.html">Lab</a><a href="docs/guide.html">Docs</a><a href="examples/index.html">Examples</a><button class="tk-theme" id="theme-button" data-theme-toggle type="button" aria-label="Switch color theme"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg></button></nav></header>
+<!-- chrome:header:end -->
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy"><p class="eyebrow">MATERIALS · MOTION · INTERACTION</p><h1 id="page-title">Visual effects<br>for the web.</h1><p class="lead">Configurable effects for native HTML.<br>Use custom elements or work directly with the renderers.</p></div>
+      <div class="hero-aside"><p>Explore the collection, adjust a few settings, and copy an example. The lab provides the full set of controls.</p><div class="facts"><div><strong>19</strong><span>effect families</span></div><div><strong>76</strong><span>examples</span></div><div><strong>0</strong><span>runtime packages</span></div></div></div>
+    </section>
+    <section id="effects" class="effects" aria-labelledby="effects-title">
+      <div class="section-top"><div><p class="eyebrow">EXPLORE</p><h2 id="effects-title">The collection</h2></div><div class="motion-tools"><span class="motion-label" id="motion-label">Preview motion</span><div class="segmented" role="group" aria-labelledby="motion-label"><button type="button" id="motion-full" aria-pressed="true">Full</button><button type="button" id="motion-reduced" aria-pressed="false">Reduced</button></div><button type="button" id="pause-button" class="button icon-text" aria-pressed="false"><span aria-hidden="true">Ⅱ</span> Pause</button></div></div>
+      <p class="motion-note" id="motion-note">Full motion is enabled for this demo. The library respects system preferences by default.</p>
+      <div class="explorer">
+        <details class="library" id="library" open>
+          <summary><span id="mobile-selection">Choose an effect</span><span aria-hidden="true">⌄</span></summary>
+          <div class="library-content">
+            <label class="sr-only" for="search">Search effects</label><div class="search-box"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="1.7"/></svg><input id="search" type="search" placeholder="Search effects" autocomplete="off"></div>
+            <label class="sr-only" for="category">Effect category</label><select id="category"><option value="all">All categories</option></select>
+            <p class="library-count" id="result-count" aria-live="polite">76 examples</p>
+            <nav id="effect-list" class="effect-list" aria-label="Effect examples"></nav>
+            <p id="no-results" class="empty" hidden>No effects match this search.</p>
+            <button id="clear-search" class="text-button" type="button" hidden>Clear filters</button>
+          </div>
+        </details>
+        <article class="viewer" aria-labelledby="selected-title">
+          <div class="viewer-heading"><div><span class="eyebrow" id="selected-family">OPTICS</span><h3 id="selected-title">Liquid glass</h3></div><code id="element-tag">&lt;ft-glass&gt;</code></div>
+          <div id="stage" class="stage" data-family="glass">
+            <div class="stage-grid" aria-hidden="true"></div><div id="preview-mount" class="preview-mount"></div>
+            <div id="presentation-note" class="presentation-note" hidden></div>
+          </div>
+          <div class="preview-caption"><p id="interaction-hint">Drag the panel across the background.</p><span id="renderer-label" class="renderer-label" title="The renderer selected by your browser">Starting</span></div>
+          <p id="effect-error" class="error" role="alert" hidden></p>
+          <div class="settings">
+            <div class="preset-row"><div><label for="preset">Preset</label><select id="preset"></select></div><button class="button" id="reset-button" type="button">Reset</button><a class="text-button lab-link" id="lab-link" href="lab.html">All settings <span aria-hidden="true">↗</span></a></div>
+            <div id="controls" class="controls"></div>
+          </div>
+          <details id="code-details" class="code-details"><summary><span><span aria-hidden="true">&lt;/&gt;</span> Use this effect</span><span aria-hidden="true">+</span></summary><div class="code-body"><div class="code-toolbar"><div class="code-tabs" role="group" aria-label="Code language"><button type="button" data-code="html" aria-pressed="true">HTML</button><button type="button" data-code="css" aria-pressed="false">CSS</button><button type="button" data-code="js" aria-pressed="false">JavaScript</button></div><button id="copy-code" class="text-button" type="button">Copy</button></div><pre id="code-output" tabindex="0" aria-label="Integration code"></pre><p class="code-help">The example keeps the library’s system-aware motion policy. Set dimensions using the CSS shown here.</p></div></details>
+        </article>
+      </div>
+    </section>
+    <section class="quick-start" id="quick-start" aria-labelledby="quick-title"><div class="quick-copy"><p class="eyebrow">INTEGRATION</p><h2 id="quick-title">Start with an element.</h2><p>Add the script and give the element a size. Your content remains ordinary HTML.</p><p>Choose the selective loader for individual effect modules, or import a renderer when your application manages its own lifecycle.</p><div class="quick-links"><a class="button primary" href="docs/guide.html">Integration guide <span aria-hidden="true">↗</span></a><a class="text-button" href="docs/reference.html">All options</a></div></div><div class="quick-code"><div class="quick-code-heading"><span>HTML + CSS</span><span>Local files</span></div><pre tabindex="0"><code>&lt;script src="./dist/frontend-toolkit.js" defer&gt;&lt;/script&gt;
+
+&lt;ft-glow preset="prism" class="card"&gt;
+  &lt;h2&gt;Project overview&lt;/h2&gt;
+  &lt;p&gt;Standard HTML, with an animated border.&lt;/p&gt;
+&lt;/ft-glow&gt;
+
+&lt;style&gt;
+  .card {
+    display: block;
+    padding: 2rem;
+    min-height: 180px;
+    border-radius: 20px;
+  }
+&lt;/style&gt;</code></pre></div></section>
+    <section class="principles" aria-label="Library design"><div><span class="eyebrow">01 / COMPOSITION</span><h3>Keep your HTML.</h3><p>Decorative layers do not replace text, controls, or your application’s layout.</p></div><div><span class="eyebrow">02 / CONTROL</span><h3>Choose the integration.</h3><p>Custom elements, managed effects on existing elements, or individual renderer modules.</p></div><div><span class="eyebrow">03 / RUNTIME</span><h3>Work within a budget.</h3><p>Shared scheduling, bounded buffers, adaptive quality, and offscreen suspension.</p></div></section>
+  </main>
+  <!-- chrome:footer:start -->
+<footer class="tk-footer wrap"><span>Frontend Toolkit <span data-version>1.0.0</span></span><nav aria-label="Project resources"><a href="https://github.com/budhi-halim/frontend-toolkit">GitHub</a><a href="docs/compatibility.html">Compatibility</a><a href="LICENSE">MIT license</a><a href="docs/notices.html">Notices</a></nav></footer>
+<!-- chrome:footer:end -->
+  <div id="announcement" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">JavaScript is required for the effect previews. The source, reference, and license remain available through the links on this page.</p></noscript>
+</body>
+</html>

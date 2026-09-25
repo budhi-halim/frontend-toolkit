@@ -1,0 +1,57 @@
+import {NOISE_GLSL} from './noise.js';
+
+// === FIVE SELF-CONTAINED SHADER STUDIES; RAIN USES ITS OWN VECTOR RENDERER ===
+export const FIELD_FRAGMENT=`
+precision highp float;
+varying vec2 vUv;
+uniform vec2 uResolution,uHostSize;
+uniform vec3 uPointer,uColor,uColor2;
+uniform float uTime,uSeed,uKind,uScale,uIntensity,uDetail,uDistortion,uWind,uTransparent,uOceanAmplitude;
+${NOISE_GLSL}
+float field(vec2 p){float result=0.,amplitude=.54;for(int i=0;i<8;i++){if(float(i)>=uDetail)break;result+=noise2(p)*amplitude;p=mat2(.84,-.54,.54,.84)*p*2.02+13.7;amplitude*=.48;}return result;}
+float wave(vec2 p){
+  float value=0.,amplitude=.17*uOceanAmplitude,frequency=1.15;
+  for(int i=0;i<7;i++){
+    if(float(i)>=uDetail)break;
+    float k=float(i),angle=k*2.39996+.17;
+    vec2 direction=vec2(cos(angle),sin(angle));
+    float phase=dot(p,direction)*frequency+uTime*(.7+k*.15)*(1.+uWind*.35)+k*13.71;
+    value+=sin(phase+sin(phase*.44+k)*.35*uDistortion)*amplitude;
+    frequency*=1.73;amplitude*=.55;
+  }
+  return value;
+}
+void main(){
+  vec2 uv=vUv;float aspect=uResolution.x/max(uResolution.y,1.);vec2 p=vec2((uv.x-.5)*aspect,uv.y-.5)*uScale;
+  vec2 seed=vec2(mod(uSeed,997.)*.13);vec3 color=vec3(0.);float alpha=1.;
+  if(uKind<.5){
+    vec2 q=vec2((uv.x-.5)*aspect,1.)/(.35+1.-uv.y)*uScale+seed;
+    float h=wave(q),e=max(.025,uScale/uResolution.y*2.);vec3 normal=normalize(vec3((h-wave(q+vec2(e,0.)))/e,1.,(h-wave(q+vec2(0.,e)))/e));
+    vec3 view=normalize(vec3((uv.x-.5)*.6,.4+(1.-uv.y)*.6,1.)),sun=normalize(vec3(-.5,1.,.8));
+    float diffuse=dot(normal,sun)*.5+.5,fresnel=pow(1.-max(dot(normal,view),0.),3.),specular=pow(max(dot(reflect(-sun,normal),view),0.),28.);
+    color=mix(uColor*.45,uColor2*.7,diffuse*.45+fresnel*.55)+vec3(1.,.93,.79)*specular*uIntensity*.55;
+    float glitter=pow(max(dot(normal,normalize(sun+vec3(.22,.08,.12))),0.),12.)*.08;color+=uColor2*glitter;
+  }else if(uKind<1.5){
+    vec2 q=p+seed;q+=vec2(field(q*.8+uTime*.06),field(q*.7-uTime*.09))*uDistortion*2.;
+    float n=field(q*1.8+vec2(0.,uTime*uWind*.1));float crack=exp(-abs(n-.48)*42.);
+    float hot=pow(crack,.7)*(.7+.3*noise2(q*8.+uTime*.2));color=mix(vec3(.022,.012,.017),uColor,hot);color=mix(color,uColor2,pow(hot,3.));color+=vec3(.12,.045,.015)*field(q*11.);color*=uIntensity;
+  }else if(uKind<2.5){
+    vec2 q=p+seed;q+=vec2(field(q+uTime*.025),field(q+7.-uTime*.035))*uDistortion*2.5;
+    float n=field(q*1.6),structure=field(q*2.3+vec2(11.,3.));float density=smoothstep(.22,.76,n)*smoothstep(.18,.75,structure);
+    color=mix(uColor,uColor2,structure)*density*1.9*uIntensity+vec3(.006,.009,.035);
+    vec2 cell=p*55.,id=floor(cell),f=fract(cell)-.5;float star=(1.-smoothstep(.025,.12,length(f)))*step(.992,hash21(id+uSeed));color+=vec3(.86,.92,1.)*star*(.6+.4*sin(uTime*.5+hash21(id)*14.));
+    alpha=uTransparent>.5?clamp(density*2.+star,0.,1.):1.;
+  }else if(uKind<4.5){
+    vec2 q=p+seed;float n=field(q+vec2(uTime*.06,uTime*uWind*.07));q+=n*uDistortion*3.;
+    float thickness=field(q*1.8)*9.+sin(p.x*.7+p.y+uTime*.3)*.9;
+    vec3 spectrum=.5+.5*cos(thickness*6.283+vec3(0.,2.1,4.2));
+    float light=.5+.5*field(q*2.6+8.);color=mix(mix(uColor,uColor2,n),spectrum,.7)*(.6+light*.65)*uIntensity;
+  }else{
+    vec2 a=vec2(-.55,.03)+vec2(sin(uTime*.3),cos(uTime*.4))*.15,b=vec2(.55,-.05);if(uPointer.z>.5)b=(uPointer.xy-.5)*vec2(aspect,1.)*uScale;
+    vec2 da=p-a,db=p-b;float angle=atan(da.y,da.x)-atan(db.y,db.x),potential=log(max(length(da),.03)/max(length(db),.03));
+    float contours=pow(.5+.5*cos(angle*16.+potential*uDistortion*3.),26.);float flow=.4+.6*pow(.5+.5*cos(potential*9.-uTime*(1.+uWind)),5.);
+    float strength=contours*flow*exp(-length(p)*.45);color=mix(uColor,uColor2,.5+.5*sin(angle*2.+uTime*.2))*strength*1.7*uIntensity;
+    alpha=uTransparent>.5?clamp(strength*2.,0.,1.):1.;color+=uTransparent>.5?vec3(0.):vec3(.006,.012,.023);
+  }
+  gl_FragColor=vec4(max(color,0.),alpha);
+}`;

@@ -1,0 +1,4050 @@
+{
+  "water": {
+    "uFlowSpeed": 0.4,
+    "uMorphSpeed": 1,
+    "uScale": 4,
+    "uWindDir": [
+      0.3,
+      0.15
+    ],
+    "uDistortionStrength": 0.018,
+    "uCausticStrength": 0.5,
+    "uRidgeSharpness": 3,
+    "uTintOpacity": 0.45,
+    "uColorTint": [
+      0.023529411764705882,
+      0.5607843137254902,
+      0.6549019607843137
+    ],
+    "uColorHighlight": [
+      0.8901960784313725,
+      0.9803921568627451,
+      0.9921568627450981
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uFlowSpeed": 0.4,
+        "uMorphSpeed": 1,
+        "uScale": 4,
+        "uWindDir": [
+          0.3,
+          0.15
+        ],
+        "uDistortionStrength": 0.018,
+        "uCausticStrength": 0.5,
+        "uRidgeSharpness": 3,
+        "uTintOpacity": 0.45,
+        "uColorTint": [
+          0.023529411764705882,
+          0.5607843137254902,
+          0.6549019607843137
+        ],
+        "uColorHighlight": [
+          0.8901960784313725,
+          0.9803921568627451,
+          0.9921568627450981
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uFlowSpeed": 0.4,
+        "uMorphSpeed": 1,
+        "uScale": 4,
+        "uWindDir": [
+          0.3,
+          0.15
+        ],
+        "uDistortionStrength": 0.018,
+        "uCausticStrength": 0.5,
+        "uRidgeSharpness": 3,
+        "uTintOpacity": 0.45,
+        "uColorTint": [
+          0.023529411764705882,
+          0.5607843137254902,
+          0.6549019607843137
+        ],
+        "uColorHighlight": [
+          0.8901960784313725,
+          0.9803921568627451,
+          0.9921568627450981
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "fire": {
+    "uSeed": 7,
+    "uScale": 4.5,
+    "uHeight": 0.78,
+    "uIntensity": 1.15,
+    "uTurbulence": 0.72,
+    "uWind": 0.05,
+    "uSpread": 0.86,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 1,
+    "uFlickerSpeed": 1,
+    "uEmbers": 0.55,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 1,
+    "uOutside": 0,
+    "uDirection": 0,
+    "uEdge": 0,
+    "uReach": 105,
+    "uGravity": 0.55,
+    "uBorder": 0,
+    "uFilament": 0.65,
+    "uBlue": 0.24,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.78,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.72,
+        "uWind": 0.05,
+        "uSpread": 0.86,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.55,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.78,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.72,
+        "uWind": 0.05,
+        "uSpread": 0.86,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.55,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "ribbon": {
+    "uSeed": 7,
+    "uScale": 4.5,
+    "uHeight": 1.05,
+    "uIntensity": 1.15,
+    "uTurbulence": 0.85,
+    "uWind": 0.05,
+    "uSpread": 0.52,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 1,
+    "uFlickerSpeed": 1,
+    "uEmbers": 0.55,
+    "uColor": [
+      0.6745098039215687,
+      0.12156862745098039,
+      0.023529411764705882
+    ],
+    "uColor2": [
+      0.9607843137254902,
+      0.3568627450980392,
+      0.06274509803921569
+    ],
+    "uColor3": [
+      1,
+      0.8156862745098039,
+      0.6039215686274509
+    ],
+    "uModel": 0,
+    "uOutside": 0,
+    "uDirection": 0,
+    "uEdge": 0,
+    "uReach": 105,
+    "uGravity": 0.55,
+    "uBorder": 0,
+    "uFilament": 0.65,
+    "uBlue": 0.12,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 1.05,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.85,
+        "uWind": 0.05,
+        "uSpread": 0.52,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.6745098039215687,
+          0.12156862745098039,
+          0.023529411764705882
+        ],
+        "uColor2": [
+          0.9607843137254902,
+          0.3568627450980392,
+          0.06274509803921569
+        ],
+        "uColor3": [
+          1,
+          0.8156862745098039,
+          0.6039215686274509
+        ],
+        "uModel": 0,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.55,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.12,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 1.05,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.85,
+        "uWind": 0.05,
+        "uSpread": 0.52,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.6745098039215687,
+          0.12156862745098039,
+          0.023529411764705882
+        ],
+        "uColor2": [
+          0.9607843137254902,
+          0.3568627450980392,
+          0.06274509803921569
+        ],
+        "uColor3": [
+          1,
+          0.8156862745098039,
+          0.6039215686274509
+        ],
+        "uModel": 0,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.55,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.12,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "embers": {
+    "uSeed": 7,
+    "uScale": 4.5,
+    "uHeight": 0.2,
+    "uIntensity": 1.2,
+    "uTurbulence": 0.72,
+    "uWind": 0.05,
+    "uSpread": 0.86,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 1,
+    "uFlickerSpeed": 1,
+    "uEmbers": 0.85,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 3,
+    "uOutside": 0,
+    "uDirection": 0,
+    "uEdge": 0,
+    "uReach": 105,
+    "uGravity": 0.55,
+    "uBorder": 0,
+    "uFilament": 0.65,
+    "uBlue": 0.24,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.2,
+        "uIntensity": 1.2,
+        "uTurbulence": 0.72,
+        "uWind": 0.05,
+        "uSpread": 0.86,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.85,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 3,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.55,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.2,
+        "uIntensity": 1.2,
+        "uTurbulence": 0.72,
+        "uWind": 0.05,
+        "uSpread": 0.86,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.85,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 3,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.55,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "candle": {
+    "uSeed": 7,
+    "uScale": 4.5,
+    "uHeight": 0.82,
+    "uIntensity": 1.15,
+    "uTurbulence": 0.18,
+    "uWind": 0.05,
+    "uSpread": 0.18,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 1,
+    "uFlickerSpeed": 1,
+    "uEmbers": 0,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 2,
+    "uOutside": 0,
+    "uDirection": 0,
+    "uEdge": 0,
+    "uReach": 105,
+    "uGravity": 0.18,
+    "uBorder": 0,
+    "uFilament": 0.65,
+    "uBlue": 0.65,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.82,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.18,
+        "uWind": 0.05,
+        "uSpread": 0.18,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 2,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.18,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.65,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.82,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.18,
+        "uWind": 0.05,
+        "uSpread": 0.18,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 2,
+        "uOutside": 0,
+        "uDirection": 0,
+        "uEdge": 0,
+        "uReach": 105,
+        "uGravity": 0.18,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.65,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "border": {
+    "uSeed": 7,
+    "uScale": 4.5,
+    "uHeight": 0.82,
+    "uIntensity": 1.15,
+    "uTurbulence": 0.72,
+    "uWind": 0.05,
+    "uSpread": 1,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 1,
+    "uFlickerSpeed": 1,
+    "uEmbers": 0.55,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 1,
+    "uOutside": 1,
+    "uDirection": 4,
+    "uEdge": 5,
+    "uReach": 100,
+    "uGravity": 0.55,
+    "uBorder": 1,
+    "uFilament": 0.65,
+    "uBlue": 0.24,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      1026,
+      726
+    ],
+    "uPadding": 213,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.82,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.72,
+        "uWind": 0.05,
+        "uSpread": 1,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 4,
+        "uEdge": 5,
+        "uReach": 100,
+        "uGravity": 0.55,
+        "uBorder": 1,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1026,
+          726
+        ],
+        "uPadding": 213,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 4.5,
+        "uHeight": 0.82,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.72,
+        "uWind": 0.05,
+        "uSpread": 1,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 1,
+        "uFlickerSpeed": 1,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 4,
+        "uEdge": 5,
+        "uReach": 100,
+        "uGravity": 0.55,
+        "uBorder": 1,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1026,
+          726
+        ],
+        "uPadding": 213,
+        "uRadius": 24
+      }
+    }
+  },
+  "jet": {
+    "uSeed": 7,
+    "uScale": 7,
+    "uHeight": 1.3,
+    "uIntensity": 1.15,
+    "uTurbulence": 0.6,
+    "uWind": 0.05,
+    "uSpread": 0.4,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 3.2,
+    "uFlickerSpeed": 1.4,
+    "uEmbers": 0.55,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 1,
+    "uOutside": 1,
+    "uDirection": 1,
+    "uEdge": 2,
+    "uReach": 240,
+    "uGravity": 0.4,
+    "uBorder": 0,
+    "uFilament": 0.65,
+    "uBlue": 0.24,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      1640,
+      1340
+    ],
+    "uPadding": 520,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.6,
+        "uWind": 0.05,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 2,
+        "uReach": 240,
+        "uGravity": 0.4,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1640,
+          1340
+        ],
+        "uPadding": 520,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.6,
+        "uWind": 0.05,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 2,
+        "uReach": 240,
+        "uGravity": 0.4,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1640,
+          1340
+        ],
+        "uPadding": 520,
+        "uRadius": 24
+      }
+    }
+  },
+  "all-right": {
+    "uSeed": 7,
+    "uScale": 7,
+    "uHeight": 1.3,
+    "uIntensity": 1.15,
+    "uTurbulence": 0.6,
+    "uWind": 0.05,
+    "uSpread": 0.4,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 3.2,
+    "uFlickerSpeed": 1.4,
+    "uEmbers": 0.55,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 1,
+    "uOutside": 1,
+    "uDirection": 1,
+    "uEdge": 5,
+    "uReach": 120,
+    "uGravity": 0.4,
+    "uBorder": 1,
+    "uFilament": 0.65,
+    "uBlue": 0.24,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      1134,
+      834
+    ],
+    "uPadding": 267,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.6,
+        "uWind": 0.05,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 5,
+        "uReach": 120,
+        "uGravity": 0.4,
+        "uBorder": 1,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1134,
+          834
+        ],
+        "uPadding": 267,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.6,
+        "uWind": 0.05,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 5,
+        "uReach": 120,
+        "uGravity": 0.4,
+        "uBorder": 1,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1134,
+          834
+        ],
+        "uPadding": 267,
+        "uRadius": 24
+      }
+    }
+  },
+  "all-strict": {
+    "uSeed": 7,
+    "uScale": 7,
+    "uHeight": 1.3,
+    "uIntensity": 1.15,
+    "uTurbulence": 0.6,
+    "uWind": 0.05,
+    "uSpread": 0.4,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 3.2,
+    "uFlickerSpeed": 1.4,
+    "uEmbers": 0.55,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 1,
+    "uOutside": 1,
+    "uDirection": 1,
+    "uEdge": 5,
+    "uReach": 120,
+    "uGravity": 0.4,
+    "uBorder": 0,
+    "uFilament": 0.65,
+    "uBlue": 0.24,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      1134,
+      834
+    ],
+    "uPadding": 267,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.6,
+        "uWind": 0.05,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 5,
+        "uReach": 120,
+        "uGravity": 0.4,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1134,
+          834
+        ],
+        "uPadding": 267,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0.6,
+        "uWind": 0.05,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 5,
+        "uReach": 120,
+        "uGravity": 0.4,
+        "uBorder": 0,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1134,
+          834
+        ],
+        "uPadding": 267,
+        "uRadius": 24
+      }
+    }
+  },
+  "all-straight": {
+    "uSeed": 7,
+    "uScale": 7,
+    "uHeight": 1.3,
+    "uIntensity": 1.15,
+    "uTurbulence": 0,
+    "uWind": 0,
+    "uSpread": 0.4,
+    "uSourceOffset": 0.5,
+    "uFlameSpeed": 3.2,
+    "uFlickerSpeed": 1.4,
+    "uEmbers": 0.55,
+    "uColor": [
+      0.8588235294117647,
+      0,
+      0.054901960784313725
+    ],
+    "uColor2": [
+      1,
+      0.6274509803921569,
+      0.023529411764705882
+    ],
+    "uColor3": [
+      1,
+      1,
+      0.7686274509803922
+    ],
+    "uModel": 1,
+    "uOutside": 1,
+    "uDirection": 1,
+    "uEdge": 5,
+    "uReach": 120,
+    "uGravity": 0,
+    "uBorder": 1,
+    "uFilament": 0.65,
+    "uBlue": 0.24,
+    "uDetail": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      1038,
+      738
+    ],
+    "uPadding": 219,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0,
+        "uWind": 0,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 5,
+        "uReach": 120,
+        "uGravity": 0,
+        "uBorder": 1,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1038,
+          738
+        ],
+        "uPadding": 219,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 7,
+        "uHeight": 1.3,
+        "uIntensity": 1.15,
+        "uTurbulence": 0,
+        "uWind": 0,
+        "uSpread": 0.4,
+        "uSourceOffset": 0.5,
+        "uFlameSpeed": 3.2,
+        "uFlickerSpeed": 1.4,
+        "uEmbers": 0.55,
+        "uColor": [
+          0.8588235294117647,
+          0,
+          0.054901960784313725
+        ],
+        "uColor2": [
+          1,
+          0.6274509803921569,
+          0.023529411764705882
+        ],
+        "uColor3": [
+          1,
+          1,
+          0.7686274509803922
+        ],
+        "uModel": 1,
+        "uOutside": 1,
+        "uDirection": 1,
+        "uEdge": 5,
+        "uReach": 120,
+        "uGravity": 0,
+        "uBorder": 1,
+        "uFilament": 0.65,
+        "uBlue": 0.24,
+        "uDetail": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          1038,
+          738
+        ],
+        "uPadding": 219,
+        "uRadius": 24
+      }
+    }
+  },
+  "smoke": {
+    "uSeed": 7,
+    "uScale": 3.2,
+    "uDensity": 1.6,
+    "uTurbulence": 0.85,
+    "uWind": 0.15,
+    "uSpread": 0.52,
+    "uRise": 0.3,
+    "uLight": 0.8,
+    "uColor": [
+      0.6666666666666666,
+      0.6980392156862745,
+      0.7411764705882353
+    ],
+    "uSteps": 32,
+    "uDepth": 1.25,
+    "uShadow": 1.2,
+    "uLightAngle": -35,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 3.2,
+        "uDensity": 1.6,
+        "uTurbulence": 0.85,
+        "uWind": 0.15,
+        "uSpread": 0.52,
+        "uRise": 0.3,
+        "uLight": 0.8,
+        "uColor": [
+          0.6666666666666666,
+          0.6980392156862745,
+          0.7411764705882353
+        ],
+        "uSteps": 32,
+        "uDepth": 1.25,
+        "uShadow": 1.2,
+        "uLightAngle": -35,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 3.2,
+        "uDensity": 1.6,
+        "uTurbulence": 0.85,
+        "uWind": 0.15,
+        "uSpread": 0.52,
+        "uRise": 0.3,
+        "uLight": 0.8,
+        "uColor": [
+          0.6666666666666666,
+          0.6980392156862745,
+          0.7411764705882353
+        ],
+        "uSteps": 32,
+        "uDepth": 1.25,
+        "uShadow": 1.2,
+        "uLightAngle": -35,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "clouds": {
+    "uSeed": 7,
+    "uScale": 2.8,
+    "uDensity": 1.2,
+    "uWind": 0.15,
+    "uLight": 1.2,
+    "uCoverage": 0.54,
+    "uSoftness": 0.15,
+    "uTransparent": 0,
+    "uColor": [
+      0.9411764705882353,
+      0.984313725490196,
+      0.996078431372549
+    ],
+    "uColor2": [
+      0.4549019607843137,
+      0.5176470588235295,
+      0.6196078431372549
+    ],
+    "uColor3": [
+      0.19607843137254902,
+      0.6235294117647059,
+      0.8745098039215686
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 2.8,
+        "uDensity": 1.2,
+        "uWind": 0.15,
+        "uLight": 1.2,
+        "uCoverage": 0.54,
+        "uSoftness": 0.15,
+        "uTransparent": 0,
+        "uColor": [
+          0.9411764705882353,
+          0.984313725490196,
+          0.996078431372549
+        ],
+        "uColor2": [
+          0.4549019607843137,
+          0.5176470588235295,
+          0.6196078431372549
+        ],
+        "uColor3": [
+          0.19607843137254902,
+          0.6235294117647059,
+          0.8745098039215686
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 2.8,
+        "uDensity": 1.2,
+        "uWind": 0.15,
+        "uLight": 1.2,
+        "uCoverage": 0.54,
+        "uSoftness": 0.15,
+        "uTransparent": 0,
+        "uColor": [
+          0.9411764705882353,
+          0.984313725490196,
+          0.996078431372549
+        ],
+        "uColor2": [
+          0.4549019607843137,
+          0.5176470588235295,
+          0.6196078431372549
+        ],
+        "uColor3": [
+          0.19607843137254902,
+          0.6235294117647059,
+          0.8745098039215686
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "sunset": {
+    "uSeed": 7,
+    "uScale": 2.8,
+    "uDensity": 1,
+    "uWind": 0.15,
+    "uLight": 1.15,
+    "uCoverage": 0.48,
+    "uSoftness": 0.15,
+    "uTransparent": 0,
+    "uColor": [
+      1,
+      0.7372549019607844,
+      0.4627450980392157
+    ],
+    "uColor2": [
+      0.6588235294117647,
+      0.2980392156862745,
+      0.3764705882352941
+    ],
+    "uColor3": [
+      0.8941176470588236,
+      0.39215686274509803,
+      0.27450980392156865
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uSeed": 7,
+        "uScale": 2.8,
+        "uDensity": 1,
+        "uWind": 0.15,
+        "uLight": 1.15,
+        "uCoverage": 0.48,
+        "uSoftness": 0.15,
+        "uTransparent": 0,
+        "uColor": [
+          1,
+          0.7372549019607844,
+          0.4627450980392157
+        ],
+        "uColor2": [
+          0.6588235294117647,
+          0.2980392156862745,
+          0.3764705882352941
+        ],
+        "uColor3": [
+          0.8941176470588236,
+          0.39215686274509803,
+          0.27450980392156865
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uSeed": 7,
+        "uScale": 2.8,
+        "uDensity": 1,
+        "uWind": 0.15,
+        "uLight": 1.15,
+        "uCoverage": 0.48,
+        "uSoftness": 0.15,
+        "uTransparent": 0,
+        "uColor": [
+          1,
+          0.7372549019607844,
+          0.4627450980392157
+        ],
+        "uColor2": [
+          0.6588235294117647,
+          0.2980392156862745,
+          0.3764705882352941
+        ],
+        "uColor3": [
+          0.8941176470588236,
+          0.39215686274509803,
+          0.27450980392156865
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "aurora": {
+    "u_cameraSpeed": 0.1,
+    "u_cameraSwaySpeed": 0.2,
+    "u_cameraSwayAmplitude": 0.14,
+    "u_cameraTilt": 2,
+    "u_cameraFov": 1,
+    "u_cameraDistance": 2.5,
+    "u_auroraLayers": 40,
+    "u_auroraSpeed": 0.32,
+    "u_breathSpeed": 0.45,
+    "u_breathOffset": 1,
+    "u_breathAmplitude": 0.08,
+    "u_colorBottom": [
+      0,
+      0.9254901960784314,
+      0.6078431372549019
+    ],
+    "u_colorTop": [
+      0.5490196078431373,
+      0.2980392156862745,
+      0.8274509803921568
+    ],
+    "u_colorProportion": 0.3,
+    "u_skyTop": [
+      0.008,
+      0.018,
+      0.045
+    ],
+    "u_skyBottom": [
+      0.001,
+      0.003,
+      0.012
+    ],
+    "u_showStars": 1,
+    "u_starDistance": 31,
+    "u_starSize": 0.18,
+    "u_starColor": [
+      0.8,
+      0.88,
+      1
+    ],
+    "u_starOpacity": 0.8,
+    "u_starDensityBottom": 0,
+    "u_starDensityTop": 0.7,
+    "u_starSkewExponent": 2,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "u_cameraSpeed": 0.1,
+        "u_cameraSwaySpeed": 0.2,
+        "u_cameraSwayAmplitude": 0.14,
+        "u_cameraTilt": 2,
+        "u_cameraFov": 1,
+        "u_cameraDistance": 2.5,
+        "u_auroraLayers": 40,
+        "u_auroraSpeed": 0.32,
+        "u_breathSpeed": 0.45,
+        "u_breathOffset": 1,
+        "u_breathAmplitude": 0.08,
+        "u_colorBottom": [
+          0,
+          0.9254901960784314,
+          0.6078431372549019
+        ],
+        "u_colorTop": [
+          0.5490196078431373,
+          0.2980392156862745,
+          0.8274509803921568
+        ],
+        "u_colorProportion": 0.3,
+        "u_skyTop": [
+          0.008,
+          0.018,
+          0.045
+        ],
+        "u_skyBottom": [
+          0.001,
+          0.003,
+          0.012
+        ],
+        "u_showStars": 1,
+        "u_starDistance": 31,
+        "u_starSize": 0.18,
+        "u_starColor": [
+          0.8,
+          0.88,
+          1
+        ],
+        "u_starOpacity": 0.8,
+        "u_starDensityBottom": 0,
+        "u_starDensityTop": 0.7,
+        "u_starSkewExponent": 2,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "u_cameraSpeed": 0.1,
+        "u_cameraSwaySpeed": 0.2,
+        "u_cameraSwayAmplitude": 0.14,
+        "u_cameraTilt": 2,
+        "u_cameraFov": 1,
+        "u_cameraDistance": 2.5,
+        "u_auroraLayers": 40,
+        "u_auroraSpeed": 0.32,
+        "u_breathSpeed": 0.45,
+        "u_breathOffset": 1,
+        "u_breathAmplitude": 0.08,
+        "u_colorBottom": [
+          0,
+          0.9254901960784314,
+          0.6078431372549019
+        ],
+        "u_colorTop": [
+          0.5490196078431373,
+          0.2980392156862745,
+          0.8274509803921568
+        ],
+        "u_colorProportion": 0.3,
+        "u_skyTop": [
+          0.008,
+          0.018,
+          0.045
+        ],
+        "u_skyBottom": [
+          0.001,
+          0.003,
+          0.012
+        ],
+        "u_showStars": 1,
+        "u_starDistance": 31,
+        "u_starSize": 0.18,
+        "u_starColor": [
+          0.8,
+          0.88,
+          1
+        ],
+        "u_starOpacity": 0.8,
+        "u_starDensityBottom": 0,
+        "u_starDensityTop": 0.7,
+        "u_starSkewExponent": 2,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "ocean": {
+    "uKind": 0,
+    "uScale": 3,
+    "uIntensity": 1,
+    "uDetail": 5,
+    "uDistortion": 0.6,
+    "uWind": 0.3,
+    "uColor": [
+      0,
+      0.4470588235294118,
+      0.6235294117647059
+    ],
+    "uColor2": [
+      0.6901960784313725,
+      0.9333333333333333,
+      0.8431372549019608
+    ],
+    "uTransparent": 0,
+    "uSeed": 7,
+    "uOceanAmplitude": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 0,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0,
+          0.4470588235294118,
+          0.6235294117647059
+        ],
+        "uColor2": [
+          0.6901960784313725,
+          0.9333333333333333,
+          0.8431372549019608
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 0,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0,
+          0.4470588235294118,
+          0.6235294117647059
+        ],
+        "uColor2": [
+          0.6901960784313725,
+          0.9333333333333333,
+          0.8431372549019608
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "lava": {
+    "uKind": 1,
+    "uScale": 3,
+    "uIntensity": 1,
+    "uDetail": 5,
+    "uDistortion": 1,
+    "uWind": 0.3,
+    "uColor": [
+      0.8313725490196079,
+      0.054901960784313725,
+      0.0784313725490196
+    ],
+    "uColor2": [
+      1,
+      0.8392156862745098,
+      0.35294117647058826
+    ],
+    "uTransparent": 0,
+    "uSeed": 7,
+    "uOceanAmplitude": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 1,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 1,
+        "uWind": 0.3,
+        "uColor": [
+          0.8313725490196079,
+          0.054901960784313725,
+          0.0784313725490196
+        ],
+        "uColor2": [
+          1,
+          0.8392156862745098,
+          0.35294117647058826
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 1,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 1,
+        "uWind": 0.3,
+        "uColor": [
+          0.8313725490196079,
+          0.054901960784313725,
+          0.0784313725490196
+        ],
+        "uColor2": [
+          1,
+          0.8392156862745098,
+          0.35294117647058826
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "nebula": {
+    "uKind": 2,
+    "uScale": 3,
+    "uIntensity": 1,
+    "uDetail": 5,
+    "uDistortion": 0.6,
+    "uWind": 0.3,
+    "uColor": [
+      0.4980392156862745,
+      0.3176470588235294,
+      0.7568627450980392
+    ],
+    "uColor2": [
+      0,
+      0.7450980392156863,
+      0.807843137254902
+    ],
+    "uTransparent": 0,
+    "uSeed": 7,
+    "uOceanAmplitude": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 2,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0.4980392156862745,
+          0.3176470588235294,
+          0.7568627450980392
+        ],
+        "uColor2": [
+          0,
+          0.7450980392156863,
+          0.807843137254902
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 2,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0.4980392156862745,
+          0.3176470588235294,
+          0.7568627450980392
+        ],
+        "uColor2": [
+          0,
+          0.7450980392156863,
+          0.807843137254902
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "iridescence": {
+    "uKind": 4,
+    "uScale": 3,
+    "uIntensity": 1,
+    "uDetail": 5,
+    "uDistortion": 0.6,
+    "uWind": 0.3,
+    "uColor": [
+      0.25098039215686274,
+      0.8509803921568627,
+      0.7568627450980392
+    ],
+    "uColor2": [
+      0.8941176470588236,
+      0.4470588235294118,
+      0.8627450980392157
+    ],
+    "uTransparent": 0,
+    "uSeed": 7,
+    "uOceanAmplitude": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 4,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0.25098039215686274,
+          0.8509803921568627,
+          0.7568627450980392
+        ],
+        "uColor2": [
+          0.8941176470588236,
+          0.4470588235294118,
+          0.8627450980392157
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 4,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0.25098039215686274,
+          0.8509803921568627,
+          0.7568627450980392
+        ],
+        "uColor2": [
+          0.8941176470588236,
+          0.4470588235294118,
+          0.8627450980392157
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "magnetic": {
+    "uKind": 5,
+    "uScale": 3,
+    "uIntensity": 1,
+    "uDetail": 5,
+    "uDistortion": 0.6,
+    "uWind": 0.3,
+    "uColor": [
+      0.6470588235294118,
+      0.4588235294117647,
+      1
+    ],
+    "uColor2": [
+      0.23529411764705882,
+      0.9411764705882353,
+      0.796078431372549
+    ],
+    "uTransparent": 0,
+    "uSeed": 7,
+    "uOceanAmplitude": 1,
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 5,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0.6470588235294118,
+          0.4588235294117647,
+          1
+        ],
+        "uColor2": [
+          0.23529411764705882,
+          0.9411764705882353,
+          0.796078431372549
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 5,
+        "uScale": 3,
+        "uIntensity": 1,
+        "uDetail": 5,
+        "uDistortion": 0.6,
+        "uWind": 0.3,
+        "uColor": [
+          0.6470588235294118,
+          0.4588235294117647,
+          1
+        ],
+        "uColor2": [
+          0.23529411764705882,
+          0.9411764705882353,
+          0.796078431372549
+        ],
+        "uTransparent": 0,
+        "uSeed": 7,
+        "uOceanAmplitude": 1,
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "sea": {
+    "uAmplitude": 0.12,
+    "uWaveSpeed": 1,
+    "uWaveDirection": 0.3141592653589793,
+    "uRipples": 0.25,
+    "uChop": 0.55,
+    "uScale": 1.2,
+    "uWind": 0.5,
+    "uHorizon": 0.6,
+    "uSunElevation": 0.22,
+    "uSunAzimuth": -0.35,
+    "uSunSize": 0.035,
+    "uFog": 0.035,
+    "uReflection": 0.7,
+    "uDetail": 5,
+    "uSeed": 7,
+    "uSky": [
+      0.25098039215686274,
+      0.43529411764705883,
+      0.6313725490196078
+    ],
+    "uHorizonColor": [
+      1,
+      0.7725490196078432,
+      0.6313725490196078
+    ],
+    "uWater": [
+      0.03137254901960784,
+      0.24313725490196078,
+      0.3333333333333333
+    ],
+    "uSunColor": [
+      1,
+      0.8666666666666667,
+      0.6431372549019608
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uAmplitude": 0.12,
+        "uWaveSpeed": 1,
+        "uWaveDirection": 0.3141592653589793,
+        "uRipples": 0.25,
+        "uChop": 0.55,
+        "uScale": 1.2,
+        "uWind": 0.5,
+        "uHorizon": 0.6,
+        "uSunElevation": 0.22,
+        "uSunAzimuth": -0.35,
+        "uSunSize": 0.035,
+        "uFog": 0.035,
+        "uReflection": 0.7,
+        "uDetail": 5,
+        "uSeed": 7,
+        "uSky": [
+          0.25098039215686274,
+          0.43529411764705883,
+          0.6313725490196078
+        ],
+        "uHorizonColor": [
+          1,
+          0.7725490196078432,
+          0.6313725490196078
+        ],
+        "uWater": [
+          0.03137254901960784,
+          0.24313725490196078,
+          0.3333333333333333
+        ],
+        "uSunColor": [
+          1,
+          0.8666666666666667,
+          0.6431372549019608
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uAmplitude": 0.12,
+        "uWaveSpeed": 1,
+        "uWaveDirection": 0.3141592653589793,
+        "uRipples": 0.25,
+        "uChop": 0.55,
+        "uScale": 1.2,
+        "uWind": 0.5,
+        "uHorizon": 0.6,
+        "uSunElevation": 0.22,
+        "uSunAzimuth": -0.35,
+        "uSunSize": 0.035,
+        "uFog": 0.035,
+        "uReflection": 0.7,
+        "uDetail": 5,
+        "uSeed": 7,
+        "uSky": [
+          0.25098039215686274,
+          0.43529411764705883,
+          0.6313725490196078
+        ],
+        "uHorizonColor": [
+          1,
+          0.7725490196078432,
+          0.6313725490196078
+        ],
+        "uWater": [
+          0.03137254901960784,
+          0.24313725490196078,
+          0.3333333333333333
+        ],
+        "uSunColor": [
+          1,
+          0.8666666666666667,
+          0.6431372549019608
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "sea-sunset": {
+    "uAmplitude": 0.12,
+    "uWaveSpeed": 1,
+    "uWaveDirection": 0.3141592653589793,
+    "uRipples": 0.25,
+    "uChop": 0.55,
+    "uScale": 1.2,
+    "uWind": 0.5,
+    "uHorizon": 0.6,
+    "uSunElevation": 0.075,
+    "uSunAzimuth": -0.1,
+    "uSunSize": 0.035,
+    "uFog": 0.035,
+    "uReflection": 0.7,
+    "uDetail": 5,
+    "uSeed": 7,
+    "uSky": [
+      0.3176470588235294,
+      0.23529411764705882,
+      0.4666666666666667
+    ],
+    "uHorizonColor": [
+      0.9294117647058824,
+      0.396078431372549,
+      0.25882352941176473
+    ],
+    "uWater": [
+      0.13333333333333333,
+      0.1803921568627451,
+      0.27450980392156865
+    ],
+    "uSunColor": [
+      1,
+      0.7490196078431373,
+      0.4823529411764706
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uAmplitude": 0.12,
+        "uWaveSpeed": 1,
+        "uWaveDirection": 0.3141592653589793,
+        "uRipples": 0.25,
+        "uChop": 0.55,
+        "uScale": 1.2,
+        "uWind": 0.5,
+        "uHorizon": 0.6,
+        "uSunElevation": 0.075,
+        "uSunAzimuth": -0.1,
+        "uSunSize": 0.035,
+        "uFog": 0.035,
+        "uReflection": 0.7,
+        "uDetail": 5,
+        "uSeed": 7,
+        "uSky": [
+          0.3176470588235294,
+          0.23529411764705882,
+          0.4666666666666667
+        ],
+        "uHorizonColor": [
+          0.9294117647058824,
+          0.396078431372549,
+          0.25882352941176473
+        ],
+        "uWater": [
+          0.13333333333333333,
+          0.1803921568627451,
+          0.27450980392156865
+        ],
+        "uSunColor": [
+          1,
+          0.7490196078431373,
+          0.4823529411764706
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uAmplitude": 0.12,
+        "uWaveSpeed": 1,
+        "uWaveDirection": 0.3141592653589793,
+        "uRipples": 0.25,
+        "uChop": 0.55,
+        "uScale": 1.2,
+        "uWind": 0.5,
+        "uHorizon": 0.6,
+        "uSunElevation": 0.075,
+        "uSunAzimuth": -0.1,
+        "uSunSize": 0.035,
+        "uFog": 0.035,
+        "uReflection": 0.7,
+        "uDetail": 5,
+        "uSeed": 7,
+        "uSky": [
+          0.3176470588235294,
+          0.23529411764705882,
+          0.4666666666666667
+        ],
+        "uHorizonColor": [
+          0.9294117647058824,
+          0.396078431372549,
+          0.25882352941176473
+        ],
+        "uWater": [
+          0.13333333333333333,
+          0.1803921568627451,
+          0.27450980392156865
+        ],
+        "uSunColor": [
+          1,
+          0.7490196078431373,
+          0.4823529411764706
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "metaballs": {
+    "uKind": 0,
+    "uAmount": 6,
+    "uScale": 1,
+    "uRelief": 0.65,
+    "uLightAngle": -0.6981317007977318,
+    "uDetail": 1,
+    "uSeed": 7,
+    "uColor": [
+      0.14901960784313725,
+      0.3058823529411765,
+      0.40784313725490196
+    ],
+    "uColor2": [
+      0.8980392156862745,
+      0.7372549019607844,
+      0.48627450980392156
+    ],
+    "uBackground": [
+      0.03137254901960784,
+      0.050980392156862744,
+      0.08627450980392157
+    ],
+    "uTransparent": 0,
+    "uBodies[0]": [
+      0.13527129590511322,
+      0.6010936498641968,
+      0.1734345257282257,
+      0.3799999952316284,
+      0.37794947624206543,
+      -0.6007341742515564,
+      -0.5253472328186035,
+      0.45491743087768555,
+      -0.6926459670066833,
+      0.6003713607788086,
+      0.3850876986980438,
+      0.4792465567588806,
+      0.6435186862945557,
+      -0.6000052094459534,
+      0.11594176292419434,
+      0.4365589916706085,
+      -0.2563725411891937,
+      0.5996357202529907,
+      -0.5083510279655457,
+      0.3556797504425049,
+      -0.2654375731945038,
+      -0.5992628931999207,
+      0.4245109558105469,
+      0.29122284054756165,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 0,
+        "uAmount": 6,
+        "uScale": 1,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.14901960784313725,
+          0.3058823529411765,
+          0.40784313725490196
+        ],
+        "uColor2": [
+          0.8980392156862745,
+          0.7372549019607844,
+          0.48627450980392156
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.4184168875217438,
+          0.4327709674835205,
+          -0.0977659747004509,
+          0.3799999952316284,
+          0.05876639485359192,
+          -0.43175438046455383,
+          -0.3916354775428772,
+          0.45491743087768555,
+          -0.506129264831543,
+          0.43073537945747375,
+          0.5141326785087585,
+          0.4792465567588806,
+          0.7078742980957031,
+          -0.42971399426460266,
+          -0.15496402978897095,
+          0.4365589916706085,
+          -0.5675009489059448,
+          0.42869022488594055,
+          -0.3493829071521759,
+          0.3556797504425049,
+          0.15397796034812927,
+          -0.4276640713214874,
+          0.5264099836349487,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 0,
+        "uAmount": 6,
+        "uScale": 1,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.14901960784313725,
+          0.3058823529411765,
+          0.40784313725490196
+        ],
+        "uColor2": [
+          0.8980392156862745,
+          0.7372549019607844,
+          0.48627450980392156
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.4772167205810547,
+          0.37259411811828613,
+          -0.16195040941238403,
+          0.3799999952316284,
+          -0.022636448964476585,
+          -0.37145474553108215,
+          -0.3434053063392639,
+          0.45491743087768555,
+          -0.44114696979522705,
+          0.3703133165836334,
+          0.5270413160324097,
+          0.4792465567588806,
+          0.6949498653411865,
+          -0.36916986107826233,
+          -0.2169179618358612,
+          0.4365589916706085,
+          -0.6196353435516357,
+          0.3680243194103241,
+          -0.2964252531528473,
+          0.3556797504425049,
+          0.25205984711647034,
+          -0.3668767511844635,
+          0.5320620536804199,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "chrome": {
+    "uKind": 0,
+    "uAmount": 6,
+    "uScale": 1,
+    "uRelief": 0.85,
+    "uLightAngle": -0.6981317007977318,
+    "uDetail": 1,
+    "uSeed": 7,
+    "uColor": [
+      0.5058823529411764,
+      0.5725490196078431,
+      0.6078431372549019
+    ],
+    "uColor2": [
+      0.8392156862745098,
+      0.9568627450980393,
+      1
+    ],
+    "uBackground": [
+      0.03137254901960784,
+      0.050980392156862744,
+      0.08627450980392157
+    ],
+    "uTransparent": 0,
+    "uBodies[0]": [
+      0.13527129590511322,
+      0.6010936498641968,
+      0.1734345257282257,
+      0.3799999952316284,
+      0.37794947624206543,
+      -0.6007341742515564,
+      -0.5253472328186035,
+      0.45491743087768555,
+      -0.6926459670066833,
+      0.6003713607788086,
+      0.3850876986980438,
+      0.4792465567588806,
+      0.6435186862945557,
+      -0.6000052094459534,
+      0.11594176292419434,
+      0.4365589916706085,
+      -0.2563725411891937,
+      0.5996357202529907,
+      -0.5083510279655457,
+      0.3556797504425049,
+      -0.2654375731945038,
+      -0.5992628931999207,
+      0.4245109558105469,
+      0.29122284054756165,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 0,
+        "uAmount": 6,
+        "uScale": 1,
+        "uRelief": 0.85,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.5058823529411764,
+          0.5725490196078431,
+          0.6078431372549019
+        ],
+        "uColor2": [
+          0.8392156862745098,
+          0.9568627450980393,
+          1
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.4184168875217438,
+          0.4327709674835205,
+          -0.0977659747004509,
+          0.3799999952316284,
+          0.05876639485359192,
+          -0.43175438046455383,
+          -0.3916354775428772,
+          0.45491743087768555,
+          -0.506129264831543,
+          0.43073537945747375,
+          0.5141326785087585,
+          0.4792465567588806,
+          0.7078742980957031,
+          -0.42971399426460266,
+          -0.15496402978897095,
+          0.4365589916706085,
+          -0.5675009489059448,
+          0.42869022488594055,
+          -0.3493829071521759,
+          0.3556797504425049,
+          0.15397796034812927,
+          -0.4276640713214874,
+          0.5264099836349487,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 0,
+        "uAmount": 6,
+        "uScale": 1,
+        "uRelief": 0.85,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.5058823529411764,
+          0.5725490196078431,
+          0.6078431372549019
+        ],
+        "uColor2": [
+          0.8392156862745098,
+          0.9568627450980393,
+          1
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.4772167205810547,
+          0.37259411811828613,
+          -0.16195040941238403,
+          0.3799999952316284,
+          -0.022636448964476585,
+          -0.37145474553108215,
+          -0.3434053063392639,
+          0.45491743087768555,
+          -0.44114696979522705,
+          0.3703133165836334,
+          0.5270413160324097,
+          0.4792465567588806,
+          0.6949498653411865,
+          -0.36916986107826233,
+          -0.2169179618358612,
+          0.4365589916706085,
+          -0.6196353435516357,
+          0.3680243194103241,
+          -0.2964252531528473,
+          0.3556797504425049,
+          0.25205984711647034,
+          -0.3668767511844635,
+          0.5320620536804199,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "silk": {
+    "uKind": 1,
+    "uAmount": 7,
+    "uScale": 1,
+    "uRelief": 0.65,
+    "uLightAngle": -0.6981317007977318,
+    "uDetail": 1,
+    "uSeed": 7,
+    "uColor": [
+      0.4823529411764706,
+      0.2196078431372549,
+      0.4117647058823529
+    ],
+    "uColor2": [
+      0.9372549019607843,
+      0.7294117647058823,
+      0.6784313725490196
+    ],
+    "uBackground": [
+      0.03137254901960784,
+      0.050980392156862744,
+      0.08627450980392157
+    ],
+    "uTransparent": 0,
+    "uBodies[0]": [
+      0.13527129590511322,
+      0.6010936498641968,
+      0.1734345257282257,
+      0.3799999952316284,
+      0.37794947624206543,
+      -0.6007341742515564,
+      -0.5253472328186035,
+      0.45491743087768555,
+      -0.6926459670066833,
+      0.6003713607788086,
+      0.3850876986980438,
+      0.4792465567588806,
+      0.6435186862945557,
+      -0.6000052094459534,
+      0.11594176292419434,
+      0.4365589916706085,
+      -0.2563725411891937,
+      0.5996357202529907,
+      -0.5083510279655457,
+      0.3556797504425049,
+      -0.2654375731945038,
+      -0.5992628931999207,
+      0.4245109558105469,
+      0.29122284054756165,
+      0.6478222012519836,
+      0.5988867878913879,
+      0.057032760232686996,
+      0.2867130935192108,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 1,
+        "uAmount": 7,
+        "uScale": 1,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.4823529411764706,
+          0.2196078431372549,
+          0.4117647058823529
+        ],
+        "uColor2": [
+          0.9372549019607843,
+          0.7294117647058823,
+          0.6784313725490196
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.13527129590511322,
+          0.6010936498641968,
+          0.1734345257282257,
+          0.3799999952316284,
+          0.37794947624206543,
+          -0.6007341742515564,
+          -0.5253472328186035,
+          0.45491743087768555,
+          -0.6926459670066833,
+          0.6003713607788086,
+          0.3850876986980438,
+          0.4792465567588806,
+          0.6435186862945557,
+          -0.6000052094459534,
+          0.11594176292419434,
+          0.4365589916706085,
+          -0.2563725411891937,
+          0.5996357202529907,
+          -0.5083510279655457,
+          0.3556797504425049,
+          -0.2654375731945038,
+          -0.5992628931999207,
+          0.4245109558105469,
+          0.29122284054756165,
+          0.6478222012519836,
+          0.5988867878913879,
+          0.057032760232686996,
+          0.2867130935192108,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 1,
+        "uAmount": 7,
+        "uScale": 1,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.4823529411764706,
+          0.2196078431372549,
+          0.4117647058823529
+        ],
+        "uColor2": [
+          0.9372549019607843,
+          0.7294117647058823,
+          0.6784313725490196
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.13527129590511322,
+          0.6010936498641968,
+          0.1734345257282257,
+          0.3799999952316284,
+          0.37794947624206543,
+          -0.6007341742515564,
+          -0.5253472328186035,
+          0.45491743087768555,
+          -0.6926459670066833,
+          0.6003713607788086,
+          0.3850876986980438,
+          0.4792465567588806,
+          0.6435186862945557,
+          -0.6000052094459534,
+          0.11594176292419434,
+          0.4365589916706085,
+          -0.2563725411891937,
+          0.5996357202529907,
+          -0.5083510279655457,
+          0.3556797504425049,
+          -0.2654375731945038,
+          -0.5992628931999207,
+          0.4245109558105469,
+          0.29122284054756165,
+          0.6478222012519836,
+          0.5988867878913879,
+          0.057032760232686996,
+          0.2867130935192108,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "interference": {
+    "uKind": 2,
+    "uAmount": 6,
+    "uScale": 0.8,
+    "uRelief": 0.65,
+    "uLightAngle": -0.6981317007977318,
+    "uDetail": 1,
+    "uSeed": 7,
+    "uColor": [
+      0.2627450980392157,
+      0.611764705882353,
+      0.6588235294117647
+    ],
+    "uColor2": [
+      0.9411764705882353,
+      0.5529411764705883,
+      0.403921568627451
+    ],
+    "uBackground": [
+      0.03137254901960784,
+      0.050980392156862744,
+      0.08627450980392157
+    ],
+    "uTransparent": 0,
+    "uBodies[0]": [
+      0.13527129590511322,
+      0.6010936498641968,
+      0.1734345257282257,
+      0.3799999952316284,
+      0.37794947624206543,
+      -0.6007341742515564,
+      -0.5253472328186035,
+      0.45491743087768555,
+      -0.6926459670066833,
+      0.6003713607788086,
+      0.3850876986980438,
+      0.4792465567588806,
+      0.6435186862945557,
+      -0.6000052094459534,
+      0.11594176292419434,
+      0.4365589916706085,
+      -0.2563725411891937,
+      0.5996357202529907,
+      -0.5083510279655457,
+      0.3556797504425049,
+      -0.2654375731945038,
+      -0.5992628931999207,
+      0.4245109558105469,
+      0.29122284054756165,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 2,
+        "uAmount": 6,
+        "uScale": 0.8,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.2627450980392157,
+          0.611764705882353,
+          0.6588235294117647
+        ],
+        "uColor2": [
+          0.9411764705882353,
+          0.5529411764705883,
+          0.403921568627451
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.13527129590511322,
+          0.6010936498641968,
+          0.1734345257282257,
+          0.3799999952316284,
+          0.37794947624206543,
+          -0.6007341742515564,
+          -0.5253472328186035,
+          0.45491743087768555,
+          -0.6926459670066833,
+          0.6003713607788086,
+          0.3850876986980438,
+          0.4792465567588806,
+          0.6435186862945557,
+          -0.6000052094459534,
+          0.11594176292419434,
+          0.4365589916706085,
+          -0.2563725411891937,
+          0.5996357202529907,
+          -0.5083510279655457,
+          0.3556797504425049,
+          -0.2654375731945038,
+          -0.5992628931999207,
+          0.4245109558105469,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 2,
+        "uAmount": 6,
+        "uScale": 0.8,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.2627450980392157,
+          0.611764705882353,
+          0.6588235294117647
+        ],
+        "uColor2": [
+          0.9411764705882353,
+          0.5529411764705883,
+          0.403921568627451
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.13527129590511322,
+          0.6010936498641968,
+          0.1734345257282257,
+          0.3799999952316284,
+          0.37794947624206543,
+          -0.6007341742515564,
+          -0.5253472328186035,
+          0.45491743087768555,
+          -0.6926459670066833,
+          0.6003713607788086,
+          0.3850876986980438,
+          0.4792465567588806,
+          0.6435186862945557,
+          -0.6000052094459534,
+          0.11594176292419434,
+          0.4365589916706085,
+          -0.2563725411891937,
+          0.5996357202529907,
+          -0.5083510279655457,
+          0.3556797504425049,
+          -0.2654375731945038,
+          -0.5992628931999207,
+          0.4245109558105469,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  },
+  "tunnel": {
+    "uKind": 3,
+    "uAmount": 6,
+    "uScale": 1,
+    "uRelief": 0.65,
+    "uLightAngle": -0.6981317007977318,
+    "uDetail": 1,
+    "uSeed": 7,
+    "uColor": [
+      0.24705882352941178,
+      0.49411764705882355,
+      0.6823529411764706
+    ],
+    "uColor2": [
+      0.9411764705882353,
+      0.596078431372549,
+      0.788235294117647
+    ],
+    "uBackground": [
+      0.03137254901960784,
+      0.050980392156862744,
+      0.08627450980392157
+    ],
+    "uTransparent": 0,
+    "uBodies[0]": [
+      0.13527129590511322,
+      0.6010936498641968,
+      0.1734345257282257,
+      0.3799999952316284,
+      0.37794947624206543,
+      -0.6007341742515564,
+      -0.5253472328186035,
+      0.45491743087768555,
+      -0.6926459670066833,
+      0.6003713607788086,
+      0.3850876986980438,
+      0.4792465567588806,
+      0.6435186862945557,
+      -0.6000052094459534,
+      0.11594176292419434,
+      0.4365589916706085,
+      -0.2563725411891937,
+      0.5996357202529907,
+      -0.5083510279655457,
+      0.3556797504425049,
+      -0.2654375731945038,
+      -0.5992628931999207,
+      0.4245109558105469,
+      0.29122284054756165,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "uHostSize": [
+      600,
+      300
+    ],
+    "uViewSize": [
+      600,
+      300
+    ],
+    "uPadding": 0,
+    "uRadius": 24,
+    "uPointer": [
+      0.5,
+      0.5,
+      0
+    ],
+    "uPointerDelta": [
+      0,
+      0
+    ],
+    "_frames": {
+      "3.5": {
+        "uKind": 3,
+        "uAmount": 6,
+        "uScale": 1,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.24705882352941178,
+          0.49411764705882355,
+          0.6823529411764706
+        ],
+        "uColor2": [
+          0.9411764705882353,
+          0.596078431372549,
+          0.788235294117647
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.13527129590511322,
+          0.6010936498641968,
+          0.1734345257282257,
+          0.3799999952316284,
+          0.37794947624206543,
+          -0.6007341742515564,
+          -0.5253472328186035,
+          0.45491743087768555,
+          -0.6926459670066833,
+          0.6003713607788086,
+          0.3850876986980438,
+          0.4792465567588806,
+          0.6435186862945557,
+          -0.6000052094459534,
+          0.11594176292419434,
+          0.4365589916706085,
+          -0.2563725411891937,
+          0.5996357202529907,
+          -0.5083510279655457,
+          0.3556797504425049,
+          -0.2654375731945038,
+          -0.5992628931999207,
+          0.4245109558105469,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      },
+      "4.1": {
+        "uKind": 3,
+        "uAmount": 6,
+        "uScale": 1,
+        "uRelief": 0.65,
+        "uLightAngle": -0.6981317007977318,
+        "uDetail": 1,
+        "uSeed": 7,
+        "uColor": [
+          0.24705882352941178,
+          0.49411764705882355,
+          0.6823529411764706
+        ],
+        "uColor2": [
+          0.9411764705882353,
+          0.596078431372549,
+          0.788235294117647
+        ],
+        "uBackground": [
+          0.03137254901960784,
+          0.050980392156862744,
+          0.08627450980392157
+        ],
+        "uTransparent": 0,
+        "uBodies[0]": [
+          0.13527129590511322,
+          0.6010936498641968,
+          0.1734345257282257,
+          0.3799999952316284,
+          0.37794947624206543,
+          -0.6007341742515564,
+          -0.5253472328186035,
+          0.45491743087768555,
+          -0.6926459670066833,
+          0.6003713607788086,
+          0.3850876986980438,
+          0.4792465567588806,
+          0.6435186862945557,
+          -0.6000052094459534,
+          0.11594176292419434,
+          0.4365589916706085,
+          -0.2563725411891937,
+          0.5996357202529907,
+          -0.5083510279655457,
+          0.3556797504425049,
+          -0.2654375731945038,
+          -0.5992628931999207,
+          0.4245109558105469,
+          0.29122284054756165,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "uHostSize": [
+          600,
+          300
+        ],
+        "uViewSize": [
+          600,
+          300
+        ],
+        "uPadding": 0,
+        "uRadius": 24
+      }
+    }
+  }
+}

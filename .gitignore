@@ -1,0 +1,19 @@
+# Local dependencies and generated deployment/release artifacts
+node_modules/
+build/
+release-output/
+# dist/ is deliberately committed for versioned GitHub CDN delivery.
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+tests/validation/
+test-results/
+playwright-report/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json

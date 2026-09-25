@@ -1,0 +1,23 @@
+import {createFallRenderer} from './effects/fall.js';
+import {createStatusRenderer} from './effects/status.js';
+import {createPatternRenderer} from './effects/pattern.js';
+import {createBackdropRenderer} from './effects/backdrop.js';
+import {createHighlightRenderer} from './effects/highlight.js';
+import {createSeaRenderer} from './effects/sea.js';
+import {createArtRenderer} from './effects/art.js';
+import {createSketchRenderer} from './effects/sketch.js';
+import {createGlassRenderer} from './effects/glass.js';
+import {createSurfaceRenderer} from './effects/surface.js';
+import {createWaterRenderer} from './effects/water.js';
+import {createFireRenderer} from './effects/fire.js';
+import {createSmokeRenderer} from './effects/smoke.js';
+import {createCloudsRenderer} from './effects/clouds.js';
+import {createAuroraRenderer} from './effects/aurora.js';
+import {createGlowRenderer} from './effects/glow.js';
+import {createFluidRenderer} from './effects/fluid.js';
+import {createTrailRenderer} from './effects/trail.js';
+import {createFieldRenderer} from './effects/field.js';
+import {registerRenderer} from './core/catalog.js';
+export const RENDERERS={glass:createGlassRenderer,surface:createSurfaceRenderer,water:createWaterRenderer,fire:createFireRenderer,smoke:createSmokeRenderer,clouds:createCloudsRenderer,aurora:createAuroraRenderer,glow:createGlowRenderer,fluid:createFluidRenderer,trail:createTrailRenderer,field:createFieldRenderer,sea:createSeaRenderer,art:createArtRenderer,sketch:createSketchRenderer,highlight:createHighlightRenderer,backdrop:createBackdropRenderer,pattern:createPatternRenderer,status:createStatusRenderer,fall:createFallRenderer};
+
+for(const [name,factory]of Object.entries(RENDERERS))registerRenderer(name,factory);

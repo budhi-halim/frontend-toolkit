@@ -1,0 +1,4 @@
+# Development tests only; the library has no runtime package dependencies.
+playwright==1.57.0
+Pillow==12.3.0
+numpy==2.3.5

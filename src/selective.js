@@ -1,0 +1,34 @@
+import {registerLoader} from './core/catalog.js';
+import {defineElements} from './elements.js';
+export {defineElements,EffectElement} from './elements.js';
+export {loadEffect,preload,loadingStats} from './core/catalog.js';
+export {createController} from './core/controller.js';
+export {resolveMotion} from './core/motion.js';
+export {makeDraggable} from './core/drag.js';
+export {schedulerStats} from './core/scheduler.js';
+export {SCHEMAS,COMMON_SCHEMA,PRESETS,getDefaults,normalizeOptions,canonicalPreset} from './core/schema.js';
+export {captureDOM,bindWaterSnapshot} from './adapters/snapshot.js';
+registerLoader('glass',()=>import('./effects/glass.js').then(m=>m.createGlassRenderer));
+registerLoader('surface',()=>import('./effects/surface.js').then(m=>m.createSurfaceRenderer));
+registerLoader('water',()=>import('./effects/water.js').then(m=>m.createWaterRenderer));
+registerLoader('fire',()=>import('./effects/fire.js').then(m=>m.createFireRenderer));
+registerLoader('smoke',()=>import('./effects/smoke.js').then(m=>m.createSmokeRenderer));
+registerLoader('clouds',()=>import('./effects/clouds.js').then(m=>m.createCloudsRenderer));
+registerLoader('aurora',()=>import('./effects/aurora.js').then(m=>m.createAuroraRenderer));
+registerLoader('glow',()=>import('./effects/glow.js').then(m=>m.createGlowRenderer));
+registerLoader('fluid',()=>import('./effects/fluid.js').then(m=>m.createFluidRenderer));
+registerLoader('trail',()=>import('./effects/trail.js').then(m=>m.createTrailRenderer));
+registerLoader('field',()=>import('./effects/field.js').then(m=>m.createFieldRenderer));
+registerLoader('sea',()=>import('./effects/sea.js').then(m=>m.createSeaRenderer));
+registerLoader('art',()=>import('./effects/art.js').then(m=>m.createArtRenderer));
+registerLoader('sketch',()=>import('./effects/sketch.js').then(m=>m.createSketchRenderer));
+registerLoader('highlight',()=>import('./effects/highlight.js').then(m=>m.createHighlightRenderer));
+registerLoader('backdrop',()=>import('./effects/backdrop.js').then(m=>m.createBackdropRenderer));
+registerLoader('pattern',()=>import('./effects/pattern.js').then(m=>m.createPatternRenderer));
+registerLoader('status',()=>import('./effects/status.js').then(m=>m.createStatusRenderer));
+registerLoader('fall',()=>import('./effects/fall.js').then(m=>m.createFallRenderer));
+defineElements();
+
+export {setDiagnostics,getDiagnostics,environmentReport,probeWebGL,diagnose} from './core/diagnostics.js';
+
+export const version='1.0.0';

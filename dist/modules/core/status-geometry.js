@@ -1,0 +1,5 @@
+/*! Frontend Toolkit 1.0.0. Copyright (c) 2026 Frontend Toolkit contributors.
+MIT for project code. Retained upstream material is not relicensed.
+Keep the distribution LICENSE, NOTICE.txt and licenses/ files with these modules. */
+function z(r,i,a){const t=Math.max(1,r*a.width),c=r*a.anchorX,s=i*a.anchorY,n=a.lineHeight,o=a.gap,x=a.lines,p=a.skeletonLayout==="avatar",m=a.skeletonLayout==="card",M=x*n+Math.max(0,x-1)*o,e=p?Math.min(a.avatarSize,t*.4):0,f=p?Math.min(a.avatarGap,Math.max(0,t-e-2)):0,v=e+f,l=m?70:0,g=m?l+o+M:Math.max(e,M),y=c-t/2,d=s-g/2,u=[];m&&u.push({x:y,y:d,w:t,h:l,r:a.radius}),p&&u.push({x:y,y:s-e/2,w:e,h:e,r:e/2});const k=m?d+l+o:s-M/2;for(let h=0;h<x;h++)u.push({x:y+v,y:k+h*(n+o),w:Math.max(.5,(t-v)*(h===x-1?.57:h===0?.82:.94)),h:n,r:Math.min(a.radius,n/2)});return u}function G(r,i,a){const t=r*a.anchorX,c=i*a.anchorY,s=Math.max(0,Math.min(a.size/2,t,r-t,c,i-c)),n=Math.min(a.thickness,s);return{radius:Math.max(0,s-n/2),thickness:n}}export{G as ringGeometry,z as skeletonShapes};
+//# sourceMappingURL=status-geometry.js.map

@@ -1,0 +1,63 @@
+/*! Frontend Toolkit 1.0.0. Copyright (c) 2026 Frontend Toolkit contributors.
+MIT for project code. Retained upstream material is not relicensed.
+Keep the distribution LICENSE, NOTICE.txt and licenses/ files with these modules. */
+const a=`/*! Frontend Toolkit 1.0.0
+MIT License
+
+Copyright (c) 2026 Frontend Toolkit contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Retained third-party notice (webgl-noise-MIT.txt):
+Copyright (C) 2011 by Ashima Arts (Simplex noise)
+Copyright (C) 2011-2016 by Stefan Gustavson (Classic noise and others)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Frontend Toolkit
+
+Project code and original repository documentation are offered under the MIT
+License in LICENSE. Third-party material is not relicensed by that statement.
+
+The water shader contains the Ashima Arts / Stefan Gustavson simplex-noise
+implementation family. Its MIT notice is included in licenses/webgl-noise-MIT.txt
+and in the generated complete bundles.
+
+The former photographic demo backdrop has been replaced with original geometric
+SVG artwork. No reference photos, external fonts, Three.js, Pixi, or html2canvas
+code are bundled. Runtime dependencies and optional development/test tools are
+separate; development dependencies retain their own licenses.
+
+*/
+(()=>{function gt(u,f,W,i,x){let c={oak:{spacing:15,late:.28,band:.22,pores:.85,ringPores:1,rays:.85,curl:.12,streak:.1},ash:{spacing:23,late:.22,band:.27,pores:.72,ringPores:1,rays:.13,curl:.06,streak:.02},walnut:{spacing:18,late:.32,band:.16,pores:.42,ringPores:.45,rays:.1,curl:.38,streak:.48},maple:{spacing:13,late:.15,band:.065,pores:.06,ringPores:0,rays:.12,curl:.48,streak:.06},pine:{spacing:22,late:.18,band:.43,pores:0,ringPores:0,rays:0,curl:.13,streak:.05,soft:!0},cedar:{spacing:10,late:.21,band:.31,pores:0,ringPores:0,rays:0,curl:.06,streak:.55,soft:!0},cherry:{spacing:16,late:.24,band:.105,pores:.1,ringPores:.18,rays:.06,curl:.24,streak:.2},mahogany:{spacing:21,late:.2,band:.045,pores:.37,ringPores:0,rays:.07,curl:.05,streak:.17,interlock:!0},teak:{spacing:17,late:.27,band:.14,pores:.65,ringPores:.48,rays:.08,curl:.08,streak:.4},rosewood:{spacing:12,late:.4,band:.12,pores:.36,ringPores:0,rays:.06,curl:.23,streak:1},ebony:{spacing:9,late:.2,band:.03,pores:.03,ringPores:0,rays:.02,curl:.05,streak:.6},bamboo:{spacing:8,late:.2,band:.05,pores:0,ringPores:0,rays:0,curl:0,streak:.1}},K=u.woodSpecies||"oak",y=c[K]||c.oak,b=u.woodCut||"plain-sawn",R=u.woodFinish||"natural",E=u.orientation==="vertical"||u.orientation==="auto"&&W>f,G=E?W:f,S=E?f:W,v=Math.pow(Math.max(1e-4,u.grainX)/.002,.28),z=Math.pow(Math.max(1e-4,u.grainY)/.035,.32),T=y.spacing/(Math.max(.4,z)*(u.ringScale||1)),J=u.depth/50,V=(n,h=0,e=1)=>Math.min(e,Math.max(h,n)),C=n=>n-Math.floor(n),X=(n,h,e)=>{let t=V((e-n)/(h-n));return t*t*(3-2*t)},at=u.knots??(y.soft?.6:.15),Z=u.pores??1,N=[...K].reduce((n,h)=>n+h.charCodeAt(0),0),et=S*(.32+x(66,N)*.45),st=G*(.23+x(4,7)*.5),rt=S*(.2+x(8,4)*.6),Y=(y.soft?22:12)*at,_=x(22,N)*40,s={tone:0,relief:0};function l(n,h,e){if(!y.pores||!Z)return 0;let t=b==="end-grain",a=n/(t?2.4:11),F=h/(t?2.4:2.8),p=Math.floor(a),g=Math.floor(F),r=.25+x(p,g)*.5,d=.25+x(p+93,g+71)*.5,m=(C(a)-r)/(t?.3:.39),k=(C(F)-d)/(t?.3:.17),P=1-X(.32,1,m*m+k*k),o=x(p+3,g+5)>.36?1:0,M=1-X(.08,.46,C(e+.11));return P*o*y.pores*Z*((1-y.ringPores)*.65+y.ringPores*M)}return function(h,e){let t=(E?e:h)*v,a=E?h:e,F=i(t*.003+11,a*.01),p=(b==="end-grain"?i(t*.7,a*.7):i(t*.035,a*1.2+(i(t*.009,a*.06)-.5)*6))-.5,g=(b==="end-grain"?i(t*2.1,a*2.1):i(t*.021,a*3.5+(i(t*.005,a*.1)-.5)*11))-.5;if(K==="bamboo"){let A=Math.floor(a/34),D=a-A*34,Q=Math.exp(-Math.min(D,34-D)*1.9),ot=t+x(A,81)*225,H=Math.abs(C(ot/260)-.5)*260,tt=Math.exp(-H*H/7),xt=i(t*.018+A*19,a*1.8),it=Math.pow(xt,4)*.34,wt=i(t*.004,a*.13)*.09;if(b==="end-grain"){let ct=t/7,lt=a/7,ht=Math.floor(ct),dt=Math.floor(lt),pt=C(ct)-.2-x(ht,dt)*.6,Mt=C(lt)-.2-x(ht+33,dt)*.6,ft=Math.exp(-(pt*pt+Mt*Mt)*47);s.tone=.6-ft*.35+(F-.5)*.1,s.relief=.5-ft*.12}else s.tone=.66-Q*.2-tt*.23-it+wt+(x(A,5)-.5)*.08,s.relief=.5-Q*.08-tt*.1-it*.18+p*.04;return s}let r=(i(t*.004,a*.006)-.5)*14*J+(i(t*.011,a*.018)-.5)*3*J;a+=r;let d=(t-st)*.54,m=a-rt,k=Math.sqrt(d*d+m*m),P=Y>0?Math.exp(-k*k/(Y*Y*5)):0;a+=m*P*1.4;let o;if(b==="end-grain"){let w=t-G*(.35+x(61,1)*.3),A=a-S*(.3+x(72,9)*.4);o=Math.hypot(w,A),o+=(i(w*.015,A*.015)-.5)*T*1.2+(i(w*.048,A*.048)-.5)*T*.24}else if(b==="quarter-sawn")o=a+(i(t*.002,a*.009)-.5)*T*.6;else{let w=.11+y.curl*.08,A=18+(t+G*.15)*w+Math.sin(t*.004+_)*7*J;o=Math.sqrt((a-et)*(a-et)+A*A)}let M=o/T+_+(i(o*.022,t*.006)-.5)*1.6+(i(o*.11,t*.013)-.5)*.23,L=Math.floor(M),I=C(M),U=y.late*(.78+x(L,51)*.44),B=X(1-U-.15,1-U+.08,I)*(1-X(.94,1,I)),O=Math.exp(-(((I-.97)*37)**2)),$=l(t,a,M),nt=(i(t*.003,a*.008)-.5)*.12,q=.6-B*y.band*(.65+i(t*.011,a*.12)*.5)-O*y.band*.1+nt+p*u.fibers*.14+g*u.fibers*.16-$*.2,j=.5-B*(y.soft?.055:.018)-$*.12+p*u.fibers*.055+g*u.fibers*.025;if(y.interlock){let w=Math.sin(a/13+(i(t*.003,a*.003)-.5)*2);q+=w*.09*Math.cos(u.lightAngle*Math.PI/180+.7),j+=w*.015}else b!=="end-grain"&&(q+=(i(t*.006,a*.07)-.5)*y.curl*.18);let ut=Math.pow(i(t*.008,a*.17+(i(t*.002,a*.008)-.5)*3),3);if(b!=="end-grain"&&(q-=ut*y.streak*(K==="rosewood"?.62:.25)),y.rays&&b!=="end-grain"){let w=a/(b==="quarter-sawn"?47:8)+i(t*.014,a*.015)*.6,A=t/(b==="quarter-sawn"?18:13),D=Math.floor(w),Q=Math.floor(A),ot=(C(w)-.25-x(D,Q)*.5)/(b==="quarter-sawn"?.42:.21),H=(C(A)-.2-x(D+7,Q+9)*.6)/(b==="quarter-sawn"?.11:.18),tt=(1-X(.25,1,ot*ot+H*H))*(x(D+141,Q+47)>.82?1:0);q+=tt*y.rays*(b==="quarter-sawn"?.22:.03),j+=tt*y.rays*.018}if(Y>0&&b!=="end-grain"){let w=1-X(Y*.45,Y*1.05,k),A=.5+.5*Math.sin(k*1.05+i(t*.1,a*.1));q=q*(1-w*.7)-w*.12-P*A*.09,j-=w*.055+P*A*.014}if(R==="weathered"){let w=Math.pow(i(t*.02,a*.7),12)*(i(t*.009,a*.11)>.3?1:0);q-=w*.5*u.weathering,j-=w*.28+B*.055,q+=(i(t*.01,a*.07)-.5)*u.weathering*.2}else if(R==="charred"){let w=Math.pow(.5+.5*Math.sin(a*.31+i(t*.01,a*.04)*3),26),A=Math.pow(.5+.5*Math.sin(t*.055+i(t*.08,a*.02)*4),30),D=Math.max(w,A*.7);q=.42+q*.25-D*.37,j=.5-D*.3+B*.04}else R==="smooth"&&(j=.5+(j-.5)*.28);return s.tone=V(q),s.relief=j,s}}function mt(u){let{width:f,height:W,cssWidth:i,cssHeight:x,options:c,rgb:K}=u,y=c.seed|0,b=new Uint8ClampedArray(f*W*4),R=new Float32Array(f*W),E=new Float32Array(f*W),G=(s,l=0,n=1)=>Math.min(n,Math.max(l,s));function S(s,l){let n=Math.imul(s^y,374761393)+Math.imul(l,668265263);return n=Math.imul(n^n>>>13,1274126177),((n^n>>>16)>>>0)/4294967295}function v(s,l){let n=Math.floor(s),h=Math.floor(l),e=s-n,t=l-h;e=e*e*(3-2*e),t=t*t*(3-2*t);let a=S(n,h),F=S(n+1,h),p=S(n,h+1),g=S(n+1,h+1);return a+(F-a)*e+(p-a)*t+(a-F-p+g)*e*t}function z(s,l,n=3){n=Math.max(1,Math.min(6,Math.round(n*X/3)));let h=0,e=.55;for(let t=0;t<n;t++){h+=v(s,l)*e;let a=s;s=a*1.93-l*.21+7.7,l=l*2.04+a*.17+15.1,e*=.48}return h}let T=c.orientation==="vertical"||c.orientation==="auto"&&x>i,J=Math.pow(Math.max(1e-4,c.grainX)/.002,.35),V=Math.pow(Math.max(1e-4,c.grainY)/.035,.35),C=c.depth/50,X=Math.min(5,Math.max(2,Math.round(c.detail/3))),at=c.material==="wood"?gt(c,i,x,v,S):null;for(let s=0;s<W;s++)for(let l=0;l<f;l++){let n=l/f*i,h=s/W*x,e=n/110*(c.material==="wood"?1:J),t=h/110*(c.material==="wood"?1:V),a=S(l,s),F=s*f+l,p=.5,g=.5;if(at){let r=at(n,h);g=r.tone,p=r.relief}else if(c.material==="paper"){let r=c.paperKind||"cotton",d=z(e*18,t*18,X),m=(v(e*140,t*8)+v(e*11,t*120))*.5,k=Math.pow(Math.max(Math.abs(l/f-.5),Math.abs(s/W-.5))*2,5),P=z(e*.9,t*.9,3)*.5+k*.2;if(p=.42+d*.13+(m-.5)*.16*c.fibers+(a-.5)*.1,g=.53+(d-.45)*.1+(a-.5)*.035-P*c.weathering*.35,r==="watercolor"){let o=v(e*8,t*8),M=Math.pow(v(e*25+o*2,t*25),3);p=.38+o*.2-M*.16+(a-.5)*.05,g=.52+(o-.5)*.06-M*.025}else if(r==="kraft"){let o=v(e*65,t*4),M=Math.pow(v(e*18,t*25),8);p+=o*.09-M*.12,g+=(o-.5)*.055-M*.33*c.fibers}else if(r==="parchment"){let o=z(e*1.3,t*1.3,4),M=Math.exp(-Math.abs(Math.sin(e*3+t*4+o*7))*40);g=.59+(o-.5)*.3-P*c.weathering*.42-M*.055,p=.45+o*.07+M*.025}else if(r==="laid"){let o=.5+.5*Math.cos(h*Math.PI*.66),M=Math.pow(.5+.5*Math.sin(n*.14),18);p+=o*.035-M*.035,g+=o*.035-M*.035}else if(r==="washi"){let o=v(e*8,t*180)+v(e*160,t*12)-1;p+=o*.16,g+=o*.035}}else if(c.material==="marble"){let r=c.marbleKind||"carrara",d=z(e*.8,t*.8,4),m=z(e*1.2+5,t*1.2+3,3),k=r==="calacatta"||r==="statuario",P=(K[0]+K[1]+K[2])/3<.4,o=(r==="statuario"?e*.6+t*2.2:e*2.5+t*1.6)+d*(4+C*3)+m*1.3,M=Math.abs(Math.sin(o*(k?.65:r==="nero"?1.4:2))),L=Math.exp(-M*(r==="calacatta"?12:r==="statuario"?21:r==="nero"?55:35))*(.3+.7*z(e*3,t*3,3)),I=Math.exp(-Math.abs(Math.sin(o*(r==="nero"?4.7:3.9)+m*(k?4:2)))*90)*(r==="nero"?.6:k?.2:.4),U=r==="calacatta"?Math.exp(-M*4)*.18:r==="carrara"?m*.045:0;g=.56+(d-.4)*.16+(L+I+U)*(P?.86:-.6),p=.5+(L+I)*.04+(a-.5)*.018}else if(c.material==="linen"){let r=n*.36*J,d=h*.36*V,m=Math.floor(r),k=Math.floor(d),P=r-m,o=d-k,M=(m+k)%2===0,L=Math.sin((M?o:P)*Math.PI),I=G(Math.min(P,1-P,o,1-o)*12);p=.28+L*.38*I+(a-.5)*.08,g=.47+L*.12*I+(S(m,k)-.5)*.1}else if(c.material==="cork"){let r=e*20,d=t*19,m=Math.floor(r),k=Math.floor(d),P=100,o=100,M=.5;for(let I=-1;I<=1;I++)for(let U=-1;U<=1;U++){let B=m+U,O=k+I,$=B+S(B,O)-r,nt=O+S(B+51,O+32)-d,q=$*$+nt*nt;q<P?(o=P,P=q,M=S(B+1,O+1)):q<o&&(o=q)}let L=G((o-P)*8);g=.3+M*.38+v(e*75,t*75)*.16-(1-L)*.08,p=.3+M*.26+L*.13+(a-.5)*.07}else if(c.material==="sand"){let r=e*3+t*15+z(e*.9,t*.5,3)*3,d=Math.sin(r)*.5+.5;p=.25+d*.38+(a-.5)*.13,g=.44+d*.13+(a-.5)*.2}else if(c.material==="slate"){let r=z(e*.6,t*.9,3),d=v(e*.8+r,t*14+r*7),m=Math.pow(.5+.5*Math.sin(t*40+r*14),18);p=.4+d*.17-m*.06+(a-.5)*.05,g=.48+(d-.5)*.38-m*.17}else if(c.material==="granite"){let r=v(e*47,t*47),d=v(e*133,t*133),m=z(e*5,t*5,3);g=G(.2+r*.68+(m-.5)*.3+(d-.5)*.28),p=.42+d*.08+(r-.5)*.04}else{let r=z(e*.9,t*.9,4),d=z(e*28,t*28,3);p=.42+d*.13+(a-.5)*.1,g=.52+(r-.5)*(.14+c.weathering*.45)+(d-.5)*.07}R[F]=p,E[F]=g}let Z=c.lightAngle*Math.PI/180,N=c.elevation*Math.PI/180,et=Math.cos(Z)*Math.cos(N),st=Math.sin(Z)*Math.cos(N),rt=Math.sin(N),Y=c.roughness*.62,_=c.contrast;for(let s=0;s<W;s++)for(let l=0;l<f;l++){let n=s*f+l,h=(R[s*f+Math.min(f-1,l+1)]-R[s*f+Math.max(0,l-1)])*Y,e=(R[Math.min(W-1,s+1)*f+l]-R[Math.max(0,s-1)*f+l])*Y,t=(-h*et-e*st+rt)/Math.sqrt(1+h*h+e*e),a=1+(E[n]-.5)*_*.9+(t-rt)*_*.65;for(let F=0;F<3;F++)b[n*4+F]=G(K[F]*a)*255;b[n*4+3]=255}return{width:f,height:W,data:b.buffer}}self.onmessage=u=>{try{let f=mt(u.data);self.postMessage(f,[f.data])}catch(f){self.postMessage({error:f.message})}};})();
+`;function r(){const t=URL.createObjectURL(new Blob([a],{type:"text/javascript"}));try{return{worker:new Worker(t),dispose(){URL.revokeObjectURL(t)}}}catch(e){throw URL.revokeObjectURL(t),e}}export{r as createMaterialWorker};
+//# sourceMappingURL=material-worker-program.js.map

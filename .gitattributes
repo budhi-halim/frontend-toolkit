@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
+*.zip binary
+dist/** linguist-generated=true
+docs/*.html linguist-generated=true
+docs/OPTIONS.md linguist-generated=true
+docs/options.json linguist-generated=true

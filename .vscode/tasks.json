@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"Toolkit: build production","type":"shell","command":"npm run build","windows":{"command":"npm.cmd run build"},"group":{"kind":"build","isDefault":true},"problemMatcher":[]},
+    {"label":"Toolkit: verify production","type":"shell","command":"npm run verify","windows":{"command":"npm.cmd run verify"},"problemMatcher":[]},
+    {"label":"Toolkit: preview production","type":"shell","command":"npm run preview","windows":{"command":"npm.cmd run preview"},"isBackground":true,"problemMatcher":[]},
+    {"label":"Toolkit: local environment","type":"shell","command":"npm run doctor","windows":{"command":"npm.cmd run doctor"},"problemMatcher":[]}
+  ]
+}

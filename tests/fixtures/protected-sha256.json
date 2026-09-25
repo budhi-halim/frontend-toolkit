@@ -1,0 +1,7 @@
+{
+  "src/assets/liquid-map.js": "bc644b8193cb18f01e4e2c8c043ae249836c064787db8bdf45fe7ad5ac0f6699",
+  "src/shaders/water.js": "972222e80d4bec4cb681115db5ddea7f8b88a67c079759aee9e6bb7bba723645",
+  "src/shaders/aurora.js": "851fc25f7d09ef4526e52bf276cb67317565990062b28d00ea6178500b2bcd5f",
+  "src/core/material-texture.js": "4fc35877ff04055391cc9b0b1191e2570b8d80fa1145864a4f50a43dbc2da1db",
+  "src/core/wood-texture.js": "4cd442babccc4ba2e6137221b238285145a803894fcb629d9390f27328fe60a4"
+}

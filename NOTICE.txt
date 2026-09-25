@@ -1,0 +1,13 @@
+Frontend Toolkit
+
+Project code and original repository documentation are offered under the MIT
+License in LICENSE. Third-party material is not relicensed by that statement.
+
+The water shader contains the Ashima Arts / Stefan Gustavson simplex-noise
+implementation family. Its MIT notice is included in licenses/webgl-noise-MIT.txt
+and in the generated complete bundles.
+
+The former photographic demo backdrop has been replaced with original geometric
+SVG artwork. No reference photos, external fonts, Three.js, Pixi, or html2canvas
+code are bundled. Runtime dependencies and optional development/test tools are
+separate; development dependencies retain their own licenses.

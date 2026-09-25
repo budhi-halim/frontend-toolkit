@@ -1,0 +1,83 @@
+{
+  "name": "frontend-toolkit",
+  "version": "1.0.0",
+  "description": "Configurable visual effects for native HTML elements.",
+  "type": "module",
+  "main": "./dist/frontend-toolkit.esm.js",
+  "module": "./dist/frontend-toolkit.esm.js",
+  "exports": {
+    ".": "./dist/frontend-toolkit.esm.js",
+    "./auto": "./dist/modules/auto.js",
+    "./core": "./dist/modules/core/controller.js",
+    "./effects/*": "./dist/modules/effects/*.js",
+    "./selective": "./dist/frontend-toolkit.loader.js",
+    "./snapshot": "./dist/modules/adapters/snapshot.js",
+    "./geometry": "./dist/modules/core/geometry.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE.txt",
+    "licenses",
+    "README.md"
+  ],
+  "sideEffects": [
+    "./src/auto.js",
+    "./src/selective.js",
+    "./src/registry.js",
+    "./dist/frontend-toolkit.js",
+    "./dist/frontend-toolkit.loader.js",
+    "./dist/modules/auto.js",
+    "./dist/modules/selective.js",
+    "./dist/modules/registry.js"
+  ],
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test-node.mjs",
+    "test:browser": "python tests/browser_test.py",
+    "test:gpu-contract": "python tests/gpu_contract_test.py",
+    "test:shaders": "python tests/shaders_egl.py && python tests/fluid_egl_test.py",
+    "test:compatibility": "python tests/compatibility_test.py",
+    "test:preview5": "python tests/preview5_test.py",
+    "test:preview6": "python tests/preview6_test.py",
+    "test:site": "python tests/site_test.py",
+    "check": "node scripts/check.mjs",
+    "check:release": "node scripts/check.mjs --release",
+    "docs": "node scripts/docs.mjs",
+    "version:sync": "node scripts/version.mjs",
+    "test:all": "node scripts/test-all.mjs",
+    "configure:repository": "node scripts/configure-repository.mjs",
+    "test:examples": "python tests/integration_pages_test.py",
+    "build:preview": "node scripts/build.mjs --development",
+    "preview": "node scripts/serve.mjs --built",
+    "verify": "node scripts/verify.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "release:prepare": "node scripts/release.mjs",
+    "check:generated": "node scripts/build.mjs --check",
+    "test:production": "python tests/production_test.py",
+    "version:set": "node scripts/version.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "private": true,
+  "license": "MIT",
+  "jsdelivr": "./dist/frontend-toolkit.js",
+  "unpkg": "./dist/frontend-toolkit.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/budhi-halim/frontend-toolkit.git"
+  },
+  "homepage": "https://budhi-halim.github.io/frontend-toolkit/",
+  "bugs": {
+    "url": "https://github.com/budhi-halim/frontend-toolkit/issues"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "html-minifier-terser": "7.2.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}

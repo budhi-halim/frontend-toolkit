@@ -1,0 +1,4969 @@
+{
+  "version": "1.0.0",
+  "common": {
+    "releaseAfter": {
+      "kind": "number",
+      "label": "Release offscreen renderer after · s",
+      "default": 3,
+      "min": 0,
+      "max": 60,
+      "step": 1
+    },
+    "adaptive": {
+      "kind": "boolean",
+      "label": "Auto optimize from measured FPS",
+      "default": true
+    },
+    "dragEnabled": {
+      "kind": "boolean",
+      "label": "Drag element (opt in)",
+      "default": false
+    },
+    "speed": {
+      "kind": "number",
+      "label": "Playback speed",
+      "default": 1,
+      "min": 0,
+      "max": 3,
+      "step": 0.05
+    },
+    "quality": {
+      "kind": "number",
+      "label": "Render scale",
+      "default": 0.7,
+      "min": 0.25,
+      "max": 1,
+      "step": 0.05
+    },
+    "dprCap": {
+      "kind": "number",
+      "label": "Pixel-ratio cap",
+      "default": 1.5,
+      "min": 0.5,
+      "max": 3,
+      "step": 0.25
+    },
+    "fps": {
+      "kind": "number",
+      "label": "Frame-rate cap",
+      "default": 60,
+      "min": 1,
+      "max": 120,
+      "step": 1
+    },
+    "seed": {
+      "kind": "number",
+      "label": "Seed",
+      "default": 7,
+      "min": 0,
+      "max": 65535,
+      "step": 1
+    },
+    "opacity": {
+      "kind": "number",
+      "label": "Effect opacity",
+      "default": 1,
+      "min": 0,
+      "max": 1,
+      "step": 0.01
+    },
+    "paused": {
+      "kind": "boolean",
+      "label": "Paused",
+      "default": false
+    },
+    "motion": {
+      "kind": "select",
+      "label": "Motion policy",
+      "default": "respect",
+      "values": [
+        "respect",
+        "always",
+        "never"
+      ]
+    },
+    "reducedMotion": {
+      "kind": "select",
+      "label": "Reduced-motion presentation",
+      "default": "auto",
+      "values": [
+        "auto",
+        "calm",
+        "still",
+        "hide",
+        "subtle"
+      ]
+    },
+    "forceFallback": {
+      "kind": "boolean",
+      "label": "Force portable fallback",
+      "default": false
+    },
+    "fallbackAnimation": {
+      "kind": "select",
+      "label": "Portable fallback motion",
+      "default": "animated",
+      "values": [
+        "animated",
+        "static"
+      ]
+    },
+    "fallbackFPS": {
+      "kind": "number",
+      "label": "Portable fallback FPS cap",
+      "default": 24,
+      "min": 1,
+      "max": 60,
+      "step": 1
+    }
+  },
+  "effects": {
+    "glass": {
+      "variant": {
+        "kind": "select",
+        "label": "Glass type",
+        "default": "liquid",
+        "values": [
+          "liquid",
+          "frosted"
+        ]
+      },
+      "distortion": {
+        "kind": "number",
+        "label": "Refraction",
+        "default": 200,
+        "min": -400,
+        "max": 400,
+        "step": 1
+      },
+      "frosting": {
+        "kind": "number",
+        "label": "Frost frequency",
+        "default": 0.01,
+        "min": 0.001,
+        "max": 0.2,
+        "step": 0.001
+      },
+      "blur": {
+        "kind": "number",
+        "label": "Blur · px",
+        "default": 0,
+        "min": 0,
+        "max": 30,
+        "step": 0.25
+      },
+      "brightness": {
+        "kind": "number",
+        "label": "Brightness",
+        "default": 1,
+        "min": 0,
+        "max": 2,
+        "step": 0.02
+      },
+      "tint": {
+        "kind": "color",
+        "label": "Tint",
+        "default": "oklch(0.97 0.01 240)"
+      },
+      "tintOpacity": {
+        "kind": "number",
+        "label": "Tint opacity",
+        "default": 0.04,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "edgeColor": {
+        "kind": "color",
+        "label": "Edge light",
+        "default": "oklch(1 0 0 / 0.65)"
+      },
+      "shadow": {
+        "kind": "number",
+        "label": "Shadow strength",
+        "default": 0.14,
+        "min": 0,
+        "max": 0.7,
+        "step": 0.01
+      },
+      "backend": {
+        "kind": "select",
+        "label": "Refraction backend",
+        "default": "auto",
+        "values": [
+          "auto",
+          "svg",
+          "css"
+        ]
+      }
+    },
+    "surface": {
+      "material": {
+        "kind": "select",
+        "label": "Material",
+        "default": "wood",
+        "values": [
+          "wood",
+          "marble",
+          "paper",
+          "wall",
+          "linen",
+          "slate",
+          "cork",
+          "sand",
+          "granite"
+        ]
+      },
+      "woodSpecies": {
+        "kind": "select",
+        "label": "Wood anatomy",
+        "default": "oak",
+        "values": [
+          "oak",
+          "ash",
+          "walnut",
+          "maple",
+          "pine",
+          "cedar",
+          "cherry",
+          "mahogany",
+          "teak",
+          "rosewood",
+          "ebony",
+          "bamboo"
+        ]
+      },
+      "woodCut": {
+        "kind": "select",
+        "label": "Cut through the grain",
+        "default": "plain-sawn",
+        "values": [
+          "plain-sawn",
+          "quarter-sawn",
+          "end-grain"
+        ]
+      },
+      "woodFinish": {
+        "kind": "select",
+        "label": "Surface finish",
+        "default": "natural",
+        "values": [
+          "natural",
+          "smooth",
+          "weathered",
+          "charred"
+        ]
+      },
+      "ringScale": {
+        "kind": "number",
+        "label": "Growth-ring frequency",
+        "default": 1,
+        "min": 0.4,
+        "max": 3,
+        "step": 0.05
+      },
+      "pores": {
+        "kind": "number",
+        "label": "Vessel / pore strength",
+        "default": 1,
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      "knots": {
+        "kind": "number",
+        "label": "Knot prominence",
+        "default": 0.15,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "marbleKind": {
+        "kind": "select",
+        "label": "Vein formation",
+        "default": "carrara",
+        "values": [
+          "carrara",
+          "calacatta",
+          "statuario",
+          "nero"
+        ]
+      },
+      "paperKind": {
+        "kind": "select",
+        "label": "Paper construction",
+        "default": "cotton",
+        "values": [
+          "cotton",
+          "watercolor",
+          "kraft",
+          "parchment",
+          "laid",
+          "washi"
+        ]
+      },
+      "contrast": {
+        "kind": "number",
+        "label": "Texture contrast",
+        "default": 0.52,
+        "min": 0,
+        "max": 1.5,
+        "step": 0.02
+      },
+      "fibers": {
+        "kind": "number",
+        "label": "Fibers / fine grain",
+        "default": 0.45,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "weathering": {
+        "kind": "number",
+        "label": "Weathering",
+        "default": 0.15,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "color": {
+        "kind": "color",
+        "label": "Material color",
+        "default": "oklch(0.65 0.12 50)"
+      },
+      "grainX": {
+        "kind": "number",
+        "label": "Longitudinal grain scale",
+        "default": 0.002,
+        "min": 0.0001,
+        "max": 0.4,
+        "step": 0.0001
+      },
+      "grainY": {
+        "kind": "number",
+        "label": "Cross-grain scale",
+        "default": 0.02,
+        "min": 0.0001,
+        "max": 0.4,
+        "step": 0.0001
+      },
+      "detail": {
+        "kind": "number",
+        "label": "Noise octaves",
+        "default": 10,
+        "min": 1,
+        "max": 15,
+        "step": 1
+      },
+      "depth": {
+        "kind": "number",
+        "label": "Pattern warping",
+        "default": 50,
+        "min": 0,
+        "max": 160,
+        "step": 1
+      },
+      "roughness": {
+        "kind": "number",
+        "label": "Relief",
+        "default": 9,
+        "min": 0,
+        "max": 20,
+        "step": 0.1
+      },
+      "orientation": {
+        "kind": "select",
+        "label": "Grain orientation",
+        "default": "auto",
+        "values": [
+          "auto",
+          "horizontal",
+          "vertical"
+        ]
+      },
+      "lightAngle": {
+        "kind": "number",
+        "label": "Light azimuth · °",
+        "default": -90,
+        "min": -180,
+        "max": 180,
+        "step": 1
+      },
+      "elevation": {
+        "kind": "number",
+        "label": "Light elevation · °",
+        "default": 60,
+        "min": 5,
+        "max": 90,
+        "step": 1
+      }
+    },
+    "water": {
+      "flowSpeed": {
+        "kind": "number",
+        "label": "Current speed",
+        "default": 0.4,
+        "min": 0,
+        "max": 2,
+        "step": 0.02
+      },
+      "morphSpeed": {
+        "kind": "number",
+        "label": "Wave evolution",
+        "default": 1,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "scale": {
+        "kind": "number",
+        "label": "Wave scale",
+        "default": 4,
+        "min": 0.5,
+        "max": 15,
+        "step": 0.1
+      },
+      "windX": {
+        "kind": "number",
+        "label": "Current X",
+        "default": 0.3,
+        "min": -4,
+        "max": 4,
+        "step": 0.05
+      },
+      "windY": {
+        "kind": "number",
+        "label": "Current Y",
+        "default": 0.15,
+        "min": -4,
+        "max": 4,
+        "step": 0.05
+      },
+      "distortion": {
+        "kind": "number",
+        "label": "Refraction",
+        "default": 0.018,
+        "min": 0,
+        "max": 0.12,
+        "step": 0.001
+      },
+      "caustic": {
+        "kind": "number",
+        "label": "Caustic light",
+        "default": 0.5,
+        "min": 0,
+        "max": 2,
+        "step": 0.02
+      },
+      "ridge": {
+        "kind": "number",
+        "label": "Caustic sharpness",
+        "default": 3,
+        "min": 0.5,
+        "max": 12,
+        "step": 0.1
+      },
+      "tint": {
+        "kind": "color",
+        "label": "Water tint",
+        "default": "oklch(0.6 0.105 215)"
+      },
+      "tintOpacity": {
+        "kind": "number",
+        "label": "Tint strength",
+        "default": 0.45,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "highlight": {
+        "kind": "color",
+        "label": "Highlight",
+        "default": "oklch(0.97 0.025 205)"
+      },
+      "contentMode": {
+        "kind": "select",
+        "label": "Content treatment",
+        "default": "floating",
+        "values": [
+          "floating",
+          "submerged"
+        ]
+      },
+      "contentDistortion": {
+        "kind": "number",
+        "label": "Submerged text warp · px",
+        "default": 4,
+        "min": 0,
+        "max": 30,
+        "step": 0.25
+      },
+      "texture": {
+        "kind": "select",
+        "label": "Built-in texture",
+        "default": "pool",
+        "values": [
+          "pool",
+          "sand",
+          "none"
+        ]
+      }
+    },
+    "fire": {
+      "model": {
+        "kind": "select",
+        "label": "Flame model",
+        "default": "classic",
+        "values": [
+          "ribbon",
+          "classic",
+          "candle",
+          "embers"
+        ]
+      },
+      "mode": {
+        "kind": "select",
+        "label": "Placement",
+        "default": "in",
+        "values": [
+          "in",
+          "out"
+        ]
+      },
+      "direction": {
+        "kind": "select",
+        "label": "Emission direction",
+        "default": "up",
+        "values": [
+          "up",
+          "right",
+          "down",
+          "left",
+          "outward"
+        ]
+      },
+      "sourceEdge": {
+        "kind": "select",
+        "label": "Burning source edges",
+        "default": "auto",
+        "values": [
+          "auto",
+          "all",
+          "top",
+          "right",
+          "bottom",
+          "left"
+        ]
+      },
+      "outPolicy": {
+        "kind": "select",
+        "label": "Outside fire visibility",
+        "default": "strict",
+        "values": [
+          "strict",
+          "border"
+        ]
+      },
+      "respectGravity": {
+        "kind": "boolean",
+        "label": "Respect buoyancy / gravity",
+        "default": true
+      },
+      "reach": {
+        "kind": "number",
+        "label": "Outside reach · px",
+        "default": 105,
+        "min": 20,
+        "max": 300,
+        "step": 5
+      },
+      "gravity": {
+        "kind": "number",
+        "label": "Buoyant upward bend",
+        "default": 0.55,
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      "filament": {
+        "kind": "number",
+        "label": "Flame folds / fine detail",
+        "default": 0.65,
+        "min": 0,
+        "max": 1.5,
+        "step": 0.02
+      },
+      "blueBase": {
+        "kind": "number",
+        "label": "Blue at source",
+        "default": 0.24,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "scale": {
+        "kind": "number",
+        "label": "Flame scale",
+        "default": 4.5,
+        "min": 1,
+        "max": 12,
+        "step": 0.1
+      },
+      "height": {
+        "kind": "number",
+        "label": "Flame height",
+        "default": 0.78,
+        "min": 0.1,
+        "max": 1.4,
+        "step": 0.02
+      },
+      "intensity": {
+        "kind": "number",
+        "label": "Heat",
+        "default": 1.15,
+        "min": 0,
+        "max": 2.5,
+        "step": 0.05
+      },
+      "turbulence": {
+        "kind": "number",
+        "label": "Turbulence",
+        "default": 0.72,
+        "min": 0,
+        "max": 1.5,
+        "step": 0.02
+      },
+      "wind": {
+        "kind": "number",
+        "label": "Wind",
+        "default": 0.05,
+        "min": -1.5,
+        "max": 1.5,
+        "step": 0.05
+      },
+      "spread": {
+        "kind": "number",
+        "label": "Source width · fraction of edge",
+        "default": 0.86,
+        "min": 0.02,
+        "max": 1.4,
+        "step": 0.02
+      },
+      "sourceOffset": {
+        "kind": "number",
+        "label": "Source center · fraction of edge",
+        "default": 0.5,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "flameSpeed": {
+        "kind": "number",
+        "label": "Flame flow speed · multiplier",
+        "default": 1,
+        "min": 0,
+        "max": 8,
+        "step": 0.05
+      },
+      "flickerSpeed": {
+        "kind": "number",
+        "label": "Flicker speed · multiplier",
+        "default": 1,
+        "min": 0,
+        "max": 5,
+        "step": 0.05
+      },
+      "embers": {
+        "kind": "number",
+        "label": "Embers",
+        "default": 0.55,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "color": {
+        "kind": "color",
+        "label": "Outer flame",
+        "default": "oklch(0.56 0.23 28)"
+      },
+      "midColor": {
+        "kind": "color",
+        "label": "Flame body",
+        "default": "oklch(0.8 0.18 64)"
+      },
+      "coreColor": {
+        "kind": "color",
+        "label": "Hot core",
+        "default": "oklch(0.99 0.075 104)"
+      }
+    },
+    "smoke": {
+      "steps": {
+        "kind": "number",
+        "label": "Volume samples",
+        "default": 32,
+        "min": 12,
+        "max": 64,
+        "step": 1
+      },
+      "depth": {
+        "kind": "number",
+        "label": "Volume depth",
+        "default": 1.25,
+        "min": 0.3,
+        "max": 2.4,
+        "step": 0.05
+      },
+      "shadow": {
+        "kind": "number",
+        "label": "Self-shadowing",
+        "default": 1.2,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "lightAngle": {
+        "kind": "number",
+        "label": "Light azimuth · °",
+        "default": -35,
+        "min": -180,
+        "max": 180,
+        "step": 1
+      },
+      "interactionMode": {
+        "kind": "select",
+        "label": "Motion source",
+        "default": "both",
+        "values": [
+          "auto",
+          "pointer",
+          "both"
+        ]
+      },
+      "interactive": {
+        "kind": "boolean",
+        "label": "Pointer stirs smoke",
+        "default": true
+      },
+      "scale": {
+        "kind": "number",
+        "label": "Turbulence scale",
+        "default": 3.2,
+        "min": 1,
+        "max": 10,
+        "step": 0.1
+      },
+      "density": {
+        "kind": "number",
+        "label": "Density",
+        "default": 1.6,
+        "min": 0,
+        "max": 4,
+        "step": 0.05
+      },
+      "turbulence": {
+        "kind": "number",
+        "label": "Curl strength",
+        "default": 0.85,
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      "wind": {
+        "kind": "number",
+        "label": "Wind",
+        "default": 0.15,
+        "min": -1.5,
+        "max": 1.5,
+        "step": 0.05
+      },
+      "spread": {
+        "kind": "number",
+        "label": "Plume width",
+        "default": 0.52,
+        "min": 0.1,
+        "max": 1.5,
+        "step": 0.02
+      },
+      "rise": {
+        "kind": "number",
+        "label": "Rise speed",
+        "default": 0.3,
+        "min": 0,
+        "max": 1.5,
+        "step": 0.02
+      },
+      "light": {
+        "kind": "number",
+        "label": "Lighting",
+        "default": 0.8,
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      "color": {
+        "kind": "color",
+        "label": "Smoke color",
+        "default": "oklch(0.76 0.018 260)"
+      }
+    },
+    "clouds": {
+      "scale": {
+        "kind": "number",
+        "label": "Cloud scale",
+        "default": 2.8,
+        "min": 0.5,
+        "max": 7,
+        "step": 0.1
+      },
+      "coverage": {
+        "kind": "number",
+        "label": "Coverage",
+        "default": 0.54,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "density": {
+        "kind": "number",
+        "label": "Density",
+        "default": 1.2,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "wind": {
+        "kind": "number",
+        "label": "Wind",
+        "default": 0.15,
+        "min": -1,
+        "max": 1,
+        "step": 0.01
+      },
+      "light": {
+        "kind": "number",
+        "label": "Silver lining",
+        "default": 1.2,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "softness": {
+        "kind": "number",
+        "label": "Edge softness",
+        "default": 0.15,
+        "min": 0.03,
+        "max": 0.4,
+        "step": 0.01
+      },
+      "color": {
+        "kind": "color",
+        "label": "Cloud light",
+        "default": "oklch(0.98 0.012 220)"
+      },
+      "shadowColor": {
+        "kind": "color",
+        "label": "Cloud shadow",
+        "default": "oklch(0.61 0.043 260)"
+      },
+      "skyColor": {
+        "kind": "color",
+        "label": "Sky",
+        "default": "oklch(0.67 0.135 240)"
+      },
+      "transparent": {
+        "kind": "boolean",
+        "label": "Transparent sky",
+        "default": false
+      }
+    },
+    "aurora": {
+      "layers": {
+        "kind": "number",
+        "label": "Ray layers",
+        "default": 40,
+        "min": 8,
+        "max": 100,
+        "step": 1
+      },
+      "auroraSpeed": {
+        "kind": "number",
+        "label": "Curtain speed",
+        "default": 0.32,
+        "min": 0,
+        "max": 4,
+        "step": 0.02
+      },
+      "breathSpeed": {
+        "kind": "number",
+        "label": "Breathing speed",
+        "default": 0.45,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "breath": {
+        "kind": "number",
+        "label": "Breathing amount",
+        "default": 0.08,
+        "min": 0,
+        "max": 0.35,
+        "step": 0.01
+      },
+      "tilt": {
+        "kind": "number",
+        "label": "Camera tilt",
+        "default": 2,
+        "min": 0.2,
+        "max": 5,
+        "step": 0.1
+      },
+      "sway": {
+        "kind": "number",
+        "label": "Camera sway",
+        "default": 0.14,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "fov": {
+        "kind": "number",
+        "label": "Field of view",
+        "default": 1,
+        "min": 0.3,
+        "max": 2.5,
+        "step": 0.05
+      },
+      "color": {
+        "kind": "color",
+        "label": "Lower curtain",
+        "default": "oklch(0.83 0.19 160)"
+      },
+      "topColor": {
+        "kind": "color",
+        "label": "Upper curtain",
+        "default": "oklch(0.56 0.2 302)"
+      },
+      "proportion": {
+        "kind": "number",
+        "label": "Color transition",
+        "default": 0.3,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "stars": {
+        "kind": "number",
+        "label": "Star visibility",
+        "default": 0.8,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      }
+    },
+    "glow": {
+      "shape": {
+        "kind": "select",
+        "label": "Contour",
+        "default": "rounded",
+        "values": [
+          "rounded",
+          "ellipse"
+        ]
+      },
+      "speedMode": {
+        "kind": "select",
+        "label": "Speed units",
+        "default": "duration",
+        "values": [
+          "duration",
+          "pixels"
+        ]
+      },
+      "velocity": {
+        "kind": "number",
+        "label": "Linear speed · px/s",
+        "default": 150,
+        "min": 0,
+        "max": 800,
+        "step": 5
+      },
+      "bloomPlacement": {
+        "kind": "select",
+        "label": "Bloom placement",
+        "default": "outside",
+        "values": [
+          "outside",
+          "inside",
+          "both"
+        ]
+      },
+      "palette": {
+        "kind": "select",
+        "label": "Palette",
+        "default": "custom",
+        "values": [
+          "custom",
+          "neon-cyberpunk",
+          "forest-mystic",
+          "sunset-inferno",
+          "aurora-stream",
+          "abyssal-tempest",
+          "vaporwave-meltdown",
+          "steampunk-copper",
+          "candy-splash",
+          "frostbyte-core",
+          "celestial-gold",
+          "toxic-slime",
+          "nebula-rift",
+          "royal-midnight",
+          "sakura-whisper",
+          "magma-core",
+          "matrix-hacker",
+          "solar-flare",
+          "blue-trail"
+        ]
+      },
+      "width": {
+        "kind": "number",
+        "label": "Border width · px",
+        "default": 2,
+        "min": 0,
+        "max": 14,
+        "step": 0.25
+      },
+      "glow": {
+        "kind": "number",
+        "label": "Bloom radius · px",
+        "default": 14,
+        "min": 0,
+        "max": 50,
+        "step": 1
+      },
+      "intensity": {
+        "kind": "number",
+        "label": "Bloom strength",
+        "default": 0.55,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "duration": {
+        "kind": "number",
+        "label": "Orbit duration · s",
+        "default": 5,
+        "min": 0.5,
+        "max": 30,
+        "step": 0.5
+      },
+      "angle": {
+        "kind": "number",
+        "label": "Starting angle · °",
+        "default": 0,
+        "min": 0,
+        "max": 360,
+        "step": 1
+      },
+      "reverse": {
+        "kind": "boolean",
+        "label": "Reverse orbit",
+        "default": false
+      },
+      "trail": {
+        "kind": "number",
+        "label": "Trail length",
+        "default": 0.6,
+        "min": 0.08,
+        "max": 1,
+        "step": 0.02
+      },
+      "color": {
+        "kind": "color",
+        "label": "Color A",
+        "default": "oklch(0.8 0.14 190)"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Color B",
+        "default": "oklch(0.65 0.22 300)"
+      },
+      "color3": {
+        "kind": "color",
+        "label": "Color C",
+        "default": "oklch(0.78 0.14 55)"
+      }
+    },
+    "fluid": {
+      "kind": {
+        "kind": "select",
+        "label": "Fluid appearance",
+        "default": "ink",
+        "values": [
+          "ink",
+          "smoke",
+          "fire",
+          "neon"
+        ]
+      },
+      "resolution": {
+        "kind": "number",
+        "label": "Simulation resolution",
+        "default": 144,
+        "min": 48,
+        "max": 384,
+        "step": 8
+      },
+      "pressureIterations": {
+        "kind": "number",
+        "label": "Pressure iterations",
+        "default": 20,
+        "min": 6,
+        "max": 48,
+        "step": 1
+      },
+      "vorticity": {
+        "kind": "number",
+        "label": "Vortex strength",
+        "default": 22,
+        "min": 0,
+        "max": 65,
+        "step": 1
+      },
+      "dissipation": {
+        "kind": "number",
+        "label": "Dye fading / second",
+        "default": 0.6,
+        "min": 0.05,
+        "max": 4,
+        "step": 0.05
+      },
+      "viscosity": {
+        "kind": "number",
+        "label": "Velocity damping",
+        "default": 0.3,
+        "min": 0,
+        "max": 4,
+        "step": 0.05
+      },
+      "radius": {
+        "kind": "number",
+        "label": "Brush radius",
+        "default": 0.048,
+        "min": 0.008,
+        "max": 0.18,
+        "step": 0.002
+      },
+      "force": {
+        "kind": "number",
+        "label": "Pointer impulse",
+        "default": 55,
+        "min": 2,
+        "max": 160,
+        "step": 1
+      },
+      "buoyancy": {
+        "kind": "number",
+        "label": "Upward lift",
+        "default": 0.45,
+        "min": 0,
+        "max": 4,
+        "step": 0.05
+      },
+      "shading": {
+        "kind": "number",
+        "label": "Density lighting",
+        "default": 0.65,
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      "color": {
+        "kind": "color",
+        "label": "Dye color",
+        "default": "oklch(.73 .17 195)"
+      },
+      "rainbow": {
+        "kind": "boolean",
+        "label": "Color cycle",
+        "default": true
+      },
+      "autoEmit": {
+        "kind": "boolean",
+        "label": "Automatic source",
+        "default": true
+      },
+      "interactive": {
+        "kind": "boolean",
+        "label": "Pointer interaction",
+        "default": true
+      }
+    },
+    "trail": {
+      "kind": {
+        "kind": "select",
+        "label": "Particle shape",
+        "default": "stars",
+        "values": [
+          "stars",
+          "flowers",
+          "petals",
+          "smoke",
+          "embers",
+          "bubbles",
+          "fireflies",
+          "snow",
+          "ribbons",
+          "comet",
+          "confetti",
+          "mixed"
+        ]
+      },
+      "trigger": {
+        "kind": "select",
+        "label": "Emission trigger",
+        "default": "move",
+        "values": [
+          "move",
+          "hover",
+          "press",
+          "click",
+          "auto",
+          "both",
+          "manual"
+        ]
+      },
+      "throttle": {
+        "kind": "select",
+        "label": "Trail spacing method",
+        "default": "distance",
+        "values": [
+          "distance",
+          "time"
+        ]
+      },
+      "distanceInterval": {
+        "kind": "number",
+        "label": "Spacing · CSS px",
+        "default": 12,
+        "min": 1,
+        "max": 160,
+        "step": 1
+      },
+      "timeInterval": {
+        "kind": "number",
+        "label": "Interval · ms",
+        "default": 32,
+        "min": 4,
+        "max": 1000,
+        "step": 1
+      },
+      "burstCount": {
+        "kind": "number",
+        "label": "Click / manual burst size",
+        "default": 24,
+        "min": 1,
+        "max": 160,
+        "step": 1
+      },
+      "colorMode": {
+        "kind": "select",
+        "label": "Particle colors",
+        "default": "palette",
+        "values": [
+          "palette",
+          "gradient",
+          "rainbow",
+          "single"
+        ]
+      },
+      "variantMode": {
+        "kind": "select",
+        "label": "Shape selection",
+        "default": "random",
+        "values": [
+          "random",
+          "cycle",
+          "fixed"
+        ]
+      },
+      "variant": {
+        "kind": "number",
+        "label": "Fixed shape variant",
+        "default": 0,
+        "min": 0,
+        "max": 3,
+        "step": 1
+      },
+      "mix": {
+        "kind": "select",
+        "label": "Mixed shape collection",
+        "default": "botanical",
+        "values": [
+          "botanical",
+          "celestial",
+          "celebration",
+          "all"
+        ]
+      },
+      "color3": {
+        "kind": "color",
+        "label": "Palette color C",
+        "default": "oklch(.78 .14 210)"
+      },
+      "color4": {
+        "kind": "color",
+        "label": "Palette color D",
+        "default": "oklch(.83 .13 130)"
+      },
+      "sizeVariation": {
+        "kind": "number",
+        "label": "Size variation",
+        "default": 0.6,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "count": {
+        "kind": "number",
+        "label": "Particle budget",
+        "default": 450,
+        "min": 40,
+        "max": 1200,
+        "step": 10
+      },
+      "emission": {
+        "kind": "number",
+        "label": "Legacy emission / second alias",
+        "default": 31.25,
+        "min": 1,
+        "max": 250,
+        "step": 1
+      },
+      "size": {
+        "kind": "number",
+        "label": "Particle size · px",
+        "default": 14,
+        "min": 2,
+        "max": 60,
+        "step": 1
+      },
+      "life": {
+        "kind": "number",
+        "label": "Lifetime · s",
+        "default": 2.4,
+        "min": 0.3,
+        "max": 8,
+        "step": 0.1
+      },
+      "gravity": {
+        "kind": "number",
+        "label": "Gravity · px/s²",
+        "default": 22,
+        "min": -180,
+        "max": 240,
+        "step": 2
+      },
+      "wind": {
+        "kind": "number",
+        "label": "Wind · px/s",
+        "default": 0,
+        "min": -200,
+        "max": 200,
+        "step": 2
+      },
+      "turbulence": {
+        "kind": "number",
+        "label": "Swirl",
+        "default": 1,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "spread": {
+        "kind": "number",
+        "label": "Emission spread",
+        "default": 28,
+        "min": 0,
+        "max": 140,
+        "step": 2
+      },
+      "color": {
+        "kind": "color",
+        "label": "Primary color",
+        "default": "oklch(.88 .12 80)"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Secondary color",
+        "default": "oklch(.7 .19 335)"
+      },
+      "rainbow": {
+        "kind": "boolean",
+        "label": "Color cycle",
+        "default": false
+      },
+      "autoEmit": {
+        "kind": "boolean",
+        "label": "Legacy automatic orbit alias",
+        "default": false
+      },
+      "interactive": {
+        "kind": "boolean",
+        "label": "Pointer interaction",
+        "default": true
+      }
+    },
+    "field": {
+      "rainSpeed": {
+        "kind": "number",
+        "label": "Fall speed · CSS px/s",
+        "default": 620,
+        "min": 0,
+        "max": 1800,
+        "step": 10
+      },
+      "rainWind": {
+        "kind": "number",
+        "label": "Crosswind · CSS px/s",
+        "default": 35,
+        "min": -450,
+        "max": 450,
+        "step": 5
+      },
+      "rainGust": {
+        "kind": "number",
+        "label": "Gust variation",
+        "default": 0.12,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "rainDepth": {
+        "kind": "number",
+        "label": "Depth / speed variation",
+        "default": 0.7,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "rainLength": {
+        "kind": "number",
+        "label": "Blur length at base speed · px",
+        "default": 26,
+        "min": 2,
+        "max": 100,
+        "step": 1
+      },
+      "rainDensity": {
+        "kind": "number",
+        "label": "Rain density",
+        "default": 0.55,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "rainWidth": {
+        "kind": "number",
+        "label": "Streak width · px",
+        "default": 1.2,
+        "min": 0.4,
+        "max": 3,
+        "step": 0.1
+      },
+      "kind": {
+        "kind": "select",
+        "label": "Field",
+        "default": "ocean",
+        "values": [
+          "ocean",
+          "lava",
+          "nebula",
+          "rain",
+          "iridescence",
+          "magnetic"
+        ]
+      },
+      "oceanAmplitude": {
+        "kind": "number",
+        "label": "Wave relief",
+        "default": 1,
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      "interactionMode": {
+        "kind": "select",
+        "label": "Motion source",
+        "default": "both",
+        "values": [
+          "auto",
+          "pointer",
+          "both"
+        ]
+      },
+      "scale": {
+        "kind": "number",
+        "label": "Pattern scale",
+        "default": 3,
+        "min": 0.4,
+        "max": 12,
+        "step": 0.1
+      },
+      "intensity": {
+        "kind": "number",
+        "label": "Intensity",
+        "default": 1,
+        "min": 0,
+        "max": 2.5,
+        "step": 0.05
+      },
+      "detail": {
+        "kind": "number",
+        "label": "Detail",
+        "default": 5,
+        "min": 2,
+        "max": 8,
+        "step": 1
+      },
+      "distortion": {
+        "kind": "number",
+        "label": "Domain distortion",
+        "default": 0.6,
+        "min": 0,
+        "max": 2,
+        "step": 0.02
+      },
+      "wind": {
+        "kind": "number",
+        "label": "Drift",
+        "default": 0.3,
+        "min": -2,
+        "max": 2,
+        "step": 0.05
+      },
+      "color": {
+        "kind": "color",
+        "label": "Primary",
+        "default": "oklch(.51 .13 227)"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Secondary",
+        "default": "oklch(.9 .07 170)"
+      },
+      "transparent": {
+        "kind": "boolean",
+        "label": "Transparent background",
+        "default": false
+      },
+      "interactive": {
+        "kind": "boolean",
+        "label": "Pointer influence",
+        "default": true
+      }
+    },
+    "sea": {
+      "waveHeight": {
+        "kind": "number",
+        "label": "Wave amplitude",
+        "default": 0.12,
+        "min": 0,
+        "max": 0.8,
+        "step": 0.005
+      },
+      "waveSpeed": {
+        "kind": "number",
+        "label": "Wave travel speed",
+        "default": 1,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "waveDirection": {
+        "kind": "number",
+        "label": "Wave heading · °",
+        "default": 18,
+        "min": -180,
+        "max": 180,
+        "step": 1
+      },
+      "ripples": {
+        "kind": "number",
+        "label": "Fine ripples",
+        "default": 0.25,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "choppiness": {
+        "kind": "number",
+        "label": "Crest sharpness",
+        "default": 0.55,
+        "min": 0,
+        "max": 2.2,
+        "step": 0.05
+      },
+      "waveScale": {
+        "kind": "number",
+        "label": "Wave frequency",
+        "default": 1.2,
+        "min": 0.3,
+        "max": 3,
+        "step": 0.05
+      },
+      "wind": {
+        "kind": "number",
+        "label": "Wind ripple strength",
+        "default": 0.5,
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      "horizon": {
+        "kind": "number",
+        "label": "Horizon height",
+        "default": 0.6,
+        "min": 0.35,
+        "max": 0.85,
+        "step": 0.01
+      },
+      "sunElevation": {
+        "kind": "number",
+        "label": "Sun elevation",
+        "default": 0.22,
+        "min": -0.15,
+        "max": 1,
+        "step": 0.01
+      },
+      "sunAzimuth": {
+        "kind": "number",
+        "label": "Sun horizontal position",
+        "default": -0.35,
+        "min": -1.5,
+        "max": 1.5,
+        "step": 0.05
+      },
+      "sunSize": {
+        "kind": "number",
+        "label": "Sun / moon disc size",
+        "default": 0.035,
+        "min": 0.005,
+        "max": 0.08,
+        "step": 0.001
+      },
+      "sunColor": {
+        "kind": "color",
+        "label": "Sun / moon color",
+        "default": "#ffdda4"
+      },
+      "skyColor": {
+        "kind": "color",
+        "label": "Upper sky",
+        "default": "#406fa1"
+      },
+      "horizonColor": {
+        "kind": "color",
+        "label": "Horizon light",
+        "default": "#ffc5a1"
+      },
+      "waterColor": {
+        "kind": "color",
+        "label": "Water depth",
+        "default": "#083e55"
+      },
+      "fog": {
+        "kind": "number",
+        "label": "Horizon mist",
+        "default": 0.035,
+        "min": 0.005,
+        "max": 0.15,
+        "step": 0.005
+      },
+      "reflection": {
+        "kind": "number",
+        "label": "Reflectivity",
+        "default": 0.7,
+        "min": 0,
+        "max": 1,
+        "step": 0.05
+      },
+      "detail": {
+        "kind": "number",
+        "label": "Wave octaves",
+        "default": 5,
+        "min": 2,
+        "max": 7,
+        "step": 1
+      },
+      "interactive": {
+        "kind": "boolean",
+        "label": "Legacy interaction (ignored)",
+        "default": false
+      }
+    },
+    "art": {
+      "kind": {
+        "kind": "select",
+        "label": "Optical field",
+        "default": "metaballs",
+        "values": [
+          "metaballs",
+          "silk",
+          "interference",
+          "tunnel"
+        ]
+      },
+      "interactionMode": {
+        "kind": "select",
+        "label": "Motion source",
+        "default": "both",
+        "values": [
+          "auto",
+          "pointer",
+          "both"
+        ]
+      },
+      "interactionTrigger": {
+        "kind": "select",
+        "label": "Brush activation",
+        "default": "move",
+        "values": [
+          "move",
+          "press"
+        ]
+      },
+      "interactionAction": {
+        "kind": "select",
+        "label": "Metal brush",
+        "default": "stir",
+        "values": [
+          "stir",
+          "attract"
+        ]
+      },
+      "interactionRadius": {
+        "kind": "number",
+        "label": "Brush radius · CSS px",
+        "default": 170,
+        "min": 35,
+        "max": 400,
+        "step": 5
+      },
+      "interactionStrength": {
+        "kind": "number",
+        "label": "Brush strength",
+        "default": 1,
+        "min": 0,
+        "max": 3,
+        "step": 0.05
+      },
+      "viscosity": {
+        "kind": "number",
+        "label": "Motion damping",
+        "default": 4.5,
+        "min": 1,
+        "max": 12,
+        "step": 0.25
+      },
+      "scale": {
+        "kind": "number",
+        "label": "Structure scale",
+        "default": 1,
+        "min": 0.4,
+        "max": 3,
+        "step": 0.05
+      },
+      "amount": {
+        "kind": "number",
+        "label": "Structures / folds",
+        "default": 6,
+        "min": 3,
+        "max": 10,
+        "step": 1
+      },
+      "relief": {
+        "kind": "number",
+        "label": "Relief / distortion",
+        "default": 0.65,
+        "min": 0.1,
+        "max": 1.5,
+        "step": 0.05
+      },
+      "lightAngle": {
+        "kind": "number",
+        "label": "Light azimuth · °",
+        "default": -40,
+        "min": -180,
+        "max": 180,
+        "step": 1
+      },
+      "color": {
+        "kind": "color",
+        "label": "Material body",
+        "default": "#264e68"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Reflected light",
+        "default": "#e5bc7c"
+      },
+      "background": {
+        "kind": "color",
+        "label": "Background",
+        "default": "#080d16"
+      },
+      "transparent": {
+        "kind": "boolean",
+        "label": "Transparent background",
+        "default": false
+      },
+      "interactive": {
+        "kind": "boolean",
+        "label": "Pointer interaction",
+        "default": true
+      }
+    },
+    "sketch": {
+      "kind": {
+        "kind": "select",
+        "label": "Kinetic drawing",
+        "default": "orbit",
+        "values": [
+          "orbit",
+          "constellation",
+          "lightning",
+          "blobs",
+          "jellyfish"
+        ]
+      },
+      "interactionMode": {
+        "kind": "select",
+        "label": "Motion source",
+        "default": "auto",
+        "values": [
+          "auto",
+          "pointer",
+          "both"
+        ]
+      },
+      "strikeTrigger": {
+        "kind": "select",
+        "label": "Strike trigger",
+        "default": "auto",
+        "values": [
+          "auto",
+          "click",
+          "both",
+          "manual"
+        ]
+      },
+      "jaggedness": {
+        "kind": "number",
+        "label": "Lightning irregularity",
+        "default": 0.65,
+        "min": 0.15,
+        "max": 1.4,
+        "step": 0.05
+      },
+      "count": {
+        "kind": "number",
+        "label": "Elements",
+        "default": 72,
+        "min": 12,
+        "max": 220,
+        "step": 1
+      },
+      "scale": {
+        "kind": "number",
+        "label": "Composition scale",
+        "default": 1,
+        "min": 0.3,
+        "max": 1.6,
+        "step": 0.05
+      },
+      "depth": {
+        "kind": "number",
+        "label": "Perspective depth",
+        "default": 1,
+        "min": 0.2,
+        "max": 2,
+        "step": 0.05
+      },
+      "width": {
+        "kind": "number",
+        "label": "Line width · px",
+        "default": 1.2,
+        "min": 0.3,
+        "max": 5,
+        "step": 0.1
+      },
+      "linkDistance": {
+        "kind": "number",
+        "label": "Connection reach · px",
+        "default": 100,
+        "min": 35,
+        "max": 230,
+        "step": 5
+      },
+      "branchSpread": {
+        "kind": "number",
+        "label": "Branch divergence · °",
+        "default": 32,
+        "min": 8,
+        "max": 65,
+        "step": 1
+      },
+      "branchLength": {
+        "kind": "number",
+        "label": "Branch length",
+        "default": 0.34,
+        "min": 0.06,
+        "max": 0.8,
+        "step": 0.02
+      },
+      "tortuosity": {
+        "kind": "number",
+        "label": "Large-scale meander",
+        "default": 0.42,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "taper": {
+        "kind": "number",
+        "label": "Branch attenuation",
+        "default": 0.58,
+        "min": 0.15,
+        "max": 0.9,
+        "step": 0.01
+      },
+      "strikeDuration": {
+        "kind": "number",
+        "label": "Discharge persistence · s",
+        "default": 0.7,
+        "min": 0.1,
+        "max": 2,
+        "step": 0.05
+      },
+      "strikeOriginX": {
+        "kind": "number",
+        "label": "Origin X",
+        "default": 0.5,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "strikeOriginY": {
+        "kind": "number",
+        "label": "Origin Y · from top",
+        "default": 0.02,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "strikeTargetX": {
+        "kind": "number",
+        "label": "Target X",
+        "default": 0.52,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "strikeTargetY": {
+        "kind": "number",
+        "label": "Target Y · from top",
+        "default": 0.98,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "strikeWander": {
+        "kind": "number",
+        "label": "Endpoint variation",
+        "default": 0.25,
+        "min": 0,
+        "max": 0.8,
+        "step": 0.01
+      },
+      "branches": {
+        "kind": "number",
+        "label": "Lightning branches",
+        "default": 5,
+        "min": 0,
+        "max": 12,
+        "step": 1
+      },
+      "strikeInterval": {
+        "kind": "number",
+        "label": "Strike interval · s",
+        "default": 4,
+        "min": 1.5,
+        "max": 15,
+        "step": 0.5
+      },
+      "bloom": {
+        "kind": "number",
+        "label": "Soft glow · px",
+        "default": 12,
+        "min": 0,
+        "max": 25,
+        "step": 1
+      },
+      "color": {
+        "kind": "color",
+        "label": "Primary",
+        "default": "#65d9d7"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Secondary",
+        "default": "#eab5ec"
+      },
+      "interactive": {
+        "kind": "boolean",
+        "label": "Pointer interaction",
+        "default": true
+      }
+    },
+    "highlight": {
+      "kind": {
+        "kind": "select",
+        "label": "Surface light",
+        "default": "spotlight",
+        "values": [
+          "spotlight",
+          "sheen",
+          "ripple",
+          "sparkle",
+          "foil",
+          "edge"
+        ]
+      },
+      "activation": {
+        "kind": "select",
+        "label": "Activation",
+        "default": "hover",
+        "values": [
+          "auto",
+          "hover",
+          "press",
+          "click",
+          "focus",
+          "manual"
+        ]
+      },
+      "motionSource": {
+        "kind": "select",
+        "label": "Light position",
+        "default": "pointer",
+        "values": [
+          "pointer",
+          "auto",
+          "both"
+        ],
+        "kinds": [
+          "spotlight",
+          "foil",
+          "edge"
+        ]
+      },
+      "radius": {
+        "kind": "number",
+        "label": "Light / ripple radius · px",
+        "default": 160,
+        "min": 8,
+        "max": 600,
+        "step": 2,
+        "kinds": [
+          "spotlight",
+          "ripple",
+          "edge"
+        ]
+      },
+      "softness": {
+        "kind": "number",
+        "label": "Light softness",
+        "default": 0.75,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "spotlight",
+          "sheen",
+          "edge"
+        ]
+      },
+      "intensity": {
+        "kind": "number",
+        "label": "Light intensity",
+        "default": 0.65,
+        "min": 0,
+        "max": 2,
+        "step": 0.02
+      },
+      "color": {
+        "kind": "color",
+        "label": "Primary light",
+        "default": "#91e8df"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Secondary light",
+        "default": "#e6b3ee",
+        "kinds": [
+          "foil",
+          "sparkle",
+          "ripple",
+          "sheen"
+        ]
+      },
+      "color3": {
+        "kind": "color",
+        "label": "Third reflection",
+        "default": "#edbf75",
+        "kinds": [
+          "foil"
+        ]
+      },
+      "duration": {
+        "kind": "number",
+        "label": "Cycle / pulse duration · s",
+        "default": 1.4,
+        "min": 0.1,
+        "max": 12,
+        "step": 0.05,
+        "kinds": [
+          "sheen",
+          "ripple",
+          "sparkle"
+        ]
+      },
+      "interval": {
+        "kind": "number",
+        "label": "Automatic repeat interval · s",
+        "default": 3,
+        "min": 0.15,
+        "max": 20,
+        "step": 0.05,
+        "kinds": [
+          "sheen",
+          "ripple"
+        ]
+      },
+      "angle": {
+        "kind": "number",
+        "label": "Light angle · °",
+        "default": -25,
+        "min": -180,
+        "max": 180,
+        "step": 1,
+        "kinds": [
+          "sheen",
+          "foil"
+        ]
+      },
+      "bandWidth": {
+        "kind": "number",
+        "label": "Sweep band · px",
+        "default": 100,
+        "min": 4,
+        "max": 600,
+        "step": 2,
+        "kinds": [
+          "sheen"
+        ]
+      },
+      "rippleStyle": {
+        "kind": "select",
+        "label": "Ripple drawing",
+        "default": "ring",
+        "values": [
+          "ring",
+          "filled",
+          "double"
+        ],
+        "kinds": [
+          "ripple"
+        ]
+      },
+      "lineWidth": {
+        "kind": "number",
+        "label": "Stroke · px",
+        "default": 1.8,
+        "min": 0.25,
+        "max": 12,
+        "step": 0.25,
+        "kinds": [
+          "ripple",
+          "edge"
+        ]
+      },
+      "count": {
+        "kind": "number",
+        "label": "Sparkle count",
+        "default": 30,
+        "min": 0,
+        "max": 120,
+        "step": 1,
+        "kinds": [
+          "sparkle"
+        ]
+      },
+      "sparkleSize": {
+        "kind": "number",
+        "label": "Sparkle size · px",
+        "default": 5,
+        "min": 1,
+        "max": 24,
+        "step": 0.5,
+        "kinds": [
+          "sparkle"
+        ]
+      },
+      "texture": {
+        "kind": "number",
+        "label": "Foil microstructure",
+        "default": 0.4,
+        "min": 0,
+        "max": 1,
+        "step": 0.02,
+        "kinds": [
+          "foil"
+        ]
+      },
+      "follow": {
+        "kind": "number",
+        "label": "Light smoothing · s",
+        "default": 0.12,
+        "min": 0,
+        "max": 1,
+        "step": 0.02,
+        "kinds": [
+          "spotlight",
+          "foil",
+          "edge"
+        ]
+      },
+      "centerX": {
+        "kind": "number",
+        "label": "Rest / manual center X",
+        "default": 0.5,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "spotlight",
+          "foil",
+          "edge",
+          "ripple"
+        ]
+      },
+      "centerY": {
+        "kind": "number",
+        "label": "Rest / manual center Y · from top",
+        "default": 0.5,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "spotlight",
+          "foil",
+          "edge",
+          "ripple"
+        ]
+      },
+      "clip": {
+        "kind": "boolean",
+        "label": "Clip to the rounded element",
+        "default": true
+      },
+      "maxPulses": {
+        "kind": "number",
+        "label": "Maximum simultaneous pulses",
+        "default": 12,
+        "min": 1,
+        "max": 40,
+        "step": 1,
+        "kinds": [
+          "ripple",
+          "sheen"
+        ]
+      },
+      "idleIntensity": {
+        "kind": "number",
+        "label": "Resting light intensity",
+        "default": 0,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "spotlight",
+          "foil",
+          "edge"
+        ]
+      }
+    },
+    "backdrop": {
+      "kind": {
+        "kind": "select",
+        "label": "Background composition",
+        "default": "mesh",
+        "values": [
+          "mesh",
+          "bokeh",
+          "beams",
+          "shadows",
+          "waves",
+          "contours"
+        ]
+      },
+      "color": {
+        "kind": "color",
+        "label": "Color A",
+        "default": "#246c71"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Color B",
+        "default": "#554f89",
+        "kinds": [
+          "mesh",
+          "bokeh",
+          "beams",
+          "waves",
+          "contours"
+        ]
+      },
+      "color3": {
+        "kind": "color",
+        "label": "Color C",
+        "default": "#a76b58",
+        "kinds": [
+          "mesh",
+          "bokeh",
+          "beams",
+          "waves"
+        ]
+      },
+      "background": {
+        "kind": "color",
+        "label": "Base color",
+        "default": "#07191f"
+      },
+      "transparent": {
+        "kind": "boolean",
+        "label": "Transparent base",
+        "default": false
+      },
+      "intensity": {
+        "kind": "number",
+        "label": "Layer intensity",
+        "default": 0.7,
+        "min": 0,
+        "max": 1.5,
+        "step": 0.02
+      },
+      "count": {
+        "kind": "number",
+        "label": "Layers / elements",
+        "default": 6,
+        "min": 1,
+        "max": 80,
+        "step": 1
+      },
+      "scale": {
+        "kind": "number",
+        "label": "Composition scale",
+        "default": 1,
+        "min": 0.15,
+        "max": 4,
+        "step": 0.05
+      },
+      "driftSpeed": {
+        "kind": "number",
+        "label": "Drift / propagation speed",
+        "default": 0.2,
+        "min": 0,
+        "max": 3,
+        "step": 0.02
+      },
+      "amplitude": {
+        "kind": "number",
+        "label": "Motion / wave amplitude",
+        "default": 0.25,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "angle": {
+        "kind": "number",
+        "label": "Direction · °",
+        "default": -25,
+        "min": -180,
+        "max": 180,
+        "step": 1,
+        "kinds": [
+          "mesh",
+          "bokeh",
+          "beams",
+          "shadows"
+        ]
+      },
+      "grain": {
+        "kind": "number",
+        "label": "Static fine grain",
+        "default": 0.035,
+        "min": 0,
+        "max": 0.3,
+        "step": 0.005
+      },
+      "vignette": {
+        "kind": "number",
+        "label": "Edge shading",
+        "default": 0.2,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "softness": {
+        "kind": "number",
+        "label": "Softness",
+        "default": 0.8,
+        "min": 0,
+        "max": 1,
+        "step": 0.02,
+        "kinds": [
+          "mesh",
+          "bokeh",
+          "beams",
+          "shadows"
+        ]
+      },
+      "bokehShape": {
+        "kind": "select",
+        "label": "Bokeh aperture",
+        "default": "circle",
+        "values": [
+          "circle",
+          "hexagon",
+          "octagon"
+        ],
+        "kinds": [
+          "bokeh"
+        ]
+      },
+      "lightX": {
+        "kind": "number",
+        "label": "Light origin X",
+        "default": 0.68,
+        "min": -0.5,
+        "max": 1.5,
+        "step": 0.01,
+        "kinds": [
+          "beams",
+          "shadows"
+        ]
+      },
+      "lightY": {
+        "kind": "number",
+        "label": "Light origin Y",
+        "default": -0.15,
+        "min": -0.8,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "beams",
+          "shadows"
+        ]
+      },
+      "shadowKind": {
+        "kind": "select",
+        "label": "Shadow caster",
+        "default": "window",
+        "values": [
+          "window",
+          "leaves",
+          "blinds"
+        ],
+        "kinds": [
+          "shadows"
+        ]
+      },
+      "edge": {
+        "kind": "select",
+        "label": "Wave attachment",
+        "default": "bottom",
+        "values": [
+          "bottom",
+          "top",
+          "left",
+          "right"
+        ],
+        "kinds": [
+          "waves"
+        ]
+      },
+      "baseline": {
+        "kind": "number",
+        "label": "Wave base position",
+        "default": 0.62,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "waves"
+        ]
+      },
+      "lineWidth": {
+        "kind": "number",
+        "label": "Contour stroke · px",
+        "default": 1,
+        "min": 0.25,
+        "max": 5,
+        "step": 0.25,
+        "kinds": [
+          "contours"
+        ]
+      },
+      "spacing": {
+        "kind": "number",
+        "label": "Contour interval · px",
+        "default": 14,
+        "min": 4,
+        "max": 60,
+        "step": 1,
+        "kinds": [
+          "contours"
+        ]
+      }
+    },
+    "pattern": {
+      "kind": {
+        "kind": "select",
+        "label": "Pattern construction",
+        "default": "dots",
+        "values": [
+          "dots",
+          "grid",
+          "crosses",
+          "hexagons",
+          "diagonal",
+          "halftone",
+          "arches",
+          "tiles"
+        ]
+      },
+      "color": {
+        "kind": "color",
+        "label": "Pattern ink",
+        "default": "#688e94"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Second ink",
+        "default": "#ce9271",
+        "kinds": [
+          "tiles",
+          "arches",
+          "halftone"
+        ]
+      },
+      "background": {
+        "kind": "color",
+        "label": "Base",
+        "default": "#0b1a22"
+      },
+      "transparent": {
+        "kind": "boolean",
+        "label": "Transparent base",
+        "default": true
+      },
+      "spacing": {
+        "kind": "number",
+        "label": "Cell spacing · CSS px",
+        "default": 26,
+        "min": 6,
+        "max": 140,
+        "step": 1
+      },
+      "size": {
+        "kind": "number",
+        "label": "Mark size · px",
+        "default": 1.4,
+        "min": 0.2,
+        "max": 30,
+        "step": 0.2,
+        "kinds": [
+          "dots",
+          "crosses",
+          "halftone"
+        ]
+      },
+      "lineWidth": {
+        "kind": "number",
+        "label": "Line weight · px",
+        "default": 1,
+        "min": 0.25,
+        "max": 8,
+        "step": 0.25,
+        "kinds": [
+          "grid",
+          "crosses",
+          "hexagons",
+          "diagonal",
+          "arches",
+          "tiles"
+        ]
+      },
+      "angle": {
+        "kind": "number",
+        "label": "Rotation · °",
+        "default": 0,
+        "min": -180,
+        "max": 180,
+        "step": 1
+      },
+      "jitter": {
+        "kind": "number",
+        "label": "Construction irregularity",
+        "default": 0,
+        "min": 0,
+        "max": 0.45,
+        "step": 0.01,
+        "kinds": [
+          "dots",
+          "crosses"
+        ]
+      },
+      "fade": {
+        "kind": "select",
+        "label": "Coverage falloff",
+        "default": "none",
+        "values": [
+          "none",
+          "radial",
+          "left",
+          "right",
+          "top",
+          "bottom"
+        ]
+      },
+      "fadeStrength": {
+        "kind": "number",
+        "label": "Falloff strength",
+        "default": 0.8,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "driftX": {
+        "kind": "number",
+        "label": "Horizontal drift · CSS px/s",
+        "default": 0,
+        "min": -80,
+        "max": 80,
+        "step": 1
+      },
+      "driftY": {
+        "kind": "number",
+        "label": "Vertical drift · CSS px/s",
+        "default": 0,
+        "min": -80,
+        "max": 80,
+        "step": 1
+      },
+      "halftoneContrast": {
+        "kind": "number",
+        "label": "Halftone scale contrast",
+        "default": 0.8,
+        "min": 0,
+        "max": 1,
+        "step": 0.02,
+        "kinds": [
+          "halftone"
+        ]
+      },
+      "alternate": {
+        "kind": "boolean",
+        "label": "Alternate tile orientation",
+        "default": true,
+        "kinds": [
+          "arches",
+          "tiles"
+        ]
+      }
+    },
+    "status": {
+      "kind": {
+        "kind": "select",
+        "label": "Status visualization",
+        "default": "skeleton",
+        "values": [
+          "skeleton",
+          "ring",
+          "bar",
+          "segments",
+          "dots",
+          "equalizer"
+        ]
+      },
+      "color": {
+        "kind": "color",
+        "label": "Active color",
+        "default": "#83ddc7"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Accent color",
+        "default": "#bbbef9"
+      },
+      "trackColor": {
+        "kind": "color",
+        "label": "Track / placeholder",
+        "default": "#24414b"
+      },
+      "value": {
+        "kind": "number",
+        "label": "Progress value",
+        "default": 0.65,
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "ring",
+          "bar",
+          "segments"
+        ]
+      },
+      "indeterminate": {
+        "kind": "boolean",
+        "label": "Indeterminate animation",
+        "default": false,
+        "kinds": [
+          "ring",
+          "bar",
+          "segments"
+        ]
+      },
+      "anchorX": {
+        "kind": "number",
+        "label": "Center X",
+        "default": 0.77,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "anchorY": {
+        "kind": "number",
+        "label": "Center Y · from top",
+        "default": 0.5,
+        "min": 0,
+        "max": 1,
+        "step": 0.01
+      },
+      "size": {
+        "kind": "number",
+        "label": "Graphic size · CSS px",
+        "default": 100,
+        "min": 8,
+        "max": 400,
+        "step": 2,
+        "kinds": [
+          "ring",
+          "dots",
+          "equalizer"
+        ]
+      },
+      "width": {
+        "kind": "number",
+        "label": "Block width · fraction of element",
+        "default": 0.32,
+        "min": 0.05,
+        "max": 1,
+        "step": 0.01,
+        "kinds": [
+          "skeleton",
+          "bar",
+          "segments"
+        ]
+      },
+      "thickness": {
+        "kind": "number",
+        "label": "Track / bar thickness · px",
+        "default": 8,
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "kinds": [
+          "ring",
+          "bar",
+          "segments"
+        ]
+      },
+      "radius": {
+        "kind": "number",
+        "label": "Corner radius · px",
+        "default": 8,
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "kinds": [
+          "skeleton",
+          "bar",
+          "segments",
+          "equalizer"
+        ]
+      },
+      "cycle": {
+        "kind": "number",
+        "label": "Animation duration · s",
+        "default": 2,
+        "min": 0.4,
+        "max": 10,
+        "step": 0.1
+      },
+      "count": {
+        "kind": "number",
+        "label": "Segments / dots / columns",
+        "default": 7,
+        "min": 2,
+        "max": 40,
+        "step": 1,
+        "kinds": [
+          "segments",
+          "dots",
+          "equalizer"
+        ]
+      },
+      "gap": {
+        "kind": "number",
+        "label": "Gap · CSS px",
+        "default": 12,
+        "min": 0,
+        "max": 48,
+        "step": 1,
+        "kinds": [
+          "segments",
+          "skeleton",
+          "equalizer"
+        ]
+      },
+      "lineHeight": {
+        "kind": "number",
+        "label": "Text bar height · CSS px",
+        "default": 10,
+        "min": 2,
+        "max": 32,
+        "step": 1,
+        "kinds": [
+          "skeleton"
+        ]
+      },
+      "avatarSize": {
+        "kind": "number",
+        "label": "Avatar diameter · CSS px",
+        "default": 38,
+        "min": 12,
+        "max": 120,
+        "step": 1,
+        "kinds": [
+          "skeleton"
+        ]
+      },
+      "avatarGap": {
+        "kind": "number",
+        "label": "Avatar / text gap · CSS px",
+        "default": 10,
+        "min": 0,
+        "max": 48,
+        "step": 1,
+        "kinds": [
+          "skeleton"
+        ]
+      },
+      "sweep": {
+        "kind": "number",
+        "label": "Track circumference · degrees",
+        "default": 360,
+        "min": 30,
+        "max": 360,
+        "step": 5,
+        "kinds": [
+          "ring"
+        ]
+      },
+      "angle": {
+        "kind": "number",
+        "label": "Ring start angle · degrees",
+        "default": -90,
+        "min": -180,
+        "max": 180,
+        "step": 1,
+        "kinds": [
+          "ring"
+        ]
+      },
+      "shimmer": {
+        "kind": "boolean",
+        "label": "Placeholder sheen",
+        "default": true,
+        "kinds": [
+          "skeleton"
+        ]
+      },
+      "skeletonLayout": {
+        "kind": "select",
+        "label": "Placeholder layout",
+        "default": "article",
+        "values": [
+          "article",
+          "avatar",
+          "card",
+          "lines"
+        ],
+        "kinds": [
+          "skeleton"
+        ]
+      },
+      "lines": {
+        "kind": "number",
+        "label": "Text placeholder lines",
+        "default": 4,
+        "min": 1,
+        "max": 8,
+        "step": 1,
+        "kinds": [
+          "skeleton"
+        ]
+      },
+      "amplitude": {
+        "kind": "number",
+        "label": "Motion amplitude",
+        "default": 0.6,
+        "min": 0,
+        "max": 1,
+        "step": 0.02,
+        "kinds": [
+          "dots",
+          "equalizer"
+        ]
+      },
+      "lineCap": {
+        "kind": "select",
+        "label": "Stroke cap",
+        "default": "round",
+        "values": [
+          "round",
+          "butt"
+        ],
+        "kinds": [
+          "ring"
+        ]
+      },
+      "reverse": {
+        "kind": "boolean",
+        "label": "Reverse direction",
+        "default": false
+      }
+    },
+    "fall": {
+      "kind": {
+        "kind": "select",
+        "label": "Falling material",
+        "default": "snow",
+        "values": [
+          "snow",
+          "leaves",
+          "petals",
+          "seeds"
+        ]
+      },
+      "shape": {
+        "kind": "select",
+        "label": "Particle shape",
+        "default": "mixed",
+        "values": [
+          "mixed",
+          "round",
+          "flake",
+          "crystal",
+          "maple",
+          "oak",
+          "birch",
+          "cherry",
+          "oval",
+          "rose",
+          "parachute",
+          "tuft"
+        ],
+        "valuesByKind": {
+          "snow": [
+            "mixed",
+            "round",
+            "flake",
+            "crystal"
+          ],
+          "leaves": [
+            "mixed",
+            "maple",
+            "oak",
+            "birch"
+          ],
+          "petals": [
+            "mixed",
+            "cherry",
+            "oval",
+            "rose"
+          ],
+          "seeds": [
+            "mixed",
+            "parachute",
+            "tuft"
+          ]
+        }
+      },
+      "fallSpeed": {
+        "kind": "number",
+        "label": "Fall speed · CSS px/s",
+        "default": 55,
+        "min": 0,
+        "max": 500,
+        "step": 1
+      },
+      "wind": {
+        "kind": "number",
+        "label": "Crosswind · CSS px/s",
+        "default": 12,
+        "min": -300,
+        "max": 300,
+        "step": 1
+      },
+      "gust": {
+        "kind": "number",
+        "label": "Gust velocity · CSS px/s",
+        "default": 14,
+        "min": 0,
+        "max": 200,
+        "step": 1
+      },
+      "gustPeriod": {
+        "kind": "number",
+        "label": "Gust cycle · seconds",
+        "default": 8,
+        "min": 1,
+        "max": 30,
+        "step": 0.5
+      },
+      "sway": {
+        "kind": "number",
+        "label": "Side-to-side drift · CSS px",
+        "default": 16,
+        "min": 0,
+        "max": 120,
+        "step": 1
+      },
+      "swaySpeed": {
+        "kind": "number",
+        "label": "Drift cycles per second",
+        "default": 0.22,
+        "min": 0,
+        "max": 2,
+        "step": 0.02
+      },
+      "tumble": {
+        "kind": "number",
+        "label": "Rotation / flutter speed",
+        "default": 0.6,
+        "min": 0,
+        "max": 4,
+        "step": 0.05
+      },
+      "depth": {
+        "kind": "number",
+        "label": "Depth variation",
+        "default": 0.7,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "size": {
+        "kind": "number",
+        "label": "Near particle size · CSS px",
+        "default": 11,
+        "min": 2,
+        "max": 100,
+        "step": 1
+      },
+      "sizeVariation": {
+        "kind": "number",
+        "label": "Size variation",
+        "default": 0.6,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      },
+      "density": {
+        "kind": "number",
+        "label": "Particles per 100,000 CSS px²",
+        "default": 30,
+        "min": 0,
+        "max": 120,
+        "step": 1
+      },
+      "maxParticles": {
+        "kind": "number",
+        "label": "Particle budget",
+        "default": 400,
+        "min": 0,
+        "max": 1500,
+        "step": 1
+      },
+      "color": {
+        "kind": "color",
+        "label": "Particle color A",
+        "default": "#eef9ff"
+      },
+      "color2": {
+        "kind": "color",
+        "label": "Particle color B",
+        "default": "#c9e6ed"
+      },
+      "color3": {
+        "kind": "color",
+        "label": "Particle color C",
+        "default": "#ffffff"
+      },
+      "colorMode": {
+        "kind": "select",
+        "label": "Color selection",
+        "default": "palette",
+        "values": [
+          "palette",
+          "single"
+        ]
+      },
+      "transparent": {
+        "kind": "boolean",
+        "label": "Transparent background",
+        "default": true
+      },
+      "background": {
+        "kind": "color",
+        "label": "Background",
+        "default": "#10232c"
+      },
+      "softness": {
+        "kind": "number",
+        "label": "Particle edge softness",
+        "default": 0.18,
+        "min": 0,
+        "max": 1,
+        "step": 0.02
+      }
+    }
+  },
+  "presets": {
+    "glass": {
+      "liquid": {},
+      "frosted": {
+        "variant": "frosted",
+        "distortion": 65,
+        "frosting": 0.07,
+        "blur": 0.5,
+        "tintOpacity": 0.08
+      },
+      "clear-lens": {
+        "distortion": 240,
+        "tintOpacity": 0
+      },
+      "soft-frost": {
+        "variant": "frosted",
+        "distortion": 30,
+        "frosting": 0.11,
+        "blur": 7
+      }
+    },
+    "surface": {
+      "wood/oak": {
+        "material": "wood",
+        "color": "oklch(.69 .072 72)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "roughness": 4,
+        "depth": 28,
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "woodSpecies": "oak",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/mahogany": {
+        "color": "oklch(.48 .071 36)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 12,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "mahogany",
+        "woodCut": "quarter-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/walnut": {
+        "material": "wood",
+        "color": "oklch(.43 .047 59)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "roughness": 4,
+        "depth": 42,
+        "contrast": 0.8,
+        "woodSpecies": "walnut",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/pine": {
+        "color": "oklch(.78 .067 80)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 8,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "pine",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.65,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/cherry": {
+        "color": "oklch(.65 .066 53)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 10,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "cherry",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/bamboo": {
+        "orientation": "vertical",
+        "color": "oklch(.79 .073 89)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 3,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "bamboo",
+        "woodCut": "quarter-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/driftwood": {
+        "color": "oklch(0.65 0.02 240)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 10,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "pine",
+        "woodCut": "plain-sawn",
+        "woodFinish": "weathered",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.65,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.8
+      },
+      "wood/burnt": {
+        "color": "oklch(0.25 0.02 40)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 12,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "pine",
+        "woodCut": "plain-sawn",
+        "woodFinish": "charred",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.65,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/maple": {
+        "color": "oklch(.84 .058 78)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 10,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "maple",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.48,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/teak": {
+        "color": "oklch(.62 .071 70)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 10,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "teak",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/cedar": {
+        "color": "oklch(.61 .076 51)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 10,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "cedar",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.65,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/ash": {
+        "color": "oklch(.78 .06 79)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 10,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "ash",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/rosewood": {
+        "color": "oklch(.37 .055 30)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 15,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "rosewood",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/ebony": {
+        "color": "oklch(.24 .012 57)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 10,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "ebony",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "contrast": 0.85,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-oak": {
+        "color": "oklch(.69 .072 72)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "oak",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-mahogany": {
+        "color": "oklch(.48 .071 36)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "mahogany",
+        "woodCut": "quarter-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-walnut": {
+        "color": "oklch(.43 .047 59)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 1,
+        "depth": 42,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "walnut",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-pine": {
+        "color": "oklch(.78 .067 80)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "pine",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-cherry": {
+        "color": "oklch(.65 .066 53)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 1,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "cherry",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-bamboo": {
+        "orientation": "vertical",
+        "color": "oklch(.79 .073 89)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 1,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "bamboo",
+        "woodCut": "quarter-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-driftwood": {
+        "color": "oklch(.78 .067 80)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "pine",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.8
+      },
+      "wood/smooth-burnt": {
+        "color": "oklch(.78 .067 80)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "pine",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-maple": {
+        "color": "oklch(.84 .058 78)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 1,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "maple",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.48,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-teak": {
+        "color": "oklch(.62 .071 70)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "teak",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-cedar": {
+        "color": "oklch(.61 .076 51)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "cedar",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-ash": {
+        "color": "oklch(.78 .06 79)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 1,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "ash",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-rosewood": {
+        "color": "oklch(.37 .055 30)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 2,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "rosewood",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/smooth-ebony": {
+        "color": "oklch(.24 .012 57)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 1,
+        "depth": 28,
+        "roughness": 2,
+        "material": "wood",
+        "woodSpecies": "ebony",
+        "woodCut": "plain-sawn",
+        "woodFinish": "smooth",
+        "contrast": 0.85,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "marble/carrara": {
+        "material": "marble",
+        "color": "oklch(.94 .01 90)",
+        "contrast": 0.62,
+        "depth": 35,
+        "roughness": 2,
+        "fibers": 0.15,
+        "marbleKind": "carrara"
+      },
+      "marble/nero": {
+        "material": "marble",
+        "color": "oklch(.25 .013 260)",
+        "contrast": 1,
+        "depth": 40,
+        "roughness": 1,
+        "fibers": 0.1,
+        "marbleKind": "nero"
+      },
+      "marble/calacatta": {
+        "color": "oklch(0.95 0.01 40)",
+        "grainX": 0.004,
+        "grainY": 0.01,
+        "detail": 10,
+        "depth": 80,
+        "roughness": 9,
+        "material": "marble",
+        "marbleKind": "calacatta"
+      },
+      "marble/statuario": {
+        "color": "oklch(0.92 0.005 240)",
+        "grainX": 0.001,
+        "grainY": 0.01,
+        "detail": 10,
+        "depth": 60,
+        "roughness": 12,
+        "material": "marble",
+        "marbleKind": "statuario"
+      },
+      "paper/watercolor": {
+        "material": "paper",
+        "color": "oklch(.94 .022 88)",
+        "roughness": 5,
+        "contrast": 0.48,
+        "fibers": 0.8,
+        "weathering": 0.06,
+        "paperKind": "watercolor"
+      },
+      "paper/buffalo": {
+        "color": "oklch(0.75 0.12 70)",
+        "grainX": 0.03,
+        "grainY": 0.03,
+        "detail": 5,
+        "depth": 8,
+        "roughness": 1.2,
+        "material": "paper",
+        "paperKind": "cotton"
+      },
+      "wall/default": {
+        "material": "wall",
+        "color": "oklch(.8 .035 90)",
+        "roughness": 5,
+        "contrast": 0.5,
+        "depth": 14
+      },
+      "wood/bleached-ash": {
+        "material": "wood",
+        "color": "oklch(.84 .025 84)",
+        "contrast": 0.8,
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "roughness": 4,
+        "woodSpecies": "ash",
+        "woodCut": "plain-sawn",
+        "woodFinish": "natural",
+        "depth": 28,
+        "fibers": 0.55,
+        "knots": 0.12,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "paper/cotton": {
+        "material": "paper",
+        "color": "oklch(.96 .018 85)",
+        "roughness": 3,
+        "contrast": 0.35,
+        "fibers": 0.65,
+        "weathering": 0.03,
+        "paperKind": "cotton"
+      },
+      "paper/kraft": {
+        "material": "paper",
+        "color": "oklch(.69 .072 72)",
+        "roughness": 4,
+        "contrast": 0.58,
+        "fibers": 0.8,
+        "weathering": 0.18,
+        "paperKind": "kraft"
+      },
+      "paper/parchment": {
+        "material": "paper",
+        "color": "oklch(.87 .065 80)",
+        "roughness": 3,
+        "contrast": 0.65,
+        "fibers": 0.28,
+        "weathering": 0.65,
+        "paperKind": "parchment"
+      },
+      "wall/limewash": {
+        "material": "wall",
+        "color": "oklch(.7 .04 62)",
+        "contrast": 0.7,
+        "roughness": 4,
+        "weathering": 0.55
+      },
+      "linen/natural": {
+        "material": "linen",
+        "color": "oklch(.79 .055 90)",
+        "contrast": 0.7,
+        "roughness": 6,
+        "fibers": 0.65
+      },
+      "linen/indigo": {
+        "material": "linen",
+        "color": "oklch(.36 .065 263)",
+        "contrast": 0.9,
+        "roughness": 5
+      },
+      "slate/charcoal": {
+        "material": "slate",
+        "color": "oklch(.31 .016 240)",
+        "contrast": 0.85,
+        "roughness": 7
+      },
+      "cork/natural": {
+        "material": "cork",
+        "color": "oklch(.66 .075 63)",
+        "contrast": 0.9,
+        "roughness": 8
+      },
+      "sand/dunes": {
+        "material": "sand",
+        "color": "oklch(.82 .073 82)",
+        "contrast": 0.6,
+        "roughness": 6
+      },
+      "granite/salt-pepper": {
+        "material": "granite",
+        "color": "oklch(.65 .013 80)",
+        "contrast": 0.9,
+        "roughness": 5
+      },
+      "wood/quarter-sawn-oak": {
+        "material": "wood",
+        "color": "oklch(.69 .072 72)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "roughness": 4,
+        "depth": 28,
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "woodSpecies": "oak",
+        "woodCut": "quarter-sawn",
+        "woodFinish": "natural",
+        "knots": 0,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/end-grain-oak": {
+        "material": "wood",
+        "color": "oklch(.69 .072 72)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "roughness": 4,
+        "depth": 28,
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "woodSpecies": "oak",
+        "woodCut": "end-grain",
+        "woodFinish": "natural",
+        "knots": 0,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "wood/end-grain-pine": {
+        "color": "oklch(.78 .067 80)",
+        "grainX": 0.002,
+        "grainY": 0.035,
+        "detail": 8,
+        "depth": 28,
+        "roughness": 4,
+        "material": "wood",
+        "woodSpecies": "pine",
+        "woodCut": "end-grain",
+        "woodFinish": "natural",
+        "contrast": 0.8,
+        "fibers": 0.55,
+        "knots": 0,
+        "ringScale": 1,
+        "pores": 1,
+        "weathering": 0.15
+      },
+      "paper/laid": {
+        "material": "paper",
+        "color": "oklch(.96 .018 85)",
+        "roughness": 3,
+        "contrast": 0.55,
+        "fibers": 0.65,
+        "weathering": 0.03,
+        "paperKind": "laid"
+      },
+      "paper/washi": {
+        "material": "paper",
+        "color": "oklch(.96 .018 85)",
+        "roughness": 4,
+        "contrast": 0.5,
+        "fibers": 0.9,
+        "weathering": 0.03,
+        "paperKind": "washi"
+      }
+    },
+    "water": {
+      "pool": {},
+      "shallows": {
+        "texture": "sand",
+        "tint": "oklch(0.76 0.085 175)",
+        "caustic": 0.65,
+        "windX": 0.12,
+        "windY": 0.08,
+        "scale": 5.2
+      },
+      "midnight": {
+        "texture": "none",
+        "tint": "oklch(0.24 0.05 245)",
+        "highlight": "oklch(0.7 0.075 215)",
+        "caustic": 0.28,
+        "speed": 0.5
+      },
+      "current": {
+        "flowSpeed": 0.4,
+        "morphSpeed": 1,
+        "scale": 4,
+        "windX": 3,
+        "windY": 3,
+        "distortion": 0.001,
+        "caustic": 0.25,
+        "ridge": 3,
+        "tint": "oklch(0.55 0.12 230)",
+        "tintOpacity": 0.45,
+        "highlight": "oklch(0.95 0.05 230)"
+      }
+    },
+    "fire": {
+      "hearth": {
+        "model": "classic"
+      },
+      "ribbon-flame": {
+        "model": "ribbon",
+        "spread": 0.52,
+        "height": 1.05,
+        "turbulence": 0.85,
+        "filament": 0.65,
+        "color": "#ac1f06",
+        "midColor": "#f55b10",
+        "coreColor": "#ffd09a",
+        "blueBase": 0.12
+      },
+      "candle": {
+        "model": "candle",
+        "spread": 0.18,
+        "height": 0.82,
+        "turbulence": 0.18,
+        "embers": 0,
+        "blueBase": 0.65,
+        "gravity": 0.18
+      },
+      "embers": {
+        "model": "embers",
+        "height": 0.2,
+        "intensity": 1.2,
+        "embers": 0.85
+      },
+      "burning-border": {
+        "model": "classic",
+        "mode": "out",
+        "direction": "outward",
+        "sourceEdge": "all",
+        "outPolicy": "border",
+        "reach": 100,
+        "height": 0.82,
+        "spread": 1
+      },
+      "flamethrower": {
+        "model": "classic",
+        "scale": 7,
+        "mode": "out",
+        "direction": "right",
+        "sourceEdge": "right",
+        "reach": 240,
+        "height": 1.3,
+        "gravity": 0.4,
+        "spread": 0.4,
+        "flameSpeed": 3.2,
+        "flickerSpeed": 1.4,
+        "turbulence": 0.6
+      },
+      "torch": {
+        "spread": 0.25,
+        "height": 1.05,
+        "scale": 3,
+        "wind": 0.1,
+        "turbulence": 0.55
+      },
+      "inferno": {
+        "height": 1.2,
+        "spread": 1.4,
+        "intensity": 1.4,
+        "turbulence": 1.1,
+        "speed": 1.4
+      },
+      "spectral": {
+        "color": "oklch(0.43 0.19 285)",
+        "midColor": "oklch(0.75 0.14 200)",
+        "coreColor": "oklch(0.98 0.025 200)",
+        "embers": 0.2
+      },
+      "gentle-flame": {
+        "model": "classic",
+        "flameSpeed": 0.45,
+        "flickerSpeed": 0.5,
+        "turbulence": 0.3,
+        "embers": 0.08
+      },
+      "fast-jet": {
+        "model": "classic",
+        "scale": 7,
+        "mode": "out",
+        "direction": "right",
+        "sourceEdge": "right",
+        "reach": 240,
+        "height": 1.3,
+        "gravity": 0.4,
+        "spread": 0.2,
+        "flameSpeed": 5,
+        "flickerSpeed": 1.4,
+        "turbulence": 0.6,
+        "respectGravity": false,
+        "wind": 0,
+        "sourceOffset": 0.5
+      },
+      "edge-candles": {
+        "model": "candle",
+        "mode": "out",
+        "direction": "up",
+        "sourceEdge": "bottom",
+        "outPolicy": "border",
+        "reach": 110,
+        "height": 0.65,
+        "spread": 1
+      }
+    },
+    "smoke": {
+      "plume": {},
+      "incense": {
+        "spread": 0.17,
+        "density": 1.1,
+        "turbulence": 1.2,
+        "rise": 0.22
+      },
+      "billowing": {
+        "spread": 0.94,
+        "density": 2.2,
+        "scale": 2.3,
+        "turbulence": 1.2
+      },
+      "mist": {
+        "spread": 1.4,
+        "density": 0.7,
+        "scale": 1.6,
+        "rise": 0.06,
+        "wind": 0.05
+      }
+    },
+    "clouds": {
+      "cumulus": {},
+      "overcast": {
+        "coverage": 0.78,
+        "density": 1.7,
+        "light": 0.7,
+        "skyColor": "oklch(0.63 0.028 248)"
+      },
+      "sunset": {
+        "skyColor": "#e46446",
+        "color": "#ffbc76",
+        "shadowColor": "#a84c60",
+        "coverage": 0.48,
+        "density": 1,
+        "light": 1.15
+      },
+      "wisps": {
+        "coverage": 0.32,
+        "density": 0.7,
+        "softness": 0.24,
+        "scale": 4
+      }
+    },
+    "aurora": {
+      "borealis": {},
+      "violet": {
+        "color": "oklch(0.65 0.18 270)",
+        "topColor": "oklch(0.74 0.22 330)",
+        "proportion": 0.55
+      },
+      "solar": {
+        "color": "oklch(0.82 0.17 70)",
+        "topColor": "oklch(0.54 0.23 330)"
+      },
+      "quiet": {
+        "speed": 0.25,
+        "breath": 0.03,
+        "sway": 0
+      }
+    },
+    "glow": {
+      "prism": {},
+      "transparent-chase": {
+        "speedMode": "pixels",
+        "velocity": 170,
+        "trail": 0.24,
+        "bloomPlacement": "outside"
+      },
+      "blue-trail": {
+        "palette": "blue-trail",
+        "trail": 1
+      },
+      "ember": {
+        "color": "oklch(0.64 0.23 28)",
+        "color2": "oklch(0.83 0.17 75)",
+        "color3": "oklch(0.99 0.05 105)"
+      },
+      "mono": {
+        "color": "oklch(0.93 0.03 190)",
+        "color2": "oklch(0.93 0.03 190)",
+        "color3": "oklch(0.93 0.03 190)",
+        "trail": 0.3
+      },
+      "neon-cyberpunk": {
+        "palette": "neon-cyberpunk",
+        "trail": 1
+      },
+      "forest-mystic": {
+        "palette": "forest-mystic",
+        "trail": 1
+      },
+      "sunset-inferno": {
+        "palette": "sunset-inferno",
+        "trail": 1
+      },
+      "aurora-stream": {
+        "palette": "aurora-stream",
+        "trail": 1
+      },
+      "abyssal-tempest": {
+        "palette": "abyssal-tempest",
+        "trail": 1
+      },
+      "vaporwave-meltdown": {
+        "palette": "vaporwave-meltdown",
+        "trail": 1
+      },
+      "steampunk-copper": {
+        "palette": "steampunk-copper",
+        "trail": 1
+      },
+      "candy-splash": {
+        "palette": "candy-splash",
+        "trail": 1
+      },
+      "frostbyte-core": {
+        "palette": "frostbyte-core",
+        "trail": 1
+      },
+      "celestial-gold": {
+        "palette": "celestial-gold",
+        "trail": 1
+      },
+      "toxic-slime": {
+        "palette": "toxic-slime",
+        "trail": 1
+      },
+      "nebula-rift": {
+        "palette": "nebula-rift",
+        "trail": 1
+      },
+      "royal-midnight": {
+        "palette": "royal-midnight",
+        "trail": 1
+      },
+      "sakura-whisper": {
+        "palette": "sakura-whisper",
+        "trail": 1
+      },
+      "magma-core": {
+        "palette": "magma-core",
+        "trail": 1
+      },
+      "matrix-hacker": {
+        "palette": "matrix-hacker",
+        "trail": 1
+      },
+      "solar-flare": {
+        "palette": "solar-flare",
+        "trail": 1
+      }
+    },
+    "fluid": {
+      "ink": {},
+      "smoke": {
+        "kind": "smoke",
+        "rainbow": false,
+        "color": "oklch(.8 .01 260)",
+        "dissipation": 0.4,
+        "buoyancy": 1.1,
+        "shading": 1.3
+      },
+      "fire": {
+        "kind": "fire",
+        "rainbow": false,
+        "dissipation": 1.3,
+        "buoyancy": 2.5,
+        "vorticity": 32
+      },
+      "neon": {
+        "kind": "neon",
+        "dissipation": 0.9,
+        "shading": 0.3
+      },
+      "quiet-ink": {
+        "autoEmit": false,
+        "force": 30,
+        "radius": 0.06
+      }
+    },
+    "trail": {
+      "stars": {},
+      "garden": {
+        "kind": "mixed",
+        "mix": "botanical",
+        "size": 20,
+        "emission": 32,
+        "life": 4,
+        "gravity": 28
+      },
+      "flowers": {
+        "kind": "flowers",
+        "size": 20,
+        "emission": 28,
+        "life": 4,
+        "gravity": 28,
+        "color": "oklch(.81 .12 350)",
+        "color2": "oklch(.92 .05 50)"
+      },
+      "petals": {
+        "kind": "petals",
+        "size": 16,
+        "emission": 38,
+        "life": 4,
+        "gravity": 30,
+        "color": "oklch(.82 .13 355)"
+      },
+      "smoke": {
+        "kind": "smoke",
+        "size": 40,
+        "life": 3.6,
+        "gravity": -32,
+        "emission": 40,
+        "color": "oklch(.76 .02 260)"
+      },
+      "embers": {
+        "kind": "embers",
+        "size": 4,
+        "gravity": -75,
+        "life": 2.2,
+        "color": "oklch(.83 .18 65)"
+      },
+      "bubbles": {
+        "kind": "bubbles",
+        "size": 18,
+        "life": 3.8,
+        "gravity": -30,
+        "emission": 30
+      },
+      "fireflies": {
+        "kind": "fireflies",
+        "size": 4,
+        "life": 4,
+        "emission": 25,
+        "gravity": -8,
+        "color": "oklch(.9 .16 115)"
+      },
+      "snow": {
+        "kind": "snow",
+        "size": 7,
+        "gravity": 22,
+        "life": 5,
+        "emission": 30
+      },
+      "ribbons": {
+        "kind": "ribbons",
+        "emission": 120,
+        "size": 12,
+        "life": 1.4,
+        "rainbow": true,
+        "gravity": 0
+      },
+      "comet": {
+        "kind": "comet",
+        "size": 5,
+        "life": 1.2,
+        "emission": 180,
+        "gravity": 0,
+        "color": "oklch(.87 .1 210)"
+      },
+      "confetti": {
+        "kind": "confetti",
+        "size": 10,
+        "life": 3,
+        "emission": 80,
+        "gravity": 110,
+        "rainbow": true
+      }
+    },
+    "field": {
+      "ocean": {},
+      "lava": {
+        "kind": "lava",
+        "color": "oklch(.55 .22 28)",
+        "color2": "oklch(.9 .15 85)",
+        "speed": 0.55,
+        "distortion": 1
+      },
+      "nebula": {
+        "kind": "nebula",
+        "color": "oklch(.54 .17 300)",
+        "color2": "oklch(.73 .13 205)",
+        "speed": 0.4
+      },
+      "rain": {
+        "kind": "rain",
+        "color": "oklch(.64 .09 225)",
+        "color2": "oklch(.94 .025 200)",
+        "transparent": true,
+        "scale": 4
+      },
+      "iridescence": {
+        "kind": "iridescence",
+        "color": "oklch(.8 .13 180)",
+        "color2": "oklch(.72 .19 330)",
+        "speed": 0.35
+      },
+      "magnetic": {
+        "kind": "magnetic",
+        "color": "oklch(.68 .21 295)",
+        "color2": "oklch(.86 .15 175)",
+        "speed": 0.7
+      }
+    },
+    "sea": {
+      "golden": {},
+      "calm": {
+        "waveHeight": 0.035,
+        "choppiness": 0.18,
+        "ripples": 0.12,
+        "wind": 0.25,
+        "waveSpeed": 0.8
+      },
+      "glassy": {
+        "waveHeight": 0,
+        "ripples": 0,
+        "wind": 0
+      },
+      "daylight": {
+        "skyColor": "#326da2",
+        "horizonColor": "#9ac8e6",
+        "sunColor": "#fff4d8",
+        "sunElevation": 0.72,
+        "waterColor": "#085368"
+      },
+      "sunset": {
+        "skyColor": "#513c77",
+        "horizonColor": "#ed6542",
+        "sunColor": "#ffbf7b",
+        "sunElevation": 0.075,
+        "sunAzimuth": -0.1,
+        "waterColor": "#222e46"
+      },
+      "moonlight": {
+        "skyColor": "#060d26",
+        "horizonColor": "#253252",
+        "sunColor": "#cadfff",
+        "sunElevation": 0.36,
+        "sunSize": 0.022,
+        "waterColor": "#051325",
+        "waveHeight": 0.2
+      },
+      "storm": {
+        "skyColor": "#182736",
+        "horizonColor": "#84949b",
+        "sunColor": "#bcc8d4",
+        "sunElevation": 0.7,
+        "sunSize": 0.008,
+        "waveHeight": 0.7,
+        "choppiness": 1.7,
+        "wind": 1.25,
+        "fog": 0.08,
+        "waterColor": "#0b2c34"
+      }
+    },
+    "art": {
+      "metaballs": {},
+      "chrome": {
+        "kind": "metaballs",
+        "color": "#81929b",
+        "color2": "#d6f4ff",
+        "relief": 0.85
+      },
+      "silk": {
+        "kind": "silk",
+        "color": "#7b3869",
+        "color2": "#efbaad",
+        "amount": 7
+      },
+      "interference": {
+        "kind": "interference",
+        "color": "#439ca8",
+        "color2": "#f08d67",
+        "scale": 0.8
+      },
+      "tunnel": {
+        "kind": "tunnel",
+        "color": "#3f7eae",
+        "color2": "#f098c9",
+        "speed": 0.4
+      }
+    },
+    "sketch": {
+      "orbit": {},
+      "constellation": {
+        "kind": "constellation",
+        "color": "#dce5ff",
+        "color2": "#81c6d4",
+        "count": 90,
+        "bloom": 5
+      },
+      "lightning": {
+        "kind": "lightning",
+        "color": "#779bed",
+        "color2": "#e9f4ff",
+        "width": 1.4,
+        "count": 48
+      },
+      "blobs": {
+        "kind": "blobs",
+        "color": "#d388a8",
+        "color2": "#766bdd",
+        "count": 24,
+        "bloom": 0,
+        "speed": 0.35
+      },
+      "jellyfish": {
+        "kind": "jellyfish",
+        "color": "#63cddc",
+        "color2": "#e2a4ed",
+        "count": 60,
+        "bloom": 8,
+        "speed": 0.5
+      },
+      "forked-lightning": {
+        "kind": "lightning",
+        "color": "#779bed",
+        "color2": "#e9f4ff",
+        "width": 1.4,
+        "count": 48,
+        "branches": 8,
+        "branchSpread": 24,
+        "branchLength": 0.48,
+        "tortuosity": 0.6,
+        "jaggedness": 0.6
+      },
+      "cloud-crawler": {
+        "kind": "lightning",
+        "color": "#779bed",
+        "color2": "#e9f4ff",
+        "width": 1.4,
+        "count": 48,
+        "branches": 10,
+        "branchSpread": 45,
+        "branchLength": 0.62,
+        "strikeOriginX": 0.08,
+        "strikeOriginY": 0.2,
+        "strikeTargetX": 0.92,
+        "strikeTargetY": 0.62,
+        "strikeWander": 0.13
+      },
+      "fine-discharge": {
+        "kind": "lightning",
+        "color": "#779bed",
+        "color2": "#e9f4ff",
+        "width": 0.7,
+        "count": 48,
+        "branches": 3,
+        "bloom": 3,
+        "branchLength": 0.24,
+        "tortuosity": 0.26,
+        "strikeDuration": 0.5
+      }
+    },
+    "highlight": {
+      "spotlight": {},
+      "sheen": {
+        "kind": "sheen",
+        "activation": "hover",
+        "color": "#fff5d7",
+        "color2": "#8dcddd",
+        "intensity": 0.65
+      },
+      "ripple": {
+        "kind": "ripple",
+        "activation": "click",
+        "radius": 220,
+        "duration": 0.8,
+        "intensity": 0.6,
+        "color": "#a3e9dc"
+      },
+      "sparkle": {
+        "kind": "sparkle",
+        "activation": "auto",
+        "count": 30,
+        "intensity": 0.65,
+        "color": "#d4f3ee",
+        "color2": "#ffd0ab"
+      },
+      "foil": {
+        "kind": "foil",
+        "activation": "hover",
+        "idleIntensity": 0.22,
+        "color": "#88c9df",
+        "color2": "#d79dce",
+        "color3": "#eec589",
+        "intensity": 0.4,
+        "texture": 0.32
+      },
+      "edge-light": {
+        "kind": "edge",
+        "activation": "hover",
+        "lineWidth": 2.3,
+        "intensity": 1.2,
+        "radius": 160,
+        "color": "#a7edce"
+      },
+      "soft-pulse": {
+        "kind": "ripple",
+        "activation": "auto",
+        "rippleStyle": "filled",
+        "radius": 160,
+        "color": "#6cbeb5",
+        "duration": 2.5,
+        "interval": 4,
+        "intensity": 0.18
+      },
+      "keyboard-focus": {
+        "kind": "edge",
+        "activation": "focus",
+        "motionSource": "auto",
+        "intensity": 1.1,
+        "radius": 450,
+        "color": "#c1e9ff"
+      },
+      "gold-foil": {
+        "kind": "foil",
+        "activation": "hover",
+        "idleIntensity": 0.3,
+        "color": "#c69a48",
+        "color2": "#f4d990",
+        "color3": "#99835b",
+        "texture": 0.7,
+        "intensity": 0.48
+      }
+    },
+    "backdrop": {
+      "mesh": {},
+      "warm-mesh": {
+        "color": "#9a423d",
+        "color2": "#b27646",
+        "color3": "#5a3e7c",
+        "background": "#281820",
+        "driftSpeed": 0.12
+      },
+      "bokeh": {
+        "kind": "bokeh",
+        "count": 38,
+        "scale": 0.7,
+        "color": "#61aaaa",
+        "color2": "#d69375",
+        "color3": "#b294d6",
+        "intensity": 0.45,
+        "driftSpeed": 0.18,
+        "softness": 0.45
+      },
+      "sunbeams": {
+        "kind": "beams",
+        "count": 7,
+        "color": "#eed6a0",
+        "color2": "#c4a279",
+        "color3": "#ffdfae",
+        "background": "#1c282a",
+        "angle": 20,
+        "intensity": 0.25,
+        "driftSpeed": 0.14,
+        "grain": 0.018
+      },
+      "window-shadows": {
+        "kind": "shadows",
+        "shadowKind": "window",
+        "count": 5,
+        "color": "#3f544e",
+        "background": "#c5b59b",
+        "intensity": 0.5,
+        "driftSpeed": 0.08,
+        "grain": 0.025
+      },
+      "leaf-shadows": {
+        "kind": "shadows",
+        "shadowKind": "leaves",
+        "count": 25,
+        "background": "#bec3a6",
+        "color": "#23392d",
+        "intensity": 0.45,
+        "driftSpeed": 0.18,
+        "amplitude": 0.18
+      },
+      "blinds": {
+        "kind": "shadows",
+        "shadowKind": "blinds",
+        "count": 16,
+        "background": "#bcaf9a",
+        "intensity": 0.4,
+        "driftSpeed": 0.06
+      },
+      "wave-divider": {
+        "kind": "waves",
+        "count": 4,
+        "transparent": true,
+        "baseline": 0.65,
+        "amplitude": 0.16,
+        "driftSpeed": 0.25,
+        "color": "#639f9b",
+        "color2": "#314f74",
+        "color3": "#bb9698",
+        "grain": 0,
+        "vignette": 0
+      },
+      "contours": {
+        "kind": "contours",
+        "count": 5,
+        "spacing": 14,
+        "lineWidth": 0.8,
+        "transparent": true,
+        "driftSpeed": 0.05,
+        "intensity": 0.4,
+        "color": "#82bbaa",
+        "color2": "#b695b7",
+        "grain": 0,
+        "vignette": 0
+      }
+    },
+    "pattern": {
+      "dots": {},
+      "grid": {
+        "kind": "grid",
+        "spacing": 40,
+        "color": "#477077"
+      },
+      "crosses": {
+        "kind": "crosses",
+        "size": 3,
+        "spacing": 26,
+        "color": "#688c8e"
+      },
+      "hexagons": {
+        "kind": "hexagons",
+        "spacing": 32,
+        "color": "#659c94"
+      },
+      "diagonal": {
+        "kind": "diagonal",
+        "spacing": 18,
+        "color": "#6a859a"
+      },
+      "halftone": {
+        "kind": "halftone",
+        "spacing": 14,
+        "size": 5,
+        "color": "#738e9a",
+        "color2": "#b99d76",
+        "halftoneContrast": 0.9
+      },
+      "arches": {
+        "kind": "arches",
+        "spacing": 36,
+        "color": "#72a292",
+        "color2": "#ce996f",
+        "size": 2
+      },
+      "tiles": {
+        "kind": "tiles",
+        "spacing": 42,
+        "color": "#78aea5",
+        "color2": "#d49d74",
+        "lineWidth": 3
+      },
+      "dot-fade": {
+        "kind": "dots",
+        "spacing": 18,
+        "size": 1.5,
+        "fade": "radial",
+        "color": "#a4c8bd"
+      },
+      "blueprint": {
+        "kind": "grid",
+        "spacing": 32,
+        "background": "#123346",
+        "transparent": false,
+        "color": "#54869c",
+        "lineWidth": 0.6
+      }
+    },
+    "status": {
+      "skeleton": {},
+      "avatar-placeholder": {
+        "kind": "skeleton",
+        "skeletonLayout": "avatar",
+        "lines": 3,
+        "width": 0.4
+      },
+      "card-placeholder": {
+        "kind": "skeleton",
+        "skeletonLayout": "card",
+        "width": 0.29,
+        "lines": 3
+      },
+      "progress-ring": {
+        "kind": "ring",
+        "sweep": 360,
+        "size": 112,
+        "value": 0.72,
+        "thickness": 7,
+        "color": "#9ad9c3"
+      },
+      "progress-bar": {
+        "kind": "bar",
+        "width": 0.38,
+        "value": 0.65,
+        "thickness": 10,
+        "color": "#87d2cb"
+      },
+      "segmented-progress": {
+        "kind": "segments",
+        "width": 0.38,
+        "count": 12,
+        "value": 0.65,
+        "thickness": 14,
+        "radius": 3,
+        "gap": 4
+      },
+      "loading-ring": {
+        "kind": "ring",
+        "sweep": 360,
+        "indeterminate": true,
+        "size": 80,
+        "thickness": 5,
+        "cycle": 1.8
+      },
+      "loading-dots": {
+        "kind": "dots",
+        "count": 3,
+        "size": 58,
+        "amplitude": 0.6,
+        "cycle": 1.3
+      },
+      "equalizer": {
+        "kind": "equalizer",
+        "size": 110,
+        "count": 12,
+        "gap": 4,
+        "radius": 2,
+        "amplitude": 0.7,
+        "cycle": 3
+      }
+    },
+    "fall": {
+      "snow": {},
+      "soft-snow": {
+        "shape": "round",
+        "size": 7,
+        "density": 42,
+        "fallSpeed": 48,
+        "tumble": 0,
+        "softness": 0.6
+      },
+      "snowflakes": {
+        "shape": "flake",
+        "size": 17,
+        "density": 18,
+        "fallSpeed": 40,
+        "tumble": 0.45,
+        "softness": 0.05
+      },
+      "snow-crystals": {
+        "shape": "crystal",
+        "size": 10,
+        "density": 32,
+        "fallSpeed": 70,
+        "tumble": 0.9,
+        "softness": 0.1
+      },
+      "snow-flurry": {
+        "shape": "mixed",
+        "density": 70,
+        "size": 9,
+        "wind": 85,
+        "gust": 40,
+        "fallSpeed": 120,
+        "sway": 20
+      },
+      "autumn-leaves": {
+        "kind": "leaves",
+        "shape": "mixed",
+        "size": 32,
+        "sizeVariation": 0.45,
+        "density": 8,
+        "fallSpeed": 48,
+        "wind": 18,
+        "gust": 20,
+        "sway": 32,
+        "swaySpeed": 0.28,
+        "tumble": 1.05,
+        "softness": 0,
+        "color": "#d48432",
+        "color2": "#ae432e",
+        "color3": "#dcb753"
+      },
+      "maple-leaves": {
+        "kind": "leaves",
+        "shape": "maple",
+        "size": 34,
+        "density": 7,
+        "fallSpeed": 48,
+        "wind": 12,
+        "gust": 22,
+        "sway": 30,
+        "tumble": 1,
+        "softness": 0,
+        "color": "#dc7540",
+        "color2": "#b64230",
+        "color3": "#dfb35e"
+      },
+      "oak-leaves": {
+        "kind": "leaves",
+        "shape": "oak",
+        "size": 34,
+        "density": 8,
+        "fallSpeed": 54,
+        "wind": 18,
+        "gust": 20,
+        "sway": 28,
+        "tumble": 1,
+        "softness": 0,
+        "color": "#a7783a",
+        "color2": "#c0994e",
+        "color3": "#85532d"
+      },
+      "birch-leaves": {
+        "kind": "leaves",
+        "shape": "birch",
+        "size": 25,
+        "density": 13,
+        "fallSpeed": 45,
+        "wind": 14,
+        "gust": 18,
+        "sway": 26,
+        "tumble": 1,
+        "softness": 0,
+        "color": "#d9bb48",
+        "color2": "#bd8e2e",
+        "color3": "#e4c87c"
+      },
+      "cherry-petals": {
+        "kind": "petals",
+        "shape": "cherry",
+        "size": 16,
+        "density": 20,
+        "fallSpeed": 34,
+        "wind": 20,
+        "gust": 18,
+        "sway": 26,
+        "tumble": 0.7,
+        "softness": 0.05,
+        "color": "#efb2bf",
+        "color2": "#f7d5d9",
+        "color3": "#fff0e7"
+      },
+      "rose-petals": {
+        "kind": "petals",
+        "shape": "rose",
+        "size": 22,
+        "density": 12,
+        "fallSpeed": 42,
+        "wind": 10,
+        "gust": 16,
+        "sway": 24,
+        "tumble": 0.8,
+        "softness": 0.05,
+        "color": "#b84558",
+        "color2": "#e28292",
+        "color3": "#edb9b7"
+      },
+      "petal-mix": {
+        "kind": "petals",
+        "shape": "mixed",
+        "size": 18,
+        "density": 18,
+        "fallSpeed": 38,
+        "wind": 18,
+        "gust": 18,
+        "sway": 28,
+        "tumble": 0.8,
+        "softness": 0.05,
+        "color": "#e7afbe",
+        "color2": "#f4d6b6",
+        "color3": "#f4eeee"
+      },
+      "dandelion-seeds": {
+        "kind": "seeds",
+        "shape": "parachute",
+        "size": 26,
+        "density": 8,
+        "fallSpeed": 12,
+        "wind": 26,
+        "gust": 14,
+        "sway": 24,
+        "swaySpeed": 0.15,
+        "tumble": 0.25,
+        "softness": 0,
+        "color": "#f7f1da",
+        "color2": "#d3e2da",
+        "color3": "#ffffff"
+      },
+      "seed-down": {
+        "kind": "seeds",
+        "shape": "tuft",
+        "size": 23,
+        "density": 13,
+        "fallSpeed": 16,
+        "wind": 26,
+        "gust": 15,
+        "sway": 22,
+        "swaySpeed": 0.15,
+        "tumble": 0.4,
+        "softness": 0.05,
+        "color": "#eee9d7",
+        "color2": "#caddd6",
+        "color3": "#ffffff"
+      }
+    }
+  }
+}

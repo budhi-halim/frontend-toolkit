@@ -1,0 +1,5 @@
+/*! Frontend Toolkit 1.0.0. Copyright (c) 2026 Frontend Toolkit contributors.
+MIT for project code. Retained upstream material is not relicensed.
+Keep the distribution LICENSE, NOTICE.txt and licenses/ files with these modules. */
+import{CLOUDS_FRAGMENT as s}from"../shaders/atmosphere.js";import{createGpuRenderer as l}from"./gpu.js";import{getDefaults as o}from"../core/schema.js";import{colorRGB as e}from"../core/utils.js";function c(t,a={},n){return l(t,s,{...o("clouds"),...a},{effect:"clouds",uniforms:r=>({uSeed:r.seed,uScale:r.scale,uDensity:r.density,uWind:r.wind,uLight:r.light,uCoverage:r.coverage,uSoftness:r.softness,uTransparent:r.transparent?1:0,uColor:e(r.color),uColor2:e(r.shadowColor),uColor3:e(r.skyColor)}),fallback:r=>`radial-gradient(ellipse at 35% 55%,${r.color},transparent 65%),radial-gradient(ellipse at 80% 40%,${r.color},transparent 60%),linear-gradient(${r.transparent?"transparent":r.skyColor},${r.transparent?"transparent":r.skyColor})`},n)}export{c as createCloudsRenderer};
+//# sourceMappingURL=clouds.js.map

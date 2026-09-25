@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Testing — Frontend Toolkit</title><link rel="icon" href="../site/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../site/style.css"><link rel="stylesheet" href="docs.css"><link rel="stylesheet" href="../site/design.css"><script src="../site/theme.js" defer></script></head><body><a class="skip-link" href="#documentation">Skip to content</a><header class="tk-header wrap"><a class="tk-brand" href="../index.html" aria-label="Frontend Toolkit home"><img src="../site/favicon.svg" alt="" width="34" height="34"><span>Frontend Toolkit</span><span class="tk-version" data-version>1.0.0</span></a><nav class="tk-nav" aria-label="Main navigation"><a href="../index.html">Demo</a><a href="../lab.html">Lab</a><a href="../docs/guide.html" aria-current="page">Docs</a><a href="../examples/index.html">Examples</a><button class="tk-theme" id="theme-button" data-theme-toggle type="button" aria-label="Switch color theme"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg></button></nav></header><main class="docs-layout wrap" id="documentation"><nav class="docs-nav" aria-label="Documentation"><a href="guide.html">Integration</a><a href="api.html">API</a><a href="reference.html">Options</a><a href="compatibility.html">Compatibility</a><a href="accessibility.html">Accessibility</a><a href="testing.html" aria-current="page">Testing</a><a href="publishing.html">Publishing</a><a href="notices.html">Notices</a></nav><article class="documentation"><h1 id="testing">Testing</h1>
+<h2 id="local-prerequisites">Local prerequisites</h2>
+<p>The build uses development-only esbuild and html-minifier-terser. Use Node.js 24 LTS (22 or newer is supported). Run <code>npm install</code> for first setup; commit the resulting package-lock.json. Clean clones use <code>npm ci</code>.</p>
+<div class="code-label">sh</div><pre tabindex="0"><code>npm run build
+npm run verify</code></pre>
+<p>Browser tests use Python 3.11 or newer and development-only packages listed in <code>requirements-test.txt</code>:</p>
+<div class="code-label">sh</div><pre tabindex="0"><code>python -m pip install -r requirements-test.txt
+python -m playwright install chromium
+npm run test:all</code></pre>
+<p>On a Linux machine missing Chromium system libraries, Playwright's <code>install --with-deps chromium</code> command installs the browser and required system dependencies. That may require administrative permission. A preinstalled Chromium can instead be selected with the <code>CHROMIUM_PATH</code> environment variable.</p>
+<p>The browser tests use isolated documents and locally supplied scripts. This permits testing in environments that restrict top-level navigation to a local server. Node tests separately exercise the actual local HTTP server and its file responses.</p>
+<p>The production-specific suite serves the actual generated website under <code>/frontend-toolkit/</code>:</p>
+<div class="code-label">sh</div><pre tabindex="0"><code>npm run test:production</code></pre>
+<p>It requires a production manifest. Its <code>--preview</code> flag is solely for honest local validation of the supplied readable preparation build; that flag is never used by the release workflow. Worker execution is checked independently of the portable fallback.</p>
+<h2 id="test-layers">Test layers</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table><thead><tr><th scope="col">Layer</th><th scope="col">What it verifies</th><th scope="col">What it does not verify</th></tr></thead><tbody><tr><td>Node</td><td>Schemas, normalization, geometry, motion rules, protected assets, source contracts, build output, local HTTP serving</td><td>Actual browser painting</td></tr><tr><td>Native Chromium</td><td>Real Canvas pixels, DOM layout, input, motion preferences, cleanup, selective module loading, public demo and lab</td><td>GPU hardware behavior when WebGL is unavailable</td></tr><tr><td>Instrumented WebGL contract</td><td>Resource and API usage through an instrumented context</td><td>Shader compilation, image quality, real GPU performance</td></tr><tr><td>Mesa/EGL</td><td>Real shader compilation, rendering, and floating-point fluid simulation in a software graphics driver</td><td>The browser's own graphics stack or hardware frame rates</td></tr><tr><td>Manual devices</td><td>Device-specific output, scrolling, touch, accessibility, and sustained performance</td><td>Universal compatibility</td></tr></tbody></table></div>
+<h2 id="individual-suites">Individual suites</h2>
+<div class="code-label">sh</div><pre tabindex="0"><code>npm run test:browser
+npm run test:compatibility
+npm run test:preview5
+npm run test:preview6
+npm run test:site
+npm run test:examples
+npm run test:gpu-contract</code></pre>
+<p>The <code>preview4</code>, <code>preview5</code>, and <code>preview6</code> file names identify regression suites for earlier feature additions. They are retained tests, not separate product versions.</p>
+<p><code>npm run test:all</code> runs Node and the native browser suites sequentially and stops at the first failure. Instrumented WebGL checks are kept separate to avoid mistaking them for real GPU tests.</p>
+<h2 id="optional-software-gpu-suite">Optional software-GPU suite</h2>
+<p>On Linux with Mesa EGL/GLES libraries available:</p>
+<div class="code-label">sh</div><pre tabindex="0"><code>npm run test:shaders</code></pre>
+<p>These Python scripts use <code>ctypes</code> to load the local EGL/GLES libraries. They compile the shader fixtures, render actual frames, and test the fluid solver. They do not require a WebGL-capable browser.</p>
+<h2 id="outputs-and-repeatability">Outputs and repeatability</h2>
+<p>Generated reports and screenshots are written under <code>tests/validation/</code>, which is ignored by Git. The scripts print their pass/fail summaries and return a nonzero exit status on failure. Seeds and explicit frame times are used where deterministic comparisons are needed; absolute hardware frame rates are not asserted.</p>
+<p>The repository check validates relative links, versions, basic module syntax, required files, and reproducible bundles. Strict release mode also rejects a readable preview, a missing lockfile, or an unconfigured repository. It does not require a per-component approval declaration.</p>
+<h2 id="validation-record">Validation record</h2>
+<p>The repository's final local test results are recorded in <a href="validation.html">Validation</a>. They describe the tested build and environment, not a guarantee of identical behavior on every browser. Native hardware WebGL, Safari, Firefox, and physical mobile devices still require device testing.</p></article></main><footer class="tk-footer wrap"><span>Frontend Toolkit <span data-version>1.0.0</span></span><nav aria-label="Project resources"><a href="https://github.com/budhi-halim/frontend-toolkit">GitHub</a><a href="../docs/compatibility.html">Compatibility</a><a href="../LICENSE">MIT license</a><a href="../docs/notices.html">Notices</a></nav></footer></body></html>

@@ -1,0 +1,5 @@
+/*! Frontend Toolkit 1.0.0. Copyright (c) 2026 Frontend Toolkit contributors.
+MIT for project code. Retained upstream material is not relicensed.
+Keep the distribution LICENSE, NOTICE.txt and licenses/ files with these modules. */
+import{ART_FRAGMENT as i}from"../shaders/art.js";import{createGpuRenderer as u}from"./gpu.js";import{createCreativeFallback as o}from"../core/creative-fallback.js";import{colorRGB as t}from"../core/utils.js";import{createMetaballMotion as c}from"../core/metaball-motion.js";function k(a,n={},l){return u(a,i,n,{effect:"art",simulation:c,effective:(e,r)=>({...e,detail:r.detail}),uniforms:e=>({uKind:["metaballs","silk","interference","tunnel"].indexOf(e.kind),uAmount:e.amount,uScale:e.scale,uRelief:e.relief,uLightAngle:e.lightAngle*Math.PI/180,uDetail:e.detail??1,uSeed:e.seed,uColor:t(e.color),uColor2:t(e.color2),uBackground:t(e.background),uTransparent:e.transparent?1:0}),portable:(e,r)=>o(e,"art",r),fallback:e=>e.transparent?"transparent":e.background,stats:e=>({study:e.kind,raySteps:e.kind==="metaballs"?Math.round(24+36*e.detail):0})},l)}export{k as createArtRenderer};
+//# sourceMappingURL=art.js.map
